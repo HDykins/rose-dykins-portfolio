@@ -2,12 +2,16 @@ body {
 	text-align: center;
 }
 
+img {
+	width: 100%;
+}
+
 .pdfView {
 	height: 100vh;
 }
 
 .splash-image {
-	background-color: blue;
+	background-color: cyan;
 	height: 100vh;
 }
 
@@ -19,11 +23,27 @@ body {
 	background-color: black;	
 }
 
-.slick-center {
-	transform: scale(1.5);
+.extra {
+	background-color: white;
 }
 
-h3 {
-	margin: 20%;
-	border: solid black 2px;
+.slick-center {
+	transform: scale(1.2);
+}
+
+.slider-for-element {
+	margin: 20px 20px 20px 20px;
+}
+
+.slider-nav-element {
+	margin: 20px 80px 20px 80px;
+}
+
+.slick-prev, .slick-next {
+	height: 90px
+}
+
+.slick-prev:before, .slick-next:before {
+	color: black;
+	font-size: 30px;
 }
