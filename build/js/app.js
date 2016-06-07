@@ -1,38 +1,27 @@
-var container = document.getElementById('container');
-var pdfView = false;
-
-function togglePdfView() {
-	if (pdfView) {
-		pdfView = false;
-	} else {
-		pdfView = true;
-	}
-}
-
-function getPdfView() {
-	return pdfView;
-}
+var container = document.getElementById('pdf-view');
 
 $('body').on('click', '.slick-slide', function (clickEvent) {
-	if (!getPdfView()) {
-		$('.main').hide();
-		$('#container').show();
+	clickEvent.preventDefault();
+	if (!Model.getPdfView()) {
+		$('#main-view').hide();
+		$('#pdf-view').show();
 		new PdfViewer({pdfUrl: 'Junior developer CV_short', staticHost: 'https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf'}).embed(container);
+    	$('[id="pdf-view"]').append($('<div class="close-button">X</div>'));
 	}
-	togglePdfView();
-	console.log(pdfView);
+	Model.togglePdfView();
 });
 
-$('body').on('click', '#container', function (clickEvent) {
-	if (getPdfView()) {
-		$('#container').empty().hide();
-		$('.main').show();
+$('body').on('click', '.close-button', function (clickEvent) {
+	clickEvent.preventDefault();
+	if (Model.getPdfView()) {
+		$('#pdf-view').empty().hide();
+		$('#main-view').show();
 	}
 });
 
-$('#container').hide();
+$('#pdf-view').hide();
 
- $('.slider-for').slick({
+$('.slider-for').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
@@ -47,5 +36,15 @@ $('.slider-nav').slick({
   speed: 200,
   asNavFor: '.slider-for',
   dots: true,
-  adaptiveHeight: true
+  adaptiveHeight: true,
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        slidesToShow: 1
+      }
+    }
+  ]
 });

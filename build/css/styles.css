@@ -6,8 +6,16 @@ img {
 	width: 100%;
 }
 
-.pdfView {
+.pdf-view {
 	height: 100vh;
+}
+
+.close-button {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 40vh;
+	left: 10px;
 }
 
 .splash-image {
@@ -46,4 +54,22 @@ img {
 .slick-prev:before, .slick-next:before {
 	color: black;
 	font-size: 30px;
+}
+
+@media (max-width: 992px) and (min-width: 767px) {
+	.slider-nav-element {
+		margin: 20px 40px 20px 40px;
+	}
+}
+
+@media (max-width: 767px) {
+	.slider-for {
+		display:none;
+	}
+}
+
+@media (max-width: 650px) and (min-width: 400px) {
+	.slider-nav-element {
+		margin: 20px 40px 20px 40px;
+	}
 }
