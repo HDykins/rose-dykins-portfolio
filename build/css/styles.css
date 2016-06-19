@@ -28,11 +28,13 @@ img {
 }
 
 .interests {
-	background-color: black;	
+	background-color: black;
+	height: 100vh;
 }
 
 .extra {
 	background-color: white;
+	height: 100vh;
 }
 
 .slick-center {
@@ -40,7 +42,7 @@ img {
 }
 
 .slider-for-element {
-	margin: 20px 20px 20px 20px;
+	margin: 10px 20px 10px 20px;
 }
 
 .slider-nav-element {
