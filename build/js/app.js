@@ -53,9 +53,47 @@ addCarouselClickEvents(function handleCarouselClickEvents () {
 
 handleClosePdfView();
 
-$('.slider-for').slick({
+$('.splash-image').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 10000,
+  speed: 200
+});
+
+$('.slider-recent-articles').slick({
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  arrows: false,
+  dots: true,
+  adaptiveHeight: true
+});
+
+$('.slider-recent-articles-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  arrows: true,
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-recent-articles',
+  adaptiveHeight: true,
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+
+$('.slider-for').slick({
+  slidesToShow: 3,
+  slidesToScroll: 3,
   arrows: false,
   fade: true,
   asNavFor: '.slider-nav',
@@ -65,6 +103,7 @@ $('.slider-for').slick({
 $('.slider-nav').slick({
   centerMode: true,
   slidesToShow: 3,
+  slidesToScroll: 3,  
   speed: 200,
   asNavFor: '.slider-for',
   dots: true,
