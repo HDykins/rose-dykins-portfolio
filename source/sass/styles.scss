@@ -28,7 +28,7 @@ h4 {
 }
 
 .row {
-	margin-bottom: 30px;
+	margin: 0 20px 30px 20px;
 }
 
 .slider-recent-articles-nav {
@@ -63,10 +63,6 @@ h4 {
 	padding: 5px;
 }
 
-.three {
-	margin: 0 20px 30px 20px;
-}
-
 .bigger-text {
 	margin: 0 0 0 30px;
 	font-size: 16vh;
@@ -92,7 +88,7 @@ h4 {
 	left: 10px;
 }
 
-.something {
+.splash-image-outer {
 	position: absolute;
 	top: 40px;
 	right: 0px;

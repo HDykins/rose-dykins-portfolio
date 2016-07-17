@@ -6,6 +6,7 @@ var reactify = require('reactify');
 var htmlMinifier = require('gulp-html-minifier');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 
 var sassInput = './source/**/*.scss';
 var cssOutput = './build/';
@@ -24,6 +25,15 @@ gulp.task('browserify', function () {
         // .pipe(buffer())
         // .pipe(uglify())
         .pipe(gulp.dest('./build/js/'));
+});
+
+gulp.task('combine-scripts', ['browserify'], function () {
+  return gulp.src([
+    './build/js/app.js',
+    './source/js/my-app.js'
+  ])
+  .pipe(concat('app.js'))
+  .pipe(gulp.dest('./build/js/'));
 });
 
 gulp.task('compile-sass', function () {
@@ -67,6 +77,6 @@ gulp.task('watch-sass', function () {
 });
 
 gulp.task('sass', ['compile-sass']);
-gulp.task('build', ['browserify', 'minifyHtml', 'compile-sass']);
+gulp.task('build', ['browserify', 'minifyHtml', 'compile-sass', 'combine-scripts']);
 gulp.task('update', ['browserify', 'minifyHtml', 'compile-sass', 'transfer-images', 'transfer-photos']);
 gulp.task('default', ['watch', 'browserify', 'minifyHtml', 'compile-sass', 'watch-sass']);

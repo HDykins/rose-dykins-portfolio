@@ -24,6 +24,7 @@
     "vinyl-source-stream": "*"
   },
   "dependencies": {
+    "gulp-concat": "^2.6.0",
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "jquery": "*",
