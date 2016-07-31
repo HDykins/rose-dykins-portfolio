@@ -63,28 +63,129 @@ $('.splash-image').slick({
   speed: 200
 });
 
+$('.slider-coffeegram').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  speed: 200,
+  asNavFor: '.slider-coffeegram-nav'
+});
+
+$('.slider-coffeegram-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  speed: 200,
+  asNavFor: '.slider-coffeegram'
+});
+
+$('.slider-videos').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  speed: 200,
+  asNavFor: '.slider-videos-nav'
+});
+
+$('.slider-videos-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  speed: 200,
+  asNavFor: '.slider-videos'
+});
+
+$('.slider-twitter').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  speed: 200,
+  asNavFor: '.slider-twitter-nav'
+});
+
+$('.slider-twitter-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  speed: 200,
+  asNavFor: '.slider-twitter'
+});
+
 $('.slider-recent-articles').slick({
   slidesToShow: 3,
   slidesToScroll: 3,
   arrows: false,
-  adaptiveHeight: true
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-recent-articles-nav',
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
 
 $('.slider-recent-articles-nav').slick({
   slidesToShow: 3,
   slidesToScroll: 3,
-  arrows: true,
+  arrows: false,
   dots: true,
   adaptiveHeight: true,
   asNavFor: '.slider-recent-articles',
-  adaptiveHeight: true,
     responsive: [
     {
       breakpoint: 768,
       settings: {
         arrows: false,
-        centerMode: true,
-        slidesToShow: 1
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+$('.slider-latest-posts').slick({
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  arrows: false,
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-latest-posts-nav',
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+$('.slider-latest-posts-nav').slick({
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  arrows: false,
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-latest-posts',
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
     }
   ]

@@ -5,7 +5,7 @@ var Application = require('./components/Application.jsx');
 
 ReactDOM.render(React.createElement(Application, null), document.querySelector('[data-rose-portfolio-react-application]'));
 
-},{"./components/Application.jsx":160,"react":159,"react-dom":3}],2:[function(require,module,exports){
+},{"./components/Application.jsx":161,"react":159,"react-dom":3}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -19010,6 +19010,27 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":27}],160:[function(require,module,exports){
 var React = require('react');
+
+var About = React.createClass({displayName: "About",
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "col-xs-4"}, 
+				React.createElement("h4", {className: "about"}, "ABOUT"), 
+				React.createElement("div", {className: "about-section"}, 
+					React.createElement("img", {className: "rose-portrait", src: "./build/images/Hiltops-Hideaways1.jpg"}), 
+					React.createElement("p", null, "I'm simply amazing. I'm unmatched in my field and will one day save the world from itself. Read more about me here on a page all about me. Me.")
+				)
+			)
+		)
+	}
+
+});
+
+module.exports = About;
+
+},{"react":159}],161:[function(require,module,exports){
+var React = require('react');
 var Homepage = require('./Homepage.jsx');
 
 var Application = React.createClass({displayName: "Application",
@@ -19036,107 +19057,101 @@ var Application = React.createClass({displayName: "Application",
 
 module.exports = Application;
 
-},{"./Homepage.jsx":161,"react":159}],161:[function(require,module,exports){
+},{"./Homepage.jsx":164,"react":159}],162:[function(require,module,exports){
 var React = require('react');
+
+var Coffeegram = React.createClass({displayName: "Coffeegram",
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("h4", null, "COFFEEGRAM"), 
+				React.createElement("div", {className: "slider-coffeegram-nav"}, 
+					React.createElement("div", {className: "slider-coffeegram-nav-element"}), 
+				  React.createElement("div", {className: "slider-coffeegram-nav-element"}), 
+				  React.createElement("div", {className: "slider-coffeegram-nav-element"}), 
+				  React.createElement("div", {className: "slider-coffeegram-nav-element"}), 
+				  React.createElement("div", {className: "slider-coffeegram-nav-element"}), 
+				  React.createElement("div", {className: "slider-coffeegram-nav-element"})
+				), 
+				React.createElement("div", {className: "slider-coffeegram"}, 
+				  React.createElement("div", {className: "slider-coffeegram-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-coffeegram-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-coffeegram-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-coffeegram-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-coffeegram-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-coffeegram-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+				)
+			)	
+		)
+	}
+
+});
+
+module.exports = Coffeegram;
+
+},{"react":159}],163:[function(require,module,exports){
+var React = require('react');
+
+var Footer = React.createClass({displayName: "Footer",
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "row footer"}, 
+				React.createElement("div", {className: "col-xs-4"}, 
+					React.createElement("p", null, "Contact: rosedykins@traveljourney.com / 077 897 345 7699")
+				), 
+				React.createElement("div", {className: "col-xs-4"}, 
+					React.createElement("p", null, "Web design: www.feedingcrows.co.uk"), 
+					React.createElement("p", null, "Created by: www.hdykins.co.uk")
+				), 
+				React.createElement("div", {className: "col-xs-4"}, 
+					React.createElement("p", null, "© Rose Dykins 2016")
+				)								
+			)
+		)
+	}
+
+});
+
+module.exports = Footer;
+
+},{"react":159}],164:[function(require,module,exports){
+var React = require('react');
+var Navbar = require('./Navbar.jsx');
+var Splashscreen = require('./Splashscreen.jsx');
+var RecentArticles = require('./RecentArticles.jsx');
+var Coffeegram = require('./Coffeegram.jsx');
+var Videos = require('./Videos.jsx');
+var Twitter = require('./Twitter.jsx');
+var LatestPosts = require('./LatestPosts.jsx');
+var About = require('./About.jsx');
+var Footer = require('./Footer.jsx');
 
 var HomePage = React.createClass({displayName: "HomePage",
 
 	render: function () {
 		return (
 			React.createElement("section", {id: "main-view"}, 
-				React.createElement("nav", {className: "navbar navbar-inverse"}, 
-				React.createElement("i", {className: "fa fa-2x fa-google-plus", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-twitter", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-tumblr", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-facebook", "aria-hidden": "true"})
-				), 
-				React.createElement("div", {className: "container-fluid"}, 
-					React.createElement("div", {className: "row splash-screen"}, 
-						React.createElement("div", {className: "something"}, 
-							React.createElement("div", {className: "splash-image"}, 
-								  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
-								  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
-								  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
-								  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
-								  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
-								  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
-							)
-						), 
-						React.createElement("br", null), 
-						React.createElement("br", null), 
-						React.createElement("h1", null, "ROSE DYKINS"), 
-						React.createElement("br", null), 
-						React.createElement("h1", {className: "bigger-text"}, "TRAVEL"), 
-						React.createElement("br", null), 
-						React.createElement("h1", {className: "bigger-text"}, "JOURNALIST"), 
-						React.createElement("br", null), 
-						React.createElement("h1", null, "HOME"), 
-						React.createElement("br", null), 
-						React.createElement("h1", null, "ABOUT"), 
-						React.createElement("br", null), 
-						React.createElement("h1", null, "LATEST WORK"), 
-						React.createElement("br", null), 
-						React.createElement("h1", null, "BLOG"), 
-						React.createElement("br", null), 
-						React.createElement("h1", null, "CONTACT")
-					)
-				), 
-				React.createElement("div", {className: "row three"}, 
+				React.createElement(Navbar, null), 
+				React.createElement(Splashscreen, null), 
+				React.createElement("div", {className: "row"}, 
 					React.createElement("div", {className: "col-xs-4"}, 
-						React.createElement("h4", null, "COFFEEGRAM"), 
-						React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})
+						React.createElement(Coffeegram, null)
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
-						React.createElement("h4", null, "VIDEOS"), 
-						React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})
+						React.createElement(Videos, null)
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
-						React.createElement("h4", null, "TWITTER"), 
-						React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})
+						React.createElement(Twitter, null)
 					)
 				), 
-				React.createElement("div", {className: "row three"}, 
-					React.createElement("h4", null, "RECENT ARTICLES"), React.createElement("div", {className: "slider-recent-articles-nav"}, 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-nav-element"})
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-nav-element"})
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 					  
-						  React.createElement("div", {className: "slider-recent-articles-nav-element"})
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 					  
-						  React.createElement("div", {className: "slider-recent-articles-nav-element"})
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-nav-element"})
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-nav-element"})
-						)
-					), 	
-					React.createElement("div", {className: "slider-recent-articles"}, 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}), React.createElement("p", null, "esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve"))
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 					  
-						  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 					  
-						  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-						  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
-						)
-					)
-				)
+				React.createElement(RecentArticles, null), 
+				React.createElement("div", {className: "row"}, 
+					React.createElement(LatestPosts, null), 
+					React.createElement(About, null)
+				), 
+				React.createElement(Footer, null)
 			)
 		);
 	}
@@ -19144,6 +19159,251 @@ var HomePage = React.createClass({displayName: "HomePage",
 });
 
 module.exports = HomePage;
+
+},{"./About.jsx":160,"./Coffeegram.jsx":162,"./Footer.jsx":163,"./LatestPosts.jsx":165,"./Navbar.jsx":166,"./RecentArticles.jsx":167,"./Splashscreen.jsx":168,"./Twitter.jsx":169,"./Videos.jsx":170,"react":159}],165:[function(require,module,exports){
+var React = require('react');
+
+var LatestPosts = React.createClass({displayName: "LatestPosts",
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "col-xs-8"}, 
+				React.createElement("h4", {className: "fullwidth-header"}, "LATEST POSTS"), 
+				React.createElement("div", {className: "slider-latest-posts-nav"}, 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-latest-posts-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-latest-posts-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-nav-element"})
+					)
+				), 	
+				React.createElement("div", {className: "slider-latest-posts"}, 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}), React.createElement("h4", null, "I went here and it was good"), React.createElement("span", null, "Date is this yes 606060"), React.createElement("p", null, "esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve"))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-latest-posts-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-latest-posts-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-latest-posts-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					)
+				)
+			)	
+		)
+	}
+
+});
+
+module.exports = LatestPosts;
+
+},{"react":159}],166:[function(require,module,exports){
+var React = require('react');
+
+var Navbar = React.createClass({displayName: "Navbar",
+
+	render: function () {
+		return (
+			React.createElement("nav", {className: "navbar navbar-inverse"}, 
+				React.createElement("i", {className: "fa fa-2x fa-google-plus", "aria-hidden": "true"}), 
+				React.createElement("i", {className: "fa fa-2x fa-twitter", "aria-hidden": "true"}), 
+				React.createElement("i", {className: "fa fa-2x fa-tumblr", "aria-hidden": "true"}), 
+				React.createElement("i", {className: "fa fa-2x fa-facebook", "aria-hidden": "true"})
+			)
+		)
+	}
+
+});
+
+module.exports = Navbar;
+
+},{"react":159}],167:[function(require,module,exports){
+var React = require('react');
+
+var RecentArticles = React.createClass({displayName: "RecentArticles",
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "row"}, 
+				React.createElement("h4", {className: "fullwidth-header"}, "RECENT ARTICLES"), 
+				React.createElement("div", {className: "slider-recent-articles-nav"}, 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-recent-articles-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-recent-articles-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-nav-element"})
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-nav-element"})
+					)
+				), 	
+				React.createElement("div", {className: "slider-recent-articles"}, 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}), React.createElement("h4", null, "The best place to go at the moment really"), React.createElement("span", null, "Date is this yes 606060"), React.createElement("p", null, "esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve"))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 					  
+					  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+					  React.createElement("div", {className: "slider-recent-articles-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+					)
+				)
+			)
+		)
+	}
+
+});
+
+module.exports = RecentArticles;
+
+},{"react":159}],168:[function(require,module,exports){
+var React = require('react');
+
+var Splashscreen = React.createClass({displayName: "Splashscreen",
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "container-fluid"}, 
+				React.createElement("div", {className: "row splash-screen"}, 
+					React.createElement("div", {className: "splash-image-outer"}, 
+						React.createElement("div", {className: "splash-image"}, 
+							  React.createElement("div", {className: "splash-image-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+							  React.createElement("div", {className: "splash-image-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+							  React.createElement("div", {className: "splash-image-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+							  React.createElement("div", {className: "splash-image-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+							  React.createElement("div", {className: "splash-image-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+							  React.createElement("div", {className: "splash-image-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+						)
+					), 
+					React.createElement("br", null), 
+					React.createElement("br", null), 
+					React.createElement("h1", null, "/ROSE DYKINS/"), 
+					React.createElement("br", null), 
+					React.createElement("h1", {className: "bigger-text"}, "TRAVEL"), 
+					React.createElement("br", null), 
+					React.createElement("h1", {className: "bigger-text"}, "JOURNALIST"), 
+					React.createElement("br", null), 
+					React.createElement("h1", null, "HOME"), 
+					React.createElement("br", null), 
+					React.createElement("h1", null, "ABOUT"), 
+					React.createElement("br", null), 
+					React.createElement("h1", null, "LATEST WORK"), 
+					React.createElement("br", null), 
+					React.createElement("h1", null, "BLOG"), 
+					React.createElement("br", null), 
+					React.createElement("h1", null, "CONTACT")
+				)
+			)
+		)
+	}
+
+});
+
+module.exports = Splashscreen;
+
+},{"react":159}],169:[function(require,module,exports){
+var React = require('react');
+
+var Twitter = React.createClass({displayName: "Twitter",
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("h4", null, "TWITTER"), 
+				React.createElement("div", {className: "slider-twitter-nav"}, 
+					React.createElement("div", {className: "slider-twitter-nav-element"}), 
+				  React.createElement("div", {className: "slider-twitter-nav-element"}), 
+				  React.createElement("div", {className: "slider-twitter-nav-element"}), 
+				  React.createElement("div", {className: "slider-twitter-nav-element"}), 
+				  React.createElement("div", {className: "slider-twitter-nav-element"}), 
+				  React.createElement("div", {className: "slider-twitter-nav-element"})
+				), 
+				React.createElement("div", {className: "slider-twitter"}, 
+				  React.createElement("div", {className: "slider-twitter-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-twitter-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-twitter-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-twitter-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-twitter-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-twitter-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+				)
+			)	
+		)
+	}
+
+});
+
+module.exports = Twitter;
+
+},{"react":159}],170:[function(require,module,exports){
+var React = require('react');
+
+var Videos = React.createClass({displayName: "Videos",
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("h4", null, "VIDEOS"), 
+				React.createElement("div", {className: "slider-videos-nav"}, 
+					React.createElement("div", {className: "slider-videos-nav-element"}), 
+				  React.createElement("div", {className: "slider-videos-nav-element"}), 
+				  React.createElement("div", {className: "slider-videos-nav-element"}), 
+				  React.createElement("div", {className: "slider-videos-nav-element"}), 
+				  React.createElement("div", {className: "slider-videos-nav-element"}), 
+				  React.createElement("div", {className: "slider-videos-nav-element"})
+				), 
+				React.createElement("div", {className: "slider-videos"}, 
+				  React.createElement("div", {className: "slider-videos-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-videos-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-videos-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-videos-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-videos-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"})), 
+				  React.createElement("div", {className: "slider-videos-element"}, React.createElement("img", {src: "./build/images/Hiltops-Hideaways1.jpg"}))
+				)
+			)	
+		)
+	}
+
+});
+
+module.exports = Videos;
 
 },{"react":159}]},{},[1]);
 
@@ -19212,28 +19472,129 @@ $('.splash-image').slick({
   speed: 200
 });
 
+$('.slider-coffeegram').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  speed: 200,
+  asNavFor: '.slider-coffeegram-nav'
+});
+
+$('.slider-coffeegram-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  speed: 200,
+  asNavFor: '.slider-coffeegram'
+});
+
+$('.slider-videos').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  speed: 200,
+  asNavFor: '.slider-videos-nav'
+});
+
+$('.slider-videos-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  speed: 200,
+  asNavFor: '.slider-videos'
+});
+
+$('.slider-twitter').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  speed: 200,
+  asNavFor: '.slider-twitter-nav'
+});
+
+$('.slider-twitter-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  speed: 200,
+  asNavFor: '.slider-twitter'
+});
+
 $('.slider-recent-articles').slick({
   slidesToShow: 3,
   slidesToScroll: 3,
   arrows: false,
-  adaptiveHeight: true
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-recent-articles-nav',
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
 
 $('.slider-recent-articles-nav').slick({
   slidesToShow: 3,
   slidesToScroll: 3,
-  arrows: true,
+  arrows: false,
   dots: true,
   adaptiveHeight: true,
   asNavFor: '.slider-recent-articles',
-  adaptiveHeight: true,
     responsive: [
     {
       breakpoint: 768,
       settings: {
         arrows: false,
-        centerMode: true,
-        slidesToShow: 1
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+$('.slider-latest-posts').slick({
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  arrows: false,
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-latest-posts-nav',
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+$('.slider-latest-posts-nav').slick({
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  arrows: false,
+  dots: true,
+  adaptiveHeight: true,
+  asNavFor: '.slider-latest-posts',
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
     }
   ]

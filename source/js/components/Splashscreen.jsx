@@ -18,7 +18,7 @@ var Splashscreen = React.createClass({
 					</div>
 					<br />
 					<br />
-					<h1>ROSE DYKINS</h1>
+					<h1>/ROSE DYKINS/</h1>
 					<br />
 					<h1 className="bigger-text">TRAVEL</h1>
 					<br />

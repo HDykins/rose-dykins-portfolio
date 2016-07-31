@@ -2,6 +2,12 @@ var React = require('react');
 var Navbar = require('./Navbar.jsx');
 var Splashscreen = require('./Splashscreen.jsx');
 var RecentArticles = require('./RecentArticles.jsx');
+var Coffeegram = require('./Coffeegram.jsx');
+var Videos = require('./Videos.jsx');
+var Twitter = require('./Twitter.jsx');
+var LatestPosts = require('./LatestPosts.jsx');
+var About = require('./About.jsx');
+var Footer = require('./Footer.jsx');
 
 var HomePage = React.createClass({
 
@@ -12,19 +18,21 @@ var HomePage = React.createClass({
 				<Splashscreen />
 				<div className="row">
 					<div className="col-xs-4">
-						<h4>COFFEEGRAM</h4>
-						<img src="./build/images/Hiltops-Hideaways1.jpg" />
+						<Coffeegram />
 					</div>
 					<div className="col-xs-4">
-						<h4>VIDEOS</h4>
-						<img src="./build/images/Hiltops-Hideaways1.jpg" />
+						<Videos />
 					</div>
 					<div className="col-xs-4">
-						<h4>TWITTER</h4>
-						<img src="./build/images/Hiltops-Hideaways1.jpg" />
+						<Twitter />
 					</div>
 				</div>
 				<RecentArticles />
+				<div className="row">
+					<LatestPosts />
+					<About />
+				</div>
+				<Footer />
 			</section>
 		);
 	}
