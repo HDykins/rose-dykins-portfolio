@@ -1,17 +1,15 @@
 $num-splash-images: 6;
 $num-coffeegram-images: 6;
 $num-videos-images: 6;
-$num-twitter-images: 6;
 $num-recent-articles-images: 6;
 $num-latest-posts-images: 6;
-$num-recent-articles-images-displayed: 3;
-$num-latest-posts-images-displayed: 2;
+$num-recent-articles-dots: 2;
+$num-latest-posts-dots: 3;
 $splash-image-dots-width: (100%/$num-splash-images);
 $coffeegram-images-dots-width: (100%/$num-coffeegram-images);
 $videos-images-dots-width: (100%/$num-videos-images);
-$twitter-images-dots-width: (100%/$num-twitter-images);
-$recent-articles-images-dots-width: (100%/$num-recent-articles-images*$num-recent-articles-images-displayed);
-$latest-posts-images-dots-width: (100%/$num-latest-posts-images*$num-latest-posts-images-displayed);
+$recent-articles-images-dots-width: (100%/$num-recent-articles-dots);
+$latest-posts-images-dots-width: (100%/$num-latest-posts-dots);
 
 body {
 	font-family: 'Comfortaa', cursive;
@@ -43,9 +41,10 @@ h4.fullwidth-header {
 	margin-left: 15px;
 }
 
-h4.about {
-	padding-bottom: 10px;
+h4.about, h4.twitter {
+	padding-bottom: 12px;
 	border-bottom: solid 1px black;
+	margin-bottom: 7px;
 }
 
 .row {
@@ -73,7 +72,7 @@ h4.about {
 	border-radius: 200%;
 }
 
-.slider-coffeegram-nav, .slider-videos-nav, .slider-twitter-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {
+.slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {
 	&.slick-dotted {
 		height: 5px;
 	}
@@ -81,7 +80,7 @@ h4.about {
 	background: white;
 	margin: 0;
 	.slick-dots {
-		height: 20px;
+		height: 20px;  
 		bottom: 0;
 		li {
 			margin: 0;
@@ -122,15 +121,6 @@ h4.about {
 	}
 	.slick-dots li {
 		width: $videos-images-dots-width;
-	}
-}
-
-.slider-twitter-nav {
-	&.slick-dotted {
-		margin-bottom: 5px;
-	}
-	.slick-dots li {
-		width: $twitter-images-dots-width;
 	}
 }
 
@@ -311,10 +301,8 @@ button.slick-next {
 }
 
 @media (max-width: 767px) {
-	$num-recent-articles-images-displayed: 1;
-	$num-latest-posts-images-displayed: 1;
-	$recent-articles-images-dots-width: (100%/$num-recent-articles-images/$num-recent-articles-images-displayed);
-	$latest-posts-images-dots-width: (100%/$num-latest-posts-images*$num-latest-posts-images-displayed);
+	$recent-articles-images-dots-width: (100%/$num-recent-articles-images);
+	$latest-posts-images-dots-width: (100%/$num-latest-posts-images);
 	h1 {
 		font-size: 27px;
 		margin: 0.5vh 0 0 0;
@@ -396,5 +384,15 @@ button.slick-next {
 	}
 	.slider-nav-element {
 		margin: 20px 40px 20px 40px;
+	}
+}
+
+
+
+@-moz-document url-prefix() {
+ .slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {
+		.slick-dots {
+			bottom: -10px;
+		}
 	}
 }

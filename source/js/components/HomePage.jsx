@@ -11,11 +11,15 @@ var Footer = require('./Footer.jsx');
 
 var HomePage = React.createClass({
 
+	componentDidMount: function () {
+		this.initSlicks()
+	},
+
 	render: function () {
 		return (
 			<section id="main-view">
 				<Navbar />
-				<Splashscreen />
+				<Splashscreen currentView={this.props.currentView} changeView={this.props.changeView} />
 				<div className="row">
 					<div className="col-xs-4">
 						<Coffeegram />
@@ -35,6 +39,46 @@ var HomePage = React.createClass({
 				<Footer />
 			</section>
 		);
+	},
+
+	initSlicks: function () {
+
+		$('.slider-latest-posts').slick({
+		  slidesToShow: 2,
+		  slidesToScroll: 2,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-latest-posts-nav',
+		  responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+
+		$('.slider-latest-posts-nav').slick({
+		  slidesToShow: 2,
+		  slidesToScroll: 2,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-latest-posts',
+		    responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        arrows: false,
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
 	}
 
 });

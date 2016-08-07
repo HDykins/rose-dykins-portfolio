@@ -1,11 +1,12 @@
 var React = require('react');
-var Homepage = require('./Homepage.jsx');
+var HomePage = require('./HomePage.jsx');
+var AboutPage = require('./AboutPage.jsx');
 
 var Application = React.createClass({
 
 	getInitialState: function () {
     return {
-      currentView: 'ABOUT'
+      currentView: 'HOME'
     };
   },
 
@@ -16,10 +17,20 @@ var Application = React.createClass({
     });
   },
 
+  changeView: function (view) {
+    this.updateState(view);
+  },
+
   render: function () {
-  	return (
-  		<Homepage />
-		);
+    if (this.state.currentView==="HOME") {
+    	return (
+    		<HomePage currentView={this.state.currentView} changeView={this.changeView} />
+  		);
+    } else {
+      return (
+        <AboutPage currentView={this.state.currentView} changeView={this.changeView} />
+      );
+    }
 	}
 });
 

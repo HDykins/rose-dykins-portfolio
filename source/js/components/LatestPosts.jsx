@@ -1,50 +1,38 @@
 var React = require('react');
+var Model = require('../../../build/js/model.js');
 
 var LatestPosts = React.createClass({
+
+	renderLatestPostsNavSlick: function () {
+		return Model.getBlogpostsArray().map (function (element, index) {
+			return (
+				<div key={index} className="slider-latest-posts-nav-element"></div>
+			);
+		});
+	},
+
+	renderLatestPostsSlick: function () {
+		return Model.getBlogpostsArray().map (function (element, index) {
+			return (
+				<div key={index} className="col-xs-4">
+					<a className="slider-latest-posts-element" href={element['link'] ? element['link'] : 'http://www.rose.blogPosts'} target="_blank"><img src={element['image-src']} /></a>
+					<h4>{element['title']}</h4>
+					<span>{element['date']}</span>
+					<p>{element['description']}</p>
+				</div>
+			);
+		});
+	},
 
 	render: function () {
 		return (
 			<div className="col-xs-8">
 				<h4 className="fullwidth-header">LATEST POSTS</h4>
 				<div className="slider-latest-posts-nav">
-					<div className="col-xs-4">
-					  <div className="slider-latest-posts-nav-element"></div>
-					</div>
-					<div className="col-xs-4">  
-					  <div className="slider-latest-posts-nav-element"></div>
-					</div>
-					<div className="col-xs-4">  					  
-					  <div className="slider-latest-posts-nav-element"></div>
-					</div>
-					<div className="col-xs-4">  					  
-					  <div className="slider-latest-posts-nav-element"></div>
-					</div>
-					<div className="col-xs-4">  
-					  <div className="slider-latest-posts-nav-element"></div>
-					</div>
-					<div className="col-xs-4">  
-					  <div className="slider-latest-posts-nav-element"></div>
-					</div>  
+					{this.renderLatestPostsNavSlick()} 
 				</div>	
 				<div className="slider-latest-posts">
-					<div className="col-xs-4">
-					  <div className="slider-latest-posts-element"><img src="./build/images/Hiltops-Hideaways1.jpg" /><h4>I went here and it was good</h4><span>Date is this yes 606060</span><p>esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve</p></div>
-					</div>
-					<div className="col-xs-4">  
-					  <div className="slider-latest-posts-element"><img src="./build/images/Hiltops-Hideaways1.jpg" /></div>
-					</div>
-					<div className="col-xs-4">  					  
-					  <div className="slider-latest-posts-element"><img src="./build/images/Hiltops-Hideaways1.jpg" /></div>
-					</div>
-					<div className="col-xs-4">  					  
-					  <div className="slider-latest-posts-element"><img src="./build/images/Hiltops-Hideaways1.jpg" /></div>
-					</div>
-					<div className="col-xs-4">  
-					  <div className="slider-latest-posts-element"><img src="./build/images/Hiltops-Hideaways1.jpg" /></div>
-					</div>
-					<div className="col-xs-4">  
-					  <div className="slider-latest-posts-element"><img src="./build/images/Hiltops-Hideaways1.jpg" /></div>
-					</div>
+					{this.renderLatestPostsSlick()}
 				</div>
 			</div>	
 		)

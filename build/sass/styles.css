@@ -22,9 +22,10 @@ h4 {
 h4.fullwidth-header {
   margin-left: 15px; }
 
-h4.about {
-  padding-bottom: 10px;
-  border-bottom: solid 1px black; }
+h4.about, h4.twitter {
+  padding-bottom: 12px;
+  border-bottom: solid 1px black;
+  margin-bottom: 7px; }
 
 .row {
   margin: 0 20px 30px 20px; }
@@ -46,16 +47,16 @@ h4.about {
   width: 80%;
   border-radius: 200%; }
 
-.slider-coffeegram-nav, .slider-videos-nav, .slider-twitter-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {
+.slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {
   position: relative;
   background: white;
   margin: 0; }
-  .slider-coffeegram-nav.slick-dotted, .slider-videos-nav.slick-dotted, .slider-twitter-nav.slick-dotted, .slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted {
+  .slider-coffeegram-nav.slick-dotted, .slider-videos-nav.slick-dotted, .slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted {
     height: 5px; }
-  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-twitter-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots {
+  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots {
     height: 20px;
     bottom: 0; }
-    .slider-coffeegram-nav .slick-dots li, .slider-videos-nav .slick-dots li, .slider-twitter-nav .slick-dots li, .slider-recent-articles-nav .slick-dots li, .slider-latest-posts-nav .slick-dots li {
+    .slider-coffeegram-nav .slick-dots li, .slider-videos-nav .slick-dots li, .slider-recent-articles-nav .slick-dots li, .slider-latest-posts-nav .slick-dots li {
       margin: 0; }
 
 .slider-recent-articles-nav.slick-dotted {
@@ -80,12 +81,6 @@ h4.about {
   margin-bottom: 5px; }
 
 .slider-videos-nav .slick-dots li {
-  width: 16.66667%; }
-
-.slider-twitter-nav.slick-dotted {
-  margin-bottom: 5px; }
-
-.slider-twitter-nav .slick-dots li {
   width: 16.66667%; }
 
 .slick-dots li button:before {
@@ -288,3 +283,7 @@ button.slick-next {
     margin: 0.5vh 0 0 -20px; }
   .slider-nav-element {
     margin: 20px 40px 20px 40px; } }
+
+@-moz-document url-prefix() {
+  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots {
+    bottom: -10px; } }
