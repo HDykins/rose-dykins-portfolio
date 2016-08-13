@@ -133,7 +133,7 @@ h4.about, h4.twitter {
 		width: 40%;
 		text-align: center;
 		margin: 0 30%;
-		bottom: 20px;
+		bottom: 60px;
 		.slick-active button {
 			background: white;
 		}
@@ -365,7 +365,7 @@ button.slick-next {
 	}
 
 
-	.slider-recent-articles {
+	.slider-recent-articles, .slider-latest-posts {
 		padding: 0 10%;
 		.col-xs-4 {
 			padding: 0;
@@ -386,8 +386,6 @@ button.slick-next {
 		margin: 20px 40px 20px 40px;
 	}
 }
-
-
 
 @-moz-document url-prefix() {
  .slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {

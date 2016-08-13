@@ -14,9 +14,6 @@ var cssOutput = './build/';
 var imagesInput = './source/images/*.{png,jpg}';
 var imagesOutput = './build/images';
 
-var photosInput = './source/images/tree-photos/*.{png,jpg}';
-var photosOutput = './build/images/tree-photos';
-
 gulp.task('browserify', function () {
   return browserify('./source/js/app.jsx')
         .transform(reactify)
@@ -49,12 +46,6 @@ gulp.task('transfer-images', function () {
     .pipe(gulp.dest(imagesOutput));
 });
 
-gulp.task('transfer-photos', function () {
-  return gulp
-    .src(photosInput)
-    .pipe(gulp.dest(photosOutput));
-});
-
 gulp.task('minifyHtml', function() {
   return gulp.src('./source/*.html')
         .pipe(htmlMinifier({collapseWhitespace: true}))
@@ -78,5 +69,5 @@ gulp.task('watch-sass', function () {
 
 gulp.task('sass', ['compile-sass']);
 gulp.task('build', ['browserify', 'minifyHtml', 'compile-sass', 'combine-scripts']);
-gulp.task('update', ['browserify', 'minifyHtml', 'compile-sass', 'transfer-images', 'transfer-photos']);
+gulp.task('update', ['browserify', 'minifyHtml', 'compile-sass', 'transfer-images']);
 gulp.task('default', ['watch', 'browserify', 'minifyHtml', 'compile-sass', 'watch-sass']);

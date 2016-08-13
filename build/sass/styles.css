@@ -90,7 +90,7 @@ h4.about, h4.twitter {
   width: 40%;
   text-align: center;
   margin: 0 30%;
-  bottom: 20px; }
+  bottom: 60px; }
   .splash-image .slick-dots .slick-active button, .slider-recent-articles .slick-dots .slick-active button, .slider-latest-posts .slick-dots .slick-active button {
     background: white; }
 
@@ -269,9 +269,9 @@ button.slick-next {
   .col-xs-8 {
     width: 100%;
     padding: 0; }
-  .slider-recent-articles {
+  .slider-recent-articles, .slider-latest-posts {
     padding: 0 10%; }
-    .slider-recent-articles .col-xs-4 {
+    .slider-recent-articles .col-xs-4, .slider-latest-posts .col-xs-4 {
       padding: 0; } }
 
 @media (max-width: 650px) and (min-width: 400px) {

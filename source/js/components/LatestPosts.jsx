@@ -3,6 +3,10 @@ var Model = require('../../../build/js/model.js');
 
 var LatestPosts = React.createClass({
 
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
 	renderLatestPostsNavSlick: function () {
 		return Model.getBlogpostsArray().map (function (element, index) {
 			return (
@@ -36,6 +40,45 @@ var LatestPosts = React.createClass({
 				</div>
 			</div>	
 		)
+	},
+
+	initSlicks: function () {
+		$('.slider-latest-posts').slick({
+		  slidesToShow: 2,
+		  slidesToScroll: 2,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-latest-posts-nav',
+		  responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+
+		$('.slider-latest-posts-nav').slick({
+		  slidesToShow: 2,
+		  slidesToScroll: 2,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-latest-posts',
+		    responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        arrows: false,
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
 	}
 
 });

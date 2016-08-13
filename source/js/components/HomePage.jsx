@@ -43,42 +43,7 @@ var HomePage = React.createClass({
 
 	initSlicks: function () {
 
-		$('.slider-latest-posts').slick({
-		  slidesToShow: 2,
-		  slidesToScroll: 2,
-		  arrows: false,
-		  dots: true,
-		  adaptiveHeight: true,
-		  asNavFor: '.slider-latest-posts-nav',
-		  responsive: [
-		    {
-		      breakpoint: 768,
-		      settings: {
-		        slidesToShow: 1,
-		        slidesToScroll: 1
-		      }
-		    }
-		  ]
-		});
-
-		$('.slider-latest-posts-nav').slick({
-		  slidesToShow: 2,
-		  slidesToScroll: 2,
-		  arrows: false,
-		  dots: true,
-		  adaptiveHeight: true,
-		  asNavFor: '.slider-latest-posts',
-		    responsive: [
-		    {
-		      breakpoint: 768,
-		      settings: {
-		        arrows: false,
-		        slidesToShow: 1,
-		        slidesToScroll: 1
-		      }
-		    }
-		  ]
-		});
+		
 	}
 
 });
