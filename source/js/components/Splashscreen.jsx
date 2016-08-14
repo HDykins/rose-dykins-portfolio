@@ -37,15 +37,15 @@ var Splashscreen = React.createClass({
 					<br />
 					<h1 className="bigger-text">JOURNALIST</h1>
 					<br />
-					<h1 onClick={function() {this.handleChangeView("HOME")}.bind(this)}>HOME</h1>
+					<h1 onClick={function() {this.handleChangeView("HOME")}.bind(this)} className={this.props.currentView==="HOME" ? "selected" : null}>{this.props.currentView==="HOME" ? "/ " : null}HOME{this.props.currentView==="HOME" ? " /" : null}</h1>
 					<br />
-					<h1 onClick={function() {this.handleChangeView("ABOUT")}.bind(this)}>ABOUT</h1>
+					<h1 onClick={function() {this.handleChangeView("ABOUT")}.bind(this)} className={this.props.currentView==="ABOUT" ? "selected" : null}>{this.props.currentView==="ABOUT" ? "/ " : null}ABOUT{this.props.currentView==="ABOUT" ? " /" : null}</h1>
 					<br />
-					<h1>LATEST WORK</h1>
+					<h1 onClick={function() {this.handleChangeView("LATEST WORK")}.bind(this)} className={this.props.currentView==="LATEST WORK" ? "selected" : null}>{this.props.currentView==="LATEST WORK" ? "/ " : null}LATEST WORK{this.props.currentView==="LATEST WORK" ? " /" : null}</h1>
 					<br />
-					<h1>BLOG</h1>
+					<h1 onClick={function() {this.handleChangeView("BLOG")}.bind(this)} className={this.props.currentView==="BLOG" ? "selected" : null}>{this.props.currentView==="BLOG" ? "/ " : null}BLOG{this.props.currentView==="BLOG" ? " /" : null}</h1>
 					<br />
-					<h1>CONTACT</h1>
+					<h1 onClick={function() {this.handleChangeView("CONTACT")}.bind(this)} className={this.props.currentView==="CONTACT" ? "selected" : null}>{this.props.currentView==="CONTACT" ? "/ " : null}CONTACT{this.props.currentView==="CONTACT" ? " /" : null}</h1>
 				</div>
 			</div>
 		)

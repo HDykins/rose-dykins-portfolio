@@ -11,8 +11,19 @@ $videos-images-dots-width: (100%/$num-videos-images);
 $recent-articles-images-dots-width: (100%/$num-recent-articles-dots);
 $latest-posts-images-dots-width: (100%/$num-latest-posts-dots);
 
+@font-face {
+font-family: Nexa;
+src: url("../fonts/Nexa Light.otf") format("opentype");
+}
+
+@font-face {
+font-family: Nexa;
+font-weight: bold;
+src: url("../fonts/Nexa Bold.otf") format("opentype");
+}
+
 body {
-	font-family: 'Comfortaa', cursive;
+	font-family: 'Nexa', cursive;
 }
 
 img {
@@ -22,6 +33,10 @@ img {
 i {
 	margin: 0 8px;
 	float: right;
+}
+
+blockquote::before, blockquote::after {
+	content: '"';
 }
 
 h1 {
@@ -51,10 +66,56 @@ h4.about, h4.twitter {
 	margin: 0 20px 30px 20px;
 }
 
+.col-xs-4 {
+	text-align: left;
+}
+
 .footer {
 	padding-top: 10px;
 	border-top: solid 1px black;
 	text-align: center;
+}
+
+.selected {
+	color: rgb(200,200,200);
+}
+
+.fa {
+	text-align: center;
+	&.large-icon {
+		font-size: 80px;
+		margin: 0 auto;
+		&.fa-envelope-o  {
+			color: rgb(185,125,185);
+		}
+		&.fa-phone  {
+			color: rgb(200,65,65);
+		}
+		&.fa-twitter {
+			color: rgb(90,190,215);
+		}
+		&.fa-file-text-o {
+			margin-top: 20px;
+		}
+		&.fa-arrow-circle-o-down {
+			color: rgb(25,190,55);
+			float: center;
+			clear: both;
+		}
+	}
+}
+
+.cv {
+	text-align: center;
+	.cv-text {
+		margin: 30px 0;
+	}
+}
+
+.contact-info {
+	display: inline-block;
+	font-size: 16px;
+	margin: 30px 0;
 }
 
 .col-xs-8 {
@@ -311,13 +372,41 @@ button.slick-next {
 		padding: 0 10%;
 		margin-left: 0;
 	}
+
+	.cv {
+		margin-bottom: 30px;
+		.cv-text {
+			margin: 70px 0;
+			float: right;
+		}
+	}
+
+	.quotes, .about-text {
+		margin-bottom: 50px;
+	}
+
 	.bigger-text {
 		font-size: 85px;
 		margin: 0.5vh 0 0 0;
 	}
-	.slider-for {
-		display:none;
+
+	.contacts-view .col-xs-8 {
+		text-align: center;
 	}
+
+	.contact-info {
+		font-size: 25px;
+		margin: 30px 0;
+	}
+
+	.fa.large-icon {
+		font-size: 120px;
+	}
+
+	.col-xs-4 .contact-icon-column {
+		text-align: center;
+	}
+
 	.splash-image {
 		.slick-dots {
 			width: 100vw;

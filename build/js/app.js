@@ -19132,37 +19132,34 @@ var Footer = require('./Footer.jsx');
 
 var AboutPage = React.createClass({displayName: "AboutPage",
 
-	componentDidMount: function () {
-		// this.initSlicks()
-	},
-
 	render: function () {
 		return (
 			React.createElement("section", {id: "about-view"}, 
-				React.createElement(Navbar, null), 
-				React.createElement(Splashscreen, {currentView: this.props.currentView, changeView: this.props.changeView}), 
 				React.createElement("div", {className: "row"}, 
-					React.createElement("div", {className: "col-xs-4"}, 
+					React.createElement("div", {className: "col-xs-4 cv"}, 
 						React.createElement("h4", {className: "about"}, "My CV"), 
-						React.createElement("a", {href: "https://rose_dykins_CV.com", target: "_blank", className: "glyphicon glyphicon-download"}
+						React.createElement("span", {className: "fa large-icon fa-file-text-o"}), 
+						React.createElement("p", {className: "cv-text"}, "Download my CV as a pdf"), 
+						React.createElement("a", {href: "https://rose_dykins_CV.com", target: "_blank", className: "fa large-icon fa-arrow-circle-o-down"}
 						)
 					), 
-					React.createElement("div", {className: "col-xs-4"}, 
+					React.createElement("div", {className: "col-xs-4 quotes"}, 
+						React.createElement("h4", {className: "about"}, "Quotes"), 
 						React.createElement("blockquote", null, "Rose is good, Rose is great"), 
 						React.createElement("h4", null, "Someone"), 
 						React.createElement("blockquote", null, "One day she came in with some krispy kremes, I suppose that was pretty decent of her. Otherwise I have no idea who you're asking about."), 
 						React.createElement("h4", null, "Someone"), 
-						React.createElement("img", {src: "", alt: "Award pic goes here"})
+						React.createElement("img", {src: "./build/images/media-award-image.jpg", alt: "Award pic goes here"})
 					), 
-					React.createElement("div", {className: "col-xs-4"}, 
+					React.createElement("div", {className: "col-xs-4 about-text"}, 
+						React.createElement("h4", {className: "about"}, "About"), 
 						React.createElement("p", null, React.createElement("strong", null, "Lorem ipsum lorem ipsum lorem ipsum,"), " lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
 						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
 						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
 						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
 						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum")
 					)
-				), 
-				React.createElement(Footer, null)
+				)
 			)
 		);
 	},
@@ -19171,10 +19168,14 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 
 module.exports = AboutPage;
 
-},{"./Footer.jsx":165,"./Navbar.jsx":168,"./Splashscreen.jsx":170,"react":160}],163:[function(require,module,exports){
+},{"./Footer.jsx":166,"./Navbar.jsx":169,"./Splashscreen.jsx":171,"react":160}],163:[function(require,module,exports){
 var React = require('react');
+var Navbar = require('./Navbar.jsx');
+var Splashscreen = require('./Splashscreen.jsx');
+var Footer = require('./Footer.jsx');
 var HomePage = require('./HomePage.jsx');
 var AboutPage = require('./AboutPage.jsx');
+var ContactPage = require('./ContactPage.jsx');
 
 var Application = React.createClass({displayName: "Application",
 
@@ -19195,22 +19196,37 @@ var Application = React.createClass({displayName: "Application",
     this.updateState(view);
   },
 
-  render: function () {
+  renderPage: function () {
     if (this.state.currentView==="HOME") {
-    	return (
-    		React.createElement(HomePage, {currentView: this.state.currentView, changeView: this.changeView})
-  		);
-    } else {
+      return (
+        React.createElement(HomePage, {currentView: this.state.currentView, changeView: this.changeView})
+      );
+    } else if (this.state.currentView==="ABOUT") {
       return (
         React.createElement(AboutPage, {currentView: this.state.currentView, changeView: this.changeView})
       );
+    } else if (this.state.currentView==="CONTACT") {
+      return (
+        React.createElement(ContactPage, {currentView: this.state.currentView, changeView: this.changeView})
+      );
     }
+  },
+
+  render: function () {
+    return (
+      React.createElement("div", null, 
+        React.createElement(Navbar, null), 
+        React.createElement(Splashscreen, {currentView: this.state.currentView, changeView: this.changeView}), 
+        this.renderPage(), 
+        React.createElement(Footer, null)
+      )
+    );
 	}
 });
 
 module.exports = Application;
 
-},{"./AboutPage.jsx":162,"./HomePage.jsx":166,"react":160}],164:[function(require,module,exports){
+},{"./AboutPage.jsx":162,"./ContactPage.jsx":165,"./Footer.jsx":166,"./HomePage.jsx":167,"./Navbar.jsx":169,"./Splashscreen.jsx":171,"react":160}],164:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19272,6 +19288,48 @@ module.exports = Coffeegram;
 
 },{"../../../build/js/model.js":2,"react":160}],165:[function(require,module,exports){
 var React = require('react');
+var RecentArticles = require('./RecentArticles.jsx');
+var Coffeegram = require('./Coffeegram.jsx');
+var Videos = require('./Videos.jsx');
+var Twitter = require('./Twitter.jsx');
+var LatestPosts = require('./LatestPosts.jsx');
+var About = require('./About.jsx');
+
+var ContactPage = React.createClass({displayName: "ContactPage",
+
+	render: function () {
+		return (
+			React.createElement("section", {id: "contacts-view", className: "contacts-view"}, 
+				React.createElement("div", {className: "row"}, 
+					React.createElement("div", {className: "col-xs-4"}, 
+						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
+						React.createElement("span", {className: "fa large-icon fa-envelope-o"})
+						), 
+						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "ROSEDYKINS@GMAIL.COM"))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
+						React.createElement("span", {className: "fa large-icon fa-phone"})
+						), 
+						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "0778 446 725 3390"))
+					), 
+					React.createElement("div", {className: "col-xs-4"}, 
+						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
+						React.createElement("span", {className: "fa large-icon fa-twitter"})
+						), 
+						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "@ROSEDYKINSJOURNALIST"))
+					)
+				)
+			)
+		);
+	}
+
+});
+
+module.exports = ContactPage;
+
+},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":170,"./Twitter.jsx":172,"./Videos.jsx":173,"react":160}],166:[function(require,module,exports){
+var React = require('react');
 
 var Footer = React.createClass({displayName: "Footer",
 
@@ -19296,29 +19354,20 @@ var Footer = React.createClass({displayName: "Footer",
 
 module.exports = Footer;
 
-},{"react":160}],166:[function(require,module,exports){
+},{"react":160}],167:[function(require,module,exports){
 var React = require('react');
-var Navbar = require('./Navbar.jsx');
-var Splashscreen = require('./Splashscreen.jsx');
 var RecentArticles = require('./RecentArticles.jsx');
 var Coffeegram = require('./Coffeegram.jsx');
 var Videos = require('./Videos.jsx');
 var Twitter = require('./Twitter.jsx');
 var LatestPosts = require('./LatestPosts.jsx');
 var About = require('./About.jsx');
-var Footer = require('./Footer.jsx');
 
 var HomePage = React.createClass({displayName: "HomePage",
-
-	componentDidMount: function () {
-		this.initSlicks()
-	},
 
 	render: function () {
 		return (
 			React.createElement("section", {id: "main-view"}, 
-				React.createElement(Navbar, null), 
-				React.createElement(Splashscreen, {currentView: this.props.currentView, changeView: this.props.changeView}), 
 				React.createElement("div", {className: "row"}, 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement(Coffeegram, null)
@@ -19334,22 +19383,16 @@ var HomePage = React.createClass({displayName: "HomePage",
 				React.createElement("div", {className: "row"}, 
 					React.createElement(LatestPosts, null), 
 					React.createElement(About, null)
-				), 
-				React.createElement(Footer, null)
+				)
 			)
 		);
-	},
-
-	initSlicks: function () {
-
-		
 	}
 
 });
 
 module.exports = HomePage;
 
-},{"./About.jsx":161,"./Coffeegram.jsx":164,"./Footer.jsx":165,"./LatestPosts.jsx":167,"./Navbar.jsx":168,"./RecentArticles.jsx":169,"./Splashscreen.jsx":170,"./Twitter.jsx":171,"./Videos.jsx":172,"react":160}],167:[function(require,module,exports){
+},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":170,"./Twitter.jsx":172,"./Videos.jsx":173,"react":160}],168:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19437,7 +19480,7 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 
 module.exports = LatestPosts;
 
-},{"../../../build/js/model.js":2,"react":160}],168:[function(require,module,exports){
+},{"../../../build/js/model.js":2,"react":160}],169:[function(require,module,exports){
 var React = require('react');
 
 var Navbar = React.createClass({displayName: "Navbar",
@@ -19457,7 +19500,7 @@ var Navbar = React.createClass({displayName: "Navbar",
 
 module.exports = Navbar;
 
-},{"react":160}],169:[function(require,module,exports){
+},{"react":160}],170:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19545,7 +19588,7 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 
 module.exports = RecentArticles;
 
-},{"../../../build/js/model.js":2,"react":160}],170:[function(require,module,exports){
+},{"../../../build/js/model.js":2,"react":160}],171:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19585,15 +19628,15 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 					React.createElement("br", null), 
 					React.createElement("h1", {className: "bigger-text"}, "JOURNALIST"), 
 					React.createElement("br", null), 
-					React.createElement("h1", {onClick: function() {this.handleChangeView("HOME")}.bind(this)}, "HOME"), 
+					React.createElement("h1", {onClick: function() {this.handleChangeView("HOME")}.bind(this), className: this.props.currentView==="HOME" ? "selected" : null}, this.props.currentView==="HOME" ? "/ " : null, "HOME", this.props.currentView==="HOME" ? " /" : null), 
 					React.createElement("br", null), 
-					React.createElement("h1", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "ABOUT"), 
+					React.createElement("h1", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this), className: this.props.currentView==="ABOUT" ? "selected" : null}, this.props.currentView==="ABOUT" ? "/ " : null, "ABOUT", this.props.currentView==="ABOUT" ? " /" : null), 
 					React.createElement("br", null), 
-					React.createElement("h1", null, "LATEST WORK"), 
+					React.createElement("h1", {onClick: function() {this.handleChangeView("LATEST WORK")}.bind(this), className: this.props.currentView==="LATEST WORK" ? "selected" : null}, this.props.currentView==="LATEST WORK" ? "/ " : null, "LATEST WORK", this.props.currentView==="LATEST WORK" ? " /" : null), 
 					React.createElement("br", null), 
-					React.createElement("h1", null, "BLOG"), 
+					React.createElement("h1", {onClick: function() {this.handleChangeView("BLOG")}.bind(this), className: this.props.currentView==="BLOG" ? "selected" : null}, this.props.currentView==="BLOG" ? "/ " : null, "BLOG", this.props.currentView==="BLOG" ? " /" : null), 
 					React.createElement("br", null), 
-					React.createElement("h1", null, "CONTACT")
+					React.createElement("h1", {onClick: function() {this.handleChangeView("CONTACT")}.bind(this), className: this.props.currentView==="CONTACT" ? "selected" : null}, this.props.currentView==="CONTACT" ? "/ " : null, "CONTACT", this.props.currentView==="CONTACT" ? " /" : null)
 				)
 			)
 		)
@@ -19615,7 +19658,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 
 module.exports = Splashscreen;
 
-},{"../../../build/js/model.js":2,"react":160}],171:[function(require,module,exports){
+},{"../../../build/js/model.js":2,"react":160}],172:[function(require,module,exports){
 var React = require('react');
 
 var Twitter = React.createClass({displayName: "Twitter",
@@ -19635,7 +19678,7 @@ var Twitter = React.createClass({displayName: "Twitter",
 
 module.exports = Twitter;
 
-},{"react":160}],172:[function(require,module,exports){
+},{"react":160}],173:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
