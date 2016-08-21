@@ -24,6 +24,7 @@ var Splashscreen = React.createClass({
 		return (
 			<div className="container-fluid">
 				<div className="row splash-screen">
+				<img className="splash-screen-award" src="./build/images/media-award-image-splash.png" alt="Award pic goes here" />
 					<div className="splash-image-outer">
 						<div className="splash-image">
 							{this.renderSplashSlick()}
@@ -41,7 +42,7 @@ var Splashscreen = React.createClass({
 					<br />
 					<h1 onClick={function() {this.handleChangeView("ABOUT")}.bind(this)} className={this.props.currentView==="ABOUT" ? "selected" : null}>{this.props.currentView==="ABOUT" ? "/ " : null}ABOUT{this.props.currentView==="ABOUT" ? " /" : null}</h1>
 					<br />
-					<h1 onClick={function() {this.handleChangeView("LATEST WORK")}.bind(this)} className={this.props.currentView==="LATEST WORK" ? "selected" : null}>{this.props.currentView==="LATEST WORK" ? "/ " : null}LATEST WORK{this.props.currentView==="LATEST WORK" ? " /" : null}</h1>
+					<h1 onClick={function() {this.handleChangeView("LATEST_WORK")}.bind(this)} className={this.props.currentView==="LATEST_WORK" ? "selected" : null}>{this.props.currentView==="LATEST_WORK" ? "/ " : null}LATEST WORK{this.props.currentView==="LATEST_WORK" ? " /" : null}</h1>
 					<br />
 					<h1 onClick={function() {this.handleChangeView("BLOG")}.bind(this)} className={this.props.currentView==="BLOG" ? "selected" : null}>{this.props.currentView==="BLOG" ? "/ " : null}BLOG{this.props.currentView==="BLOG" ? " /" : null}</h1>
 					<br />

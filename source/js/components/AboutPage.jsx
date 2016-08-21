@@ -22,7 +22,7 @@ var AboutPage = React.createClass({
 						<h4>Someone</h4>
 						<blockquote>One day she came in with some krispy kremes, I suppose that was pretty decent of her. Otherwise I have no idea who you're asking about.</blockquote>
 						<h4>Someone</h4>
-						<img src="./build/images/media-award-image.jpg" alt="Award pic goes here" />
+						<img src="./build/images/media-award-image.png" alt="Award pic goes here" />
 					</div>
 					<div className="col-xs-4 about-text">
 						<h4 className="about">About</h4>

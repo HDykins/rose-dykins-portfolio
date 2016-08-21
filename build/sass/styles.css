@@ -49,6 +49,8 @@ h4.about, h4.twitter {
   padding-top: 10px;
   border-top: solid 1px black;
   text-align: center; }
+  .footer .col-xs-4 {
+    text-align: center; }
 
 .selected {
   color: #c8c8c8; }
@@ -93,29 +95,32 @@ h4.about, h4.twitter {
   width: 80%;
   border-radius: 200%; }
 
-.slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav {
+.slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav, .slider-online-articles-nav, .slider-print-articles-nav {
   position: relative;
   background: white;
   margin: 0; }
-  .slider-coffeegram-nav.slick-dotted, .slider-videos-nav.slick-dotted, .slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted {
+  .slider-coffeegram-nav.slick-dotted, .slider-videos-nav.slick-dotted, .slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted, .slider-online-articles-nav.slick-dotted, .slider-print-articles-nav.slick-dotted {
     height: 5px; }
-  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots {
+  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots, .slider-online-articles-nav .slick-dots, .slider-print-articles-nav .slick-dots {
     height: 20px;
     bottom: 0; }
-    .slider-coffeegram-nav .slick-dots li, .slider-videos-nav .slick-dots li, .slider-recent-articles-nav .slick-dots li, .slider-latest-posts-nav .slick-dots li {
+    .slider-coffeegram-nav .slick-dots li, .slider-videos-nav .slick-dots li, .slider-recent-articles-nav .slick-dots li, .slider-latest-posts-nav .slick-dots li, .slider-online-articles-nav .slick-dots li, .slider-print-articles-nav .slick-dots li {
       margin: 0; }
 
-.slider-recent-articles-nav.slick-dotted {
+.slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted, .slider-online-articles-nav.slick-dotted, .slider-print-articles-nav.slick-dotted {
   margin: 0 15px 5px 15px; }
 
 .slider-recent-articles-nav .slick-dots li {
   width: 50%; }
 
-.slider-latest-posts-nav.slick-dotted {
-  margin: 0 15px 5px 15px; }
-
 .slider-latest-posts-nav .slick-dots li {
   width: 33.33333%; }
+
+.slider-online-articles-nav .slick-dots li {
+  width: 50%; }
+
+.slider-print-articles-nav .slick-dots li {
+  width: 100%; }
 
 .slider-coffeegram-nav.slick-dotted {
   margin-bottom: 5px; }
@@ -132,19 +137,19 @@ h4.about, h4.twitter {
 .slick-dots li button:before {
   content: none; }
 
-.splash-image .slick-dots, .slider-recent-articles .slick-dots, .slider-latest-posts .slick-dots {
+.splash-image .slick-dots, .slider-recent-articles .slick-dots, .slider-latest-posts .slick-dots, .slider-online-articles .slick-dots, .slider-print-articles .slick-dots {
   width: 40%;
   text-align: center;
   margin: 0 30%;
   bottom: 60px; }
-  .splash-image .slick-dots .slick-active button, .slider-recent-articles .slick-dots .slick-active button, .slider-latest-posts .slick-dots .slick-active button {
+  .splash-image .slick-dots .slick-active button, .slider-recent-articles .slick-dots .slick-active button, .slider-latest-posts .slick-dots .slick-active button, .slider-online-articles .slick-dots .slick-active button, .slider-print-articles .slick-dots .slick-active button {
     background: white; }
 
-.splash-image .slick-dots li, .slider-recent-articles .slick-dots li, .slider-latest-posts .slick-dots li {
+.splash-image .slick-dots li, .slider-recent-articles .slick-dots li, .slider-latest-posts .slick-dots li, .slider-online-articles .slick-dots li, .slider-print-articles .slick-dots li {
   height: 20px;
   width: 20px; }
 
-.splash-image .slick-dots li button, .slider-recent-articles .slick-dots li button, .slider-latest-posts .slick-dots li button {
+.splash-image .slick-dots li button, .slider-recent-articles .slick-dots li button, .slider-latest-posts .slick-dots li button, .slider-online-articles .slick-dots li button, .slider-print-articles .slick-dots li button {
   background: none;
   height: 20px;
   width: 20px;
@@ -153,12 +158,12 @@ h4.about, h4.twitter {
   border: solid 3px white;
   border-radius: 100%; }
 
-.slider-recent-articles .slick-dots, .slider-latest-posts .slick-dots {
+.slider-recent-articles .slick-dots, .slider-latest-posts .slick-dots, .slider-online-articles .slick-dots, .slider-print-articles .slick-dots {
   bottom: auto; }
-  .slider-recent-articles .slick-dots .slick-active button, .slider-latest-posts .slick-dots .slick-active button {
+  .slider-recent-articles .slick-dots .slick-active button, .slider-latest-posts .slick-dots .slick-active button, .slider-online-articles .slick-dots .slick-active button, .slider-print-articles .slick-dots .slick-active button {
     background: black; }
 
-.slider-recent-articles .slick-dots li button, .slider-latest-posts .slick-dots li button {
+.slider-recent-articles .slick-dots li button, .slider-latest-posts .slick-dots li button, .slider-online-articles .slick-dots li button, .slider-print-articles .slick-dots li button {
   border: solid 3px black; }
 
 .slick-dots li button {
@@ -206,6 +211,12 @@ button.slick-next {
   height: 46vw;
   min-height: 500px; }
 
+.splash-screen-award {
+  width: 250px;
+  position: absolute;
+  top: 40px;
+  right: 0; }
+
 .pdf-view {
   height: 100vh; }
 
@@ -214,7 +225,12 @@ button.slick-next {
   height: 30px;
   position: absolute;
   top: 40vh;
-  left: 10px; }
+  left: 50px;
+  border: solid 2px black;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer; }
 
 .splash-image-outer {
   position: absolute;
@@ -297,6 +313,9 @@ button.slick-next {
   .bigger-text {
     font-size: 85px;
     margin: 0.5vh 0 0 0; }
+  .splash-screen-award {
+    width: 32%;
+    min-width: 200px; }
   .contacts-view .col-xs-8 {
     text-align: center; }
   .contact-info {
@@ -310,28 +329,32 @@ button.slick-next {
     width: 100vw;
     margin: 0;
     right: 0; }
-  .slider-recent-articles .slick-dots, .slider-latest-posts .slick-dots {
+  .slider-recent-articles .slick-dots, .slider-latest-posts .slick-dots, .slider-online-articles .slick-dots, .slider-print-articles .slick-dots {
     width: 100%;
     margin: 0;
     right: 0; }
-  .slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted {
+  .slider-recent-articles-nav.slick-dotted, .slider-latest-posts-nav.slick-dotted, .slider-online-articles-nav.slick-dotted, .slider-print-articles-nav.slick-dotted {
     margin: 0 0 5px 0; }
-  .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots {
+  .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots, .slider-online-articles-nav .slick-dots, .slider-print-articles-nav .slick-dots {
     margin: 0;
     padding: 0 10%; }
   .slider-recent-articles-nav .slick-dots li {
     width: 16.66667%; }
   .slider-latest-posts-nav .slick-dots li {
     width: 16.66667%; }
+  .slider-online-articles-nav .slick-dots li {
+    width: 25%; }
+  .slider-print-articles-nav .slick-dots li {
+    width: 50%; }
   .col-xs-4 {
     width: 100%;
     padding: 0 10%; }
   .col-xs-8 {
     width: 100%;
     padding: 0; }
-  .slider-recent-articles, .slider-latest-posts {
+  .slider-recent-articles, .slider-latest-posts, .slider-online-articles, .slider-print-articles {
     padding: 0 10%; }
-    .slider-recent-articles .col-xs-4, .slider-latest-posts .col-xs-4 {
+    .slider-recent-articles .col-xs-4, .slider-latest-posts .col-xs-4, .slider-online-articles .col-xs-4, .slider-print-articles .col-xs-4 {
       padding: 0; } }
 
 @media (max-width: 650px) and (min-width: 400px) {
@@ -341,9 +364,11 @@ button.slick-next {
   .bigger-text {
     font-size: 55px;
     margin: 0.5vh 0 0 -20px; }
+  .splash-screen-award {
+    min-width: 150px; }
   .slider-nav-element {
     margin: 20px 40px 20px 40px; } }
 
 @-moz-document url-prefix() {
-  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots {
+  .slider-coffeegram-nav .slick-dots, .slider-videos-nav .slick-dots, .slider-recent-articles-nav .slick-dots, .slider-latest-posts-nav .slick-dots, .slider-online-articles-nav .slick-dots, .slider-print-articles-nav .slick-dots {
     bottom: -10px; } }

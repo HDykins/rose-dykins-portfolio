@@ -40,8 +40,8 @@ var Model = (function initModel() {
 		{pdf: true, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/articles-image-2.jpg", description: "gibbon", title: "2", date: "22/22/22"},
 		{pdf: true, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/articles-image-3.jpg", description: "gibbon", title: "3", date: "33/33/33"},
 		{pdf: true, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "hhhfuhfu feiuhfew ewfuew fehuweuwfhf fwhufi uff nfweuf", date: "44/44/44"},
-		{pdf: true, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "5", date: "55/55/55"},
-		{pdf: true, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "6", date: "66/66/66"}
+		{pdf: false, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "5", date: "55/55/55"},
+		{pdf: false, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "6", date: "66/66/66"}
 	];
 
 	var blogpostsArray = [
@@ -19149,7 +19149,7 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 						React.createElement("h4", null, "Someone"), 
 						React.createElement("blockquote", null, "One day she came in with some krispy kremes, I suppose that was pretty decent of her. Otherwise I have no idea who you're asking about."), 
 						React.createElement("h4", null, "Someone"), 
-						React.createElement("img", {src: "./build/images/media-award-image.jpg", alt: "Award pic goes here"})
+						React.createElement("img", {src: "./build/images/media-award-image.png", alt: "Award pic goes here"})
 					), 
 					React.createElement("div", {className: "col-xs-4 about-text"}, 
 						React.createElement("h4", {className: "about"}, "About"), 
@@ -19168,42 +19168,56 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 
 module.exports = AboutPage;
 
-},{"./Footer.jsx":166,"./Navbar.jsx":169,"./Splashscreen.jsx":171,"react":160}],163:[function(require,module,exports){
+},{"./Footer.jsx":166,"./Navbar.jsx":170,"./Splashscreen.jsx":175,"react":160}],163:[function(require,module,exports){
 var React = require('react');
+var PdfView = require('./PdfView.jsx');
 var Navbar = require('./Navbar.jsx');
 var Splashscreen = require('./Splashscreen.jsx');
 var Footer = require('./Footer.jsx');
 var HomePage = require('./HomePage.jsx');
 var AboutPage = require('./AboutPage.jsx');
+var LatestWorkPage = require('./LatestWorkPage.jsx');
 var ContactPage = require('./ContactPage.jsx');
+
 
 var Application = React.createClass({displayName: "Application",
 
 	getInitialState: function () {
     return {
-      currentView: 'HOME'
+      currentView: 'HOME',
+      pdfView: false,
+      pdfLink: ""
     };
   },
 
-  updateState: function (view) {
+  updateState: function (state, value) {
     this.setState(
     {
-      currentView: view
+      [state]: value
     });
   },
 
   changeView: function (view) {
-    this.updateState(view);
+    this.updateState("currentView", view);
+  },
+
+  togglePdfView: function (pdfView, pdfLink) {
+    this.updateState("pdfView", !this.state.pdfView)
+    this.updateState("pdfLink", pdfLink)
   },
 
   renderPage: function () {
     if (this.state.currentView==="HOME") {
       return (
-        React.createElement(HomePage, {currentView: this.state.currentView, changeView: this.changeView})
+        React.createElement(HomePage, {currentView: this.state.currentView, changeView: this.changeView, togglePdfView: this.togglePdfView})
       );
     } else if (this.state.currentView==="ABOUT") {
       return (
         React.createElement(AboutPage, {currentView: this.state.currentView, changeView: this.changeView})
+      );
+    } else if (this.state.currentView==="LATEST_WORK") {
+      return (
+        React.createElement(LatestWorkPage, {currentView: this.state.currentView, changeView: this.changeView, togglePdfView: this.togglePdfView})
       );
     } else if (this.state.currentView==="CONTACT") {
       return (
@@ -19213,20 +19227,25 @@ var Application = React.createClass({displayName: "Application",
   },
 
   render: function () {
-    return (
-      React.createElement("div", null, 
-        React.createElement(Navbar, null), 
-        React.createElement(Splashscreen, {currentView: this.state.currentView, changeView: this.changeView}), 
-        this.renderPage(), 
-        React.createElement(Footer, null)
-      )
-    );
+    console.log(this.state.pdfView);
+    if (this.state.pdfView) {
+      return React.createElement(PdfView, {pdfLink: this.state.pdfLink, togglePdfView: this.togglePdfView})
+    } else {
+      return (
+        React.createElement("div", null, 
+          React.createElement(Navbar, null), 
+          React.createElement(Splashscreen, {currentView: this.state.currentView, changeView: this.changeView}), 
+          this.renderPage(), 
+          React.createElement(Footer, null)
+        )
+      );
+    }
 	}
 });
 
 module.exports = Application;
 
-},{"./AboutPage.jsx":162,"./ContactPage.jsx":165,"./Footer.jsx":166,"./HomePage.jsx":167,"./Navbar.jsx":169,"./Splashscreen.jsx":171,"react":160}],164:[function(require,module,exports){
+},{"./AboutPage.jsx":162,"./ContactPage.jsx":165,"./Footer.jsx":166,"./HomePage.jsx":167,"./LatestWorkPage.jsx":169,"./Navbar.jsx":170,"./PdfView.jsx":172,"./Splashscreen.jsx":175,"react":160}],164:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19328,7 +19347,7 @@ var ContactPage = React.createClass({displayName: "ContactPage",
 
 module.exports = ContactPage;
 
-},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":170,"./Twitter.jsx":172,"./Videos.jsx":173,"react":160}],166:[function(require,module,exports){
+},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":174,"./Twitter.jsx":176,"./Videos.jsx":177,"react":160}],166:[function(require,module,exports){
 var React = require('react');
 
 var Footer = React.createClass({displayName: "Footer",
@@ -19379,7 +19398,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 						React.createElement(Twitter, null)
 					)
 				), 
-				React.createElement(RecentArticles, null), 
+				React.createElement(RecentArticles, {togglePdfView: this.props.togglePdfView}), 
 				React.createElement("div", {className: "row"}, 
 					React.createElement(LatestPosts, null), 
 					React.createElement(About, null)
@@ -19392,7 +19411,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 
 module.exports = HomePage;
 
-},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":170,"./Twitter.jsx":172,"./Videos.jsx":173,"react":160}],168:[function(require,module,exports){
+},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":174,"./Twitter.jsx":176,"./Videos.jsx":177,"react":160}],168:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19482,6 +19501,26 @@ module.exports = LatestPosts;
 
 },{"../../../build/js/model.js":2,"react":160}],169:[function(require,module,exports){
 var React = require('react');
+var OnlineArticles = require('./OnlineArticles.jsx');
+var PrintArticles = require('./PrintArticles.jsx');
+
+var LatestWorkPage = React.createClass({displayName: "LatestWorkPage",
+
+	render: function () {
+		return (
+			React.createElement("section", {id: "latest-work-view"}, 
+				React.createElement(OnlineArticles, null), 
+				React.createElement(PrintArticles, {togglePdfView: this.props.togglePdfView})
+			)
+		);
+	}
+
+});
+
+module.exports = LatestWorkPage;
+
+},{"./OnlineArticles.jsx":171,"./PrintArticles.jsx":173,"react":160}],170:[function(require,module,exports){
+var React = require('react');
 
 var Navbar = React.createClass({displayName: "Navbar",
 
@@ -19500,7 +19539,242 @@ var Navbar = React.createClass({displayName: "Navbar",
 
 module.exports = Navbar;
 
-},{"react":160}],170:[function(require,module,exports){
+},{"react":160}],171:[function(require,module,exports){
+var React = require('react');
+var Model = require('../../../build/js/model.js');
+
+var OnlineArticles = React.createClass({displayName: "OnlineArticles",
+
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
+	renderOnlineArticlesNavSlick: function () {
+		return Model.getArticlesArray().filter(function (element)	{
+			if(element['pdf']) {
+				return true;
+			}
+		}).map (function (element, index) {
+			return (
+				React.createElement("div", {key: index, className: "slider-online-articles-nav-element"})
+			);
+		});
+	},
+
+	renderOnlineArticlesSlick: function () {
+		return Model.getArticlesArray().filter(function (element)	{
+			if(element['pdf']) {
+				return true;
+			}
+		}).map (function (element, index) {
+			return (
+				React.createElement("div", {key: index, className: "col-xs-4"}, 
+					React.createElement("a", {className: "slider-online-articles-element", href: element['link'], target: "_blank"}, React.createElement("img", {src: element['image-src']})), 
+					React.createElement("h4", null, element['title']), 
+					React.createElement("span", null, element['date']), 
+					React.createElement("p", null, element['description'])
+				)
+			);
+		}.bind(this));
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "row"}, 
+				React.createElement("h4", {className: "fullwidth-header"}, "ONLINE"), 
+				React.createElement("div", {className: "slider-online-articles-nav"}, 
+					this.renderOnlineArticlesNavSlick()					 
+				), 	
+				React.createElement("div", {className: "slider-online-articles"}, 
+					this.renderOnlineArticlesSlick()				
+				)
+			)
+		)
+	},
+
+	initSlicks: function () {
+		$('.slider-online-articles').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-online-articles-nav',
+		  responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+
+		$('.slider-online-articles-nav').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-online-articles',
+		    responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        arrows: false,
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+	}
+
+});
+
+module.exports = OnlineArticles;
+
+},{"../../../build/js/model.js":2,"react":160}],172:[function(require,module,exports){
+var React = require('react');
+
+var PdfView = React.createClass({displayName: "PdfView",
+
+	componentDidMount: function () {
+		new PdfViewer({pdfUrl: 'no more', staticHost: this.props.pdfLink}).embed(this.refs.pdf)
+		$('[id="pdf-view"]').append($('<div class="close-button">X</div>'));
+		$('.close-button').click(function() {
+  		this.handleCloseButton(this.props.pdfLink);
+		}.bind(this));
+	},
+
+	componentWillUnmount: function () {
+		$('.close-button').off('click');
+	},
+
+	handleCloseButton: function (pdfLink) {
+		this.props.togglePdfView(false, pdfLink)
+	},
+
+	renderPdfView: function () {
+		return (
+		React.createElement("div", {className: "close-button"}, "X")
+		);
+	},
+
+	render: function () {
+		return (
+			React.createElement("section", {ref: "pdf", id: "pdf-view", className: "container pdf-view"}, 
+				this.renderPdfView()
+			)
+		);
+	}
+
+});
+
+module.exports = PdfView;
+
+},{"react":160}],173:[function(require,module,exports){
+var React = require('react');
+var Model = require('../../../build/js/model.js');
+
+var PrintArticles = React.createClass({displayName: "PrintArticles",
+
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
+	handleLoadPdfViewer: function (pdfLink) {
+		this.props.togglePdfView(true, pdfLink)
+	},
+
+	renderPrintArticlesNavSlick: function () {
+		return Model.getArticlesArray().filter(function (element)	{
+			if(!element['pdf']) {
+				return true;
+			}
+		}).map (function (element, index) {
+			return (
+				React.createElement("div", {key: index, className: "slider-print-articles-nav-element"})
+			);
+		});
+	},
+
+	renderPrintArticlesSlick: function () {
+		return Model.getArticlesArray().filter(function (element)	{
+			if(!element['pdf']) {
+				return true;
+			}
+		}).map (function (element, index) {
+			return (
+				React.createElement("div", {key: index, className: "col-xs-4"}, 
+					React.createElement("a", {className: "slider-print-articles-element", onClick: function() {this.handleLoadPdfViewer(element['link'])}.bind(this)}, React.createElement("img", {src: element['image-src']})), 
+					React.createElement("h4", null, element['title']), 
+					React.createElement("span", null, element['date']), 
+					React.createElement("p", null, element['description'])
+				)
+			);
+		}.bind(this));
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "row"}, 
+				React.createElement("h4", {className: "fullwidth-header"}, "PRINT"), 
+				React.createElement("div", {className: "slider-print-articles-nav"}, 
+					this.renderPrintArticlesNavSlick()					 
+				), 	
+				React.createElement("div", {className: "slider-print-articles"}, 
+					this.renderPrintArticlesSlick()				
+				)
+			)
+		)
+	},
+
+	initSlicks: function () {
+		$('.slider-print-articles').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-print-articles-nav',
+		  responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+
+		$('.slider-print-articles-nav').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-print-articles',
+		    responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        arrows: false,
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+	}
+
+});
+
+module.exports = PrintArticles;
+
+},{"../../../build/js/model.js":2,"react":160}],174:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19508,6 +19782,10 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 
 	componentDidMount: function () {
 		this.initSlicks();
+	},
+
+	handleLoadPdfViewer: function (pdfLink) {
+		this.props.togglePdfView(true, pdfLink)
 	},
 
 	renderRecentArticlesNavSlick: function () {
@@ -19522,13 +19800,13 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 		return Model.getArticlesArray().map (function (element, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-recent-articles-element", href: element['link'] ? element['link'] : 'http://www.rose.RecentArticles', target: "_blank"}, React.createElement("img", {src: element['image-src']})), 
+					React.createElement("a", {className: "slider-recent-articles-element", onClick: element['pdf'] ? function() {this.handleLoadPdfViewer(element['link'])}.bind(this) : null, href: !element['pdf'] ? element['link'] : null, target: "_blank"}, React.createElement("img", {src: element['image-src']})), 
 					React.createElement("h4", null, element['title']), 
 					React.createElement("span", null, element['date']), 
 					React.createElement("p", null, element['description'])
 				)
 			);
-		});
+		}.bind(this));
 	},
 
 	render: function () {
@@ -19588,7 +19866,7 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 
 module.exports = RecentArticles;
 
-},{"../../../build/js/model.js":2,"react":160}],171:[function(require,module,exports){
+},{"../../../build/js/model.js":2,"react":160}],175:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19615,6 +19893,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 		return (
 			React.createElement("div", {className: "container-fluid"}, 
 				React.createElement("div", {className: "row splash-screen"}, 
+				React.createElement("img", {className: "splash-screen-award", src: "./build/images/media-award-image-splash.png", alt: "Award pic goes here"}), 
 					React.createElement("div", {className: "splash-image-outer"}, 
 						React.createElement("div", {className: "splash-image"}, 
 							this.renderSplashSlick()
@@ -19632,7 +19911,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 					React.createElement("br", null), 
 					React.createElement("h1", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this), className: this.props.currentView==="ABOUT" ? "selected" : null}, this.props.currentView==="ABOUT" ? "/ " : null, "ABOUT", this.props.currentView==="ABOUT" ? " /" : null), 
 					React.createElement("br", null), 
-					React.createElement("h1", {onClick: function() {this.handleChangeView("LATEST WORK")}.bind(this), className: this.props.currentView==="LATEST WORK" ? "selected" : null}, this.props.currentView==="LATEST WORK" ? "/ " : null, "LATEST WORK", this.props.currentView==="LATEST WORK" ? " /" : null), 
+					React.createElement("h1", {onClick: function() {this.handleChangeView("LATEST_WORK")}.bind(this), className: this.props.currentView==="LATEST_WORK" ? "selected" : null}, this.props.currentView==="LATEST_WORK" ? "/ " : null, "LATEST WORK", this.props.currentView==="LATEST_WORK" ? " /" : null), 
 					React.createElement("br", null), 
 					React.createElement("h1", {onClick: function() {this.handleChangeView("BLOG")}.bind(this), className: this.props.currentView==="BLOG" ? "selected" : null}, this.props.currentView==="BLOG" ? "/ " : null, "BLOG", this.props.currentView==="BLOG" ? " /" : null), 
 					React.createElement("br", null), 
@@ -19658,7 +19937,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 
 module.exports = Splashscreen;
 
-},{"../../../build/js/model.js":2,"react":160}],172:[function(require,module,exports){
+},{"../../../build/js/model.js":2,"react":160}],176:[function(require,module,exports){
 var React = require('react');
 
 var Twitter = React.createClass({displayName: "Twitter",
@@ -19678,7 +19957,7 @@ var Twitter = React.createClass({displayName: "Twitter",
 
 module.exports = Twitter;
 
-},{"react":160}],173:[function(require,module,exports){
+},{"react":160}],177:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 

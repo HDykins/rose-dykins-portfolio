@@ -1,7 +1,7 @@
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
-var RecentArticles = React.createClass({
+var PrintArticles = React.createClass({
 
 	componentDidMount: function () {
 		this.initSlicks();
@@ -11,19 +11,27 @@ var RecentArticles = React.createClass({
 		this.props.togglePdfView(true, pdfLink)
 	},
 
-	renderRecentArticlesNavSlick: function () {
-		return Model.getArticlesArray().map (function (element, index) {
+	renderPrintArticlesNavSlick: function () {
+		return Model.getArticlesArray().filter(function (element)	{
+			if(!element['pdf']) {
+				return true;
+			}
+		}).map (function (element, index) {
 			return (
-				<div key={index} className="slider-recent-articles-nav-element"></div>
+				<div key={index} className="slider-print-articles-nav-element"></div>
 			);
 		});
 	},
 
-	renderRecentArticlesSlick: function () {
-		return Model.getArticlesArray().map (function (element, index) {
+	renderPrintArticlesSlick: function () {
+		return Model.getArticlesArray().filter(function (element)	{
+			if(!element['pdf']) {
+				return true;
+			}
+		}).map (function (element, index) {
 			return (
 				<div key={index} className="col-xs-4">
-					<a className="slider-recent-articles-element" onClick={element['pdf'] ? function() {this.handleLoadPdfViewer(element['link'])}.bind(this) : null} href={!element['pdf'] ? element['link'] : null} target="_blank"><img src={element['image-src']} /></a>
+					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(element['link'])}.bind(this)}><img src={element['image-src']} /></a>
 					<h4>{element['title']}</h4>
 					<span>{element['date']}</span>
 					<p>{element['description']}</p>
@@ -35,25 +43,25 @@ var RecentArticles = React.createClass({
 	render: function () {
 		return (
 			<div className="row">
-				<h4 className="fullwidth-header">RECENT ARTICLES</h4>
-				<div className="slider-recent-articles-nav">
-					{this.renderRecentArticlesNavSlick()} 					 
+				<h4 className="fullwidth-header">PRINT</h4>
+				<div className="slider-print-articles-nav">
+					{this.renderPrintArticlesNavSlick()} 					 
 				</div>	
-				<div className="slider-recent-articles">
-					{this.renderRecentArticlesSlick()}				
+				<div className="slider-print-articles">
+					{this.renderPrintArticlesSlick()}				
 				</div>
 			</div>
 		)
 	},
 
 	initSlicks: function () {
-		$('.slider-recent-articles').slick({
+		$('.slider-print-articles').slick({
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
 		  dots: true,
 		  adaptiveHeight: true,
-		  asNavFor: '.slider-recent-articles-nav',
+		  asNavFor: '.slider-print-articles-nav',
 		  responsive: [
 		    {
 		      breakpoint: 768,
@@ -65,13 +73,13 @@ var RecentArticles = React.createClass({
 		  ]
 		});
 
-		$('.slider-recent-articles-nav').slick({
+		$('.slider-print-articles-nav').slick({
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
 		  dots: true,
 		  adaptiveHeight: true,
-		  asNavFor: '.slider-recent-articles',
+		  asNavFor: '.slider-print-articles',
 		    responsive: [
 		    {
 		      breakpoint: 768,
@@ -87,4 +95,4 @@ var RecentArticles = React.createClass({
 
 });
 
-module.exports = RecentArticles;
+module.exports = PrintArticles;

@@ -22,7 +22,7 @@ var HomePage = React.createClass({
 						<Twitter />
 					</div>
 				</div>
-				<RecentArticles />
+				<RecentArticles togglePdfView={this.props.togglePdfView} />
 				<div className="row">
 					<LatestPosts />
 					<About />
