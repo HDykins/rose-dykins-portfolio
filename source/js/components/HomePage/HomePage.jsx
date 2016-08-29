@@ -8,6 +8,10 @@ var About = require('./About.jsx');
 
 var HomePage = React.createClass({
 
+	handleScroll: function () {
+		$('html, body').animate({scrollTop: $('#top').offset().top}, 1500);
+	},
+
 	render: function () {
 		return (
 			<section id="main-view">
@@ -22,10 +26,11 @@ var HomePage = React.createClass({
 						<Twitter />
 					</div>
 				</div>
-				<RecentArticles togglePdfView={this.props.togglePdfView} />
+				<RecentArticles changeView={this.props.changeView} togglePdfView={this.props.togglePdfView} />
 				<div className="row">
-					<LatestPosts />
-					<About />
+					<LatestPosts changeView={this.props.changeView} changeCurrentBlogId={this.props.changeCurrentBlogId} />
+					<About changeView={this.props.changeView} />
+					<a className="scroll-top" onClick={this.handleScroll}><h4>^ Back to top ^</h4></a>
 				</div>
 			</section>
 		);

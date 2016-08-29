@@ -1,7 +1,4 @@
 var React = require('react');
-var Navbar = require('./Navbar.jsx');
-var Splashscreen = require('./Splashscreen.jsx');
-var Footer = require('./Footer.jsx');
 
 var AboutPage = React.createClass({
 

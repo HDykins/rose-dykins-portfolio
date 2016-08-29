@@ -3,10 +3,11 @@ var PdfView = require('./PdfView.jsx');
 var Navbar = require('./Navbar.jsx');
 var Splashscreen = require('./Splashscreen.jsx');
 var Footer = require('./Footer.jsx');
-var HomePage = require('./HomePage.jsx');
-var AboutPage = require('./AboutPage.jsx');
-var LatestWorkPage = require('./LatestWorkPage.jsx');
-var ContactPage = require('./ContactPage.jsx');
+var HomePage = require('./HomePage/HomePage.jsx');
+var AboutPage = require('./AboutPage/AboutPage.jsx');
+var LatestWorkPage = require('./LatestWorkPage/LatestWorkPage.jsx');
+var BlogPage = require('./BlogPage/BlogPage.jsx');
+var ContactPage = require('./ContactPage/ContactPage.jsx');
 
 
 var Application = React.createClass({
@@ -15,7 +16,8 @@ var Application = React.createClass({
     return {
       currentView: 'HOME',
       pdfView: false,
-      pdfLink: ""
+      pdfLink: "",
+      currentBlogId: ""
     };
   },
 
@@ -35,10 +37,14 @@ var Application = React.createClass({
     this.updateState("pdfLink", pdfLink)
   },
 
+  changeCurrentBlogId: function (id) {
+    this.updateState("currentBlogId", id)
+  },
+
   renderPage: function () {
     if (this.state.currentView==="HOME") {
       return (
-        <HomePage currentView={this.state.currentView} changeView={this.changeView} togglePdfView={this.togglePdfView} />
+        <HomePage changeView={this.changeView} togglePdfView={this.togglePdfView} changeCurrentBlogId={this.changeCurrentBlogId} />
       );
     } else if (this.state.currentView==="ABOUT") {
       return (
@@ -48,6 +54,10 @@ var Application = React.createClass({
       return (
         <LatestWorkPage currentView={this.state.currentView} changeView={this.changeView} togglePdfView={this.togglePdfView} />
       );
+    } else if (this.state.currentView==="BLOG") {
+      return (
+        <BlogPage currentView={this.state.currentView} changeView={this.changeView} currentBlogId={this.state.currentBlogId} />
+      );
     } else if (this.state.currentView==="CONTACT") {
       return (
         <ContactPage currentView={this.state.currentView} changeView={this.changeView} />
@@ -56,7 +66,6 @@ var Application = React.createClass({
   },
 
   render: function () {
-    console.log(this.state.pdfView);
     if (this.state.pdfView) {
       return <PdfView pdfLink={this.state.pdfLink} togglePdfView={this.togglePdfView} />
     } else {

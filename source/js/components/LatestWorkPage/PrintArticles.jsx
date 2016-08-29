@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var PrintArticles = React.createClass({
 
@@ -12,11 +12,11 @@ var PrintArticles = React.createClass({
 	},
 
 	renderPrintArticlesNavSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(!element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				<div key={index} className="slider-print-articles-nav-element"></div>
 			);
@@ -24,17 +24,17 @@ var PrintArticles = React.createClass({
 	},
 
 	renderPrintArticlesSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(!element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				<div key={index} className="col-xs-4">
-					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(element['link'])}.bind(this)}><img src={element['image-src']} /></a>
-					<h4>{element['title']}</h4>
-					<span>{element['date']}</span>
-					<p>{element['description']}</p>
+					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}><img src={article['image-src']} /></a>
+					<h4>{article['title']}</h4>
+					<span>{article['date']}</span>
+					<p>{article['description']}</p>
 				</div>
 			);
 		}.bind(this));

@@ -17,6 +17,14 @@ i {
   margin: 0 8px;
   float: right; }
 
+a {
+  color: black;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none;
+  color: purple; }
+
 blockquote::before, blockquote::after {
   content: '"'; }
 
@@ -26,15 +34,17 @@ h1 {
   background: white;
   padding: 5px;
   margin: 0.4vw 0 0 0;
-  font-size: 2.6vw; }
+  font-size: 2.6vw;
+  cursor: pointer; }
 
 h4 {
   font-weight: 700; }
 
 h4.fullwidth-header {
-  margin-left: 15px; }
+  margin-left: 15px;
+  cursor: pointer; }
 
-h4.about, h4.twitter {
+h4.about, h4.twitter, h4.blogpost {
   padding-bottom: 12px;
   border-bottom: solid 1px black;
   margin-bottom: 7px; }
@@ -45,6 +55,10 @@ h4.about, h4.twitter {
 .col-xs-4 {
   text-align: left; }
 
+.link {
+  color: purple;
+  cursor: pointer; }
+
 .footer {
   padding-top: 10px;
   border-top: solid 1px black;
@@ -54,6 +68,14 @@ h4.about, h4.twitter {
 
 .selected {
   color: #c8c8c8; }
+
+.scroll-top {
+  text-align: center;
+  cursor: pointer; }
+
+.homepage-header:hover {
+  cursor: pointer;
+  color: purple; }
 
 .fa {
   text-align: center; }
@@ -93,7 +115,8 @@ h4.about, h4.twitter {
 .rose-portrait {
   margin: 60px 10%;
   width: 80%;
-  border-radius: 200%; }
+  border-radius: 200%;
+  cursor: pointer; }
 
 .slider-coffeegram-nav, .slider-videos-nav, .slider-recent-articles-nav, .slider-latest-posts-nav, .slider-online-articles-nav, .slider-print-articles-nav {
   position: relative;
@@ -204,7 +227,8 @@ button.slick-next {
   margin: 0 0 0 0;
   font-size: 8vw;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  cursor: default; }
 
 .splash-screen {
   text-align: left;
@@ -243,16 +267,11 @@ button.slick-next {
   z-index: -1;
   min-width: 820px; }
 
-.about {
-  background-color: white; }
-
-.interests {
-  background-color: black;
-  height: 100vh; }
-
-.extra {
-  background-color: white;
-  height: 100vh; }
+.blog-image {
+  display: inline-block;
+  width: 48%;
+  margin: 0 1%;
+  margin-top: 1%; }
 
 .slick-center {
   transform: scale(1.2); }

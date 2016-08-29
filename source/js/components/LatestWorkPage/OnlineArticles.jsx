@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var OnlineArticles = React.createClass({
 
@@ -8,11 +8,11 @@ var OnlineArticles = React.createClass({
 	},
 
 	renderOnlineArticlesNavSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				<div key={index} className="slider-online-articles-nav-element"></div>
 			);
@@ -20,17 +20,17 @@ var OnlineArticles = React.createClass({
 	},
 
 	renderOnlineArticlesSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				<div key={index} className="col-xs-4">
-					<a className="slider-online-articles-element" href={element['link']} target="_blank"><img src={element['image-src']} /></a>
-					<h4>{element['title']}</h4>
-					<span>{element['date']}</span>
-					<p>{element['description']}</p>
+					<a className="slider-online-articles-element" href={article['link']} target="_blank"><img src={article['image-src']} /></a>
+					<h4>{article['title']}</h4>
+					<span>{article['date']}</span>
+					<p>{article['description']}</p>
 				</div>
 			);
 		}.bind(this));

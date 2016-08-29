@@ -7,6 +7,41 @@ var Splashscreen = React.createClass({
 		this.initSlicks()
 	},
 
+	handleNameAnimation: function () {
+		var name = $('#name');
+    name.animate({
+      'margin-left': '-=5px',
+      'margin-right': '+=5px',
+      'color': 'rgb(230,200,20)'
+    }, 200, function() {
+      name.animate({
+        'margin-left': '+=5px',
+        'margin-right': '-=5px'
+      }, 200, function() {
+	      name.animate({
+	        'margin-left': '-=5px',
+	        'margin-right': '+=5px'
+	      }, 200, function() {
+			    name.animate({
+		        'margin-left': '+=5px',
+		        'margin-right': '-=5px'
+		      }, 200, function() {
+			      name.animate({
+			        'margin-left': '-=5px',
+			        'margin-right': '+=5px'
+			      }, 200, function() {
+			        name.animate({
+				        'margin-left': '+=5px',
+				        'margin-right': '-=5px',
+				        'color': 'black'
+		      		});
+			      });
+		      });
+	      });
+      });
+    });		
+	},
+
 	handleChangeView: function (view) {
 		if (this.props.currentView!==view) {
 			this.props.changeView(view);
@@ -14,13 +49,12 @@ var Splashscreen = React.createClass({
 	},
 
 	renderSplashSlick: function () {
-		return Model.getSplashImagesArray().map (function (element, index) {
-			return <div key={index} className="splash-image-element"><img src={element['image-src']} /></div>;
+		return Model.getSplashImagesArray().map (function (image, index) {
+			return <div key={index} className="splash-image-element"><img src={image['image-src']} /></div>;
 		});
 	},
 
 	render: function () {
-		console.log(this.props.currentView);
 		return (
 			<div className="container-fluid">
 				<div className="row splash-screen">
@@ -32,7 +66,7 @@ var Splashscreen = React.createClass({
 					</div>
 					<br />
 					<br />
-					<h1>/ROSE DYKINS/</h1>
+					<h1 id="name" onClick={this.handleNameAnimation}>/ROSE DYKINS/</h1>
 					<br />
 					<h1 className="bigger-text">TRAVEL</h1>
 					<br />

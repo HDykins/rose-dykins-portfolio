@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var Coffeegram = React.createClass({
 
@@ -15,14 +15,14 @@ var Coffeegram = React.createClass({
 
 	renderCoffeegramSlick: function () {
 		return Model.getCoffeegramArray().map (function (element, index) {
-			return <a key={index} className="slider-coffeegram-element" href={element['link'] ? element['link'] : 'http://www.rose.coffeegram'} target="_blank"><img src={element['image-src']} /></a>;
+			return <a key={index} className="slider-coffeegram-element" href={element['link'] ? element['link'] : 'https://vimeo.com/177925265'} target="_blank"><img src={element['image-src']} /></a>;
 		});
 	},
 
 	render: function () {
 		return (
 			<div>
-				<h4>COFFEEGRAM</h4>
+				<a href="https://vimeo.com/177925265" target="_blank"><h4>COFFEEGRAM</h4></a>
 				<div className="slider-coffeegram-nav">
 					{this.renderCoffeegramNavSlick()}
 				</div>

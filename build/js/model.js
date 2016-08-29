@@ -37,12 +37,72 @@ var Model = (function initModel() {
 	];
 
 	var blogpostsArray = [
-		{'image-src': "./build/images/latest-posts-1.jpg", description: "esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve", title: "The best place to go at the moment really", date: "Date is this yes 606060"},
-		{'image-src': "./build/images/latest-posts-2.jpg", description: "gibbon", title: "2", date: "22/22/22"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "3", date: "33/33/33"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "hhhfuhfu feiuhfew ewfuew fehuweuwfhf fwhufi uff nfweuf", date: "44/44/44"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "5", date: "55/55/55"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "6", date: "66/66/66"}
+		{
+			id: "1",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "2",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "3",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "4",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "5",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "6",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		}
 	];	
 
 	var pdfView = false;

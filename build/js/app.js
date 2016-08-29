@@ -5,7 +5,7 @@ var Application = require('./components/Application.jsx');
 
 ReactDOM.render(React.createElement(Application, null), document.querySelector('[data-rose-portfolio-react-application]'));
 
-},{"./components/Application.jsx":163,"react":160,"react-dom":4}],2:[function(require,module,exports){
+},{"./components/Application.jsx":162,"react":160,"react-dom":4}],2:[function(require,module,exports){
 var Model = (function initModel() {
 
 	var splashImagesArray = [
@@ -45,12 +45,72 @@ var Model = (function initModel() {
 	];
 
 	var blogpostsArray = [
-		{'image-src': "./build/images/latest-posts-1.jpg", description: "esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve", title: "The best place to go at the moment really", date: "Date is this yes 606060"},
-		{'image-src': "./build/images/latest-posts-2.jpg", description: "gibbon", title: "2", date: "22/22/22"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "3", date: "33/33/33"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "hhhfuhfu feiuhfew ewfuew fehuweuwfhf fwhufi uff nfweuf", date: "44/44/44"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "5", date: "55/55/55"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "gibbon", title: "6", date: "66/66/66"}
+		{
+			id: "1",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "2",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "3",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "4",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "5",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		},
+		{
+			id: "6",
+			title: "The best place to go at the moment really",
+			date: "Date is this yes 606060",
+			post: 
+			"esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve NEWLINE\
+			",
+			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
+			'slider-image': "./build/images/latest-posts-1.jpg"
+		}
 	];	
 
 	var pdfView = false;
@@ -19106,30 +19166,6 @@ module.exports = require('./lib/React');
 },{"./lib/React":28}],161:[function(require,module,exports){
 var React = require('react');
 
-var About = React.createClass({displayName: "About",
-
-	render: function () {
-		return (
-			React.createElement("div", {className: "col-xs-4"}, 
-				React.createElement("h4", {className: "about"}, "ABOUT"), 
-				React.createElement("div", {className: "about-section"}, 
-					React.createElement("img", {className: "rose-portrait", src: "./build/images/about-mugshot.png"}), 
-					React.createElement("p", null, "I'm simply amazing. I'm unmatched in my field and will one day save the world from itself. Read more about me here on a page all about me. Me.")
-				)
-			)
-		)
-	}
-
-});
-
-module.exports = About;
-
-},{"react":160}],162:[function(require,module,exports){
-var React = require('react');
-var Navbar = require('./Navbar.jsx');
-var Splashscreen = require('./Splashscreen.jsx');
-var Footer = require('./Footer.jsx');
-
 var AboutPage = React.createClass({displayName: "AboutPage",
 
 	render: function () {
@@ -19168,16 +19204,17 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 
 module.exports = AboutPage;
 
-},{"./Footer.jsx":166,"./Navbar.jsx":170,"./Splashscreen.jsx":175,"react":160}],163:[function(require,module,exports){
+},{"react":160}],162:[function(require,module,exports){
 var React = require('react');
 var PdfView = require('./PdfView.jsx');
 var Navbar = require('./Navbar.jsx');
 var Splashscreen = require('./Splashscreen.jsx');
 var Footer = require('./Footer.jsx');
-var HomePage = require('./HomePage.jsx');
-var AboutPage = require('./AboutPage.jsx');
-var LatestWorkPage = require('./LatestWorkPage.jsx');
-var ContactPage = require('./ContactPage.jsx');
+var HomePage = require('./HomePage/HomePage.jsx');
+var AboutPage = require('./AboutPage/AboutPage.jsx');
+var LatestWorkPage = require('./LatestWorkPage/LatestWorkPage.jsx');
+var BlogPage = require('./BlogPage/BlogPage.jsx');
+var ContactPage = require('./ContactPage/ContactPage.jsx');
 
 
 var Application = React.createClass({displayName: "Application",
@@ -19186,7 +19223,8 @@ var Application = React.createClass({displayName: "Application",
     return {
       currentView: 'HOME',
       pdfView: false,
-      pdfLink: ""
+      pdfLink: "",
+      currentBlogId: ""
     };
   },
 
@@ -19206,10 +19244,14 @@ var Application = React.createClass({displayName: "Application",
     this.updateState("pdfLink", pdfLink)
   },
 
+  changeCurrentBlogId: function (id) {
+    this.updateState("currentBlogId", id)
+  },
+
   renderPage: function () {
     if (this.state.currentView==="HOME") {
       return (
-        React.createElement(HomePage, {currentView: this.state.currentView, changeView: this.changeView, togglePdfView: this.togglePdfView})
+        React.createElement(HomePage, {changeView: this.changeView, togglePdfView: this.togglePdfView, changeCurrentBlogId: this.changeCurrentBlogId})
       );
     } else if (this.state.currentView==="ABOUT") {
       return (
@@ -19219,6 +19261,10 @@ var Application = React.createClass({displayName: "Application",
       return (
         React.createElement(LatestWorkPage, {currentView: this.state.currentView, changeView: this.changeView, togglePdfView: this.togglePdfView})
       );
+    } else if (this.state.currentView==="BLOG") {
+      return (
+        React.createElement(BlogPage, {currentView: this.state.currentView, changeView: this.changeView, currentBlogId: this.state.currentBlogId})
+      );
     } else if (this.state.currentView==="CONTACT") {
       return (
         React.createElement(ContactPage, {currentView: this.state.currentView, changeView: this.changeView})
@@ -19227,7 +19273,6 @@ var Application = React.createClass({displayName: "Application",
   },
 
   render: function () {
-    console.log(this.state.pdfView);
     if (this.state.pdfView) {
       return React.createElement(PdfView, {pdfLink: this.state.pdfLink, togglePdfView: this.togglePdfView})
     } else {
@@ -19245,74 +19290,72 @@ var Application = React.createClass({displayName: "Application",
 
 module.exports = Application;
 
-},{"./AboutPage.jsx":162,"./ContactPage.jsx":165,"./Footer.jsx":166,"./HomePage.jsx":167,"./LatestWorkPage.jsx":169,"./Navbar.jsx":170,"./PdfView.jsx":172,"./Splashscreen.jsx":175,"react":160}],164:[function(require,module,exports){
+},{"./AboutPage/AboutPage.jsx":161,"./BlogPage/BlogPage.jsx":163,"./ContactPage/ContactPage.jsx":164,"./Footer.jsx":165,"./HomePage/HomePage.jsx":168,"./LatestWorkPage/LatestWorkPage.jsx":173,"./Navbar.jsx":176,"./PdfView.jsx":177,"./Splashscreen.jsx":178,"react":160}],163:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
-var Coffeegram = React.createClass({displayName: "Coffeegram",
+var BlogPage = React.createClass({displayName: "BlogPage",
 
 	componentDidMount: function () {
-		this.initSlicks();
+		if (this.props.currentBlogId) {
+			$('html, body').animate({scrollTop: $("#blogpost" + this.props.currentBlogId).offset().top}, 1500);
+		}
 	},
 
-	renderCoffeegramNavSlick: function () {
-		return Model.getCoffeegramArray().map (function (element, index) {
-			return React.createElement("div", {key: index, className: "slider-coffeegram-nav-element"});
+	handleScroll: function () {
+		$('html, body').animate({scrollTop: $('#top').offset().top}, 1500);
+	},
+
+	renderBlogpostImages: function (blogpost) {
+		return blogpost['image-srcs'].map(function (image, index) {
+			return (
+				React.createElement("div", {key: index, className: "blog-image"}, 
+					React.createElement("img", {src: image})
+				)
+			);	
 		});
 	},
 
-	renderCoffeegramSlick: function () {
-		return Model.getCoffeegramArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-coffeegram-element", href: element['link'] ? element['link'] : 'http://www.rose.coffeegram', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+	renderBlogpostParagraphs: function (blogpost) {
+		return blogpost['post'].replace(/\s\s+/g, ' ').split('NEWLINE').map(function (paragraph, index) {
+			return React.createElement("p", {key: index}, paragraph)
 		});
+	},
+
+	renderBlogpost: function () {
+		return Model.getBlogpostsArray().map(function (blogpost, index) {
+			return (
+				React.createElement("div", {id: 'blogpost' + blogpost['id'], key: index, className: "row"}, 
+					React.createElement("div", {className: "col-xs-12"}, 
+						React.createElement("h4", {className: "fullwidth-header blogpost"}, blogpost['date']), 
+						React.createElement("div", {className: "col-xs-8"}, 
+							this.renderBlogpostImages(blogpost)
+						), 
+						React.createElement("div", {className: "col-xs-4"}, 
+							React.createElement("h4", null, blogpost['title']), 
+							this.renderBlogpostParagraphs(blogpost), 
+							React.createElement("a", {className: "scroll-top", onClick: this.handleScroll}, React.createElement("h4", null, "^ Back to top ^"))
+						)
+					)
+				)
+			);
+		}.bind(this));
 	},
 
 	render: function () {
 		return (
-			React.createElement("div", null, 
-				React.createElement("h4", null, "COFFEEGRAM"), 
-				React.createElement("div", {className: "slider-coffeegram-nav"}, 
-					this.renderCoffeegramNavSlick()
-				), 
-				React.createElement("div", {className: "slider-coffeegram"}, 
-				  this.renderCoffeegramSlick()
-				)
-			)	
-		)
-	},
-
-	initSlicks: function () {
-		$('.slider-coffeegram').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: false,
-		  speed: 200,
-		  asNavFor: '.slider-coffeegram-nav'
-		});
-
-		$('.slider-coffeegram-nav').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: true,
-		  speed: 200,
-		  asNavFor: '.slider-coffeegram'
-		});
+			React.createElement("section", {id: "blog-view", className: "blog-view"}, 
+				this.renderBlogpost()
+			)
+		);
 	}
 
 });
 
-module.exports = Coffeegram;
+module.exports = BlogPage;
 
-},{"../../../build/js/model.js":2,"react":160}],165:[function(require,module,exports){
+},{"../../../../build/js/model.js":2,"react":160}],164:[function(require,module,exports){
 var React = require('react');
-var RecentArticles = require('./RecentArticles.jsx');
-var Coffeegram = require('./Coffeegram.jsx');
-var Videos = require('./Videos.jsx');
-var Twitter = require('./Twitter.jsx');
-var LatestPosts = require('./LatestPosts.jsx');
-var About = require('./About.jsx');
 
 var ContactPage = React.createClass({displayName: "ContactPage",
 
@@ -19347,7 +19390,7 @@ var ContactPage = React.createClass({displayName: "ContactPage",
 
 module.exports = ContactPage;
 
-},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":174,"./Twitter.jsx":176,"./Videos.jsx":177,"react":160}],166:[function(require,module,exports){
+},{"react":160}],165:[function(require,module,exports){
 var React = require('react');
 
 var Footer = React.createClass({displayName: "Footer",
@@ -19373,7 +19416,92 @@ var Footer = React.createClass({displayName: "Footer",
 
 module.exports = Footer;
 
+},{"react":160}],166:[function(require,module,exports){
+var React = require('react');
+
+var About = React.createClass({displayName: "About",
+
+	handleChangeView: function (view) {
+		this.props.changeView(view);
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "col-xs-4"}, 
+				React.createElement("h4", {className: "about homepage-header", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "ABOUT"), 
+				React.createElement("div", {className: "about-section"}, 
+					React.createElement("img", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this), className: "rose-portrait", src: "./build/images/about-mugshot.png"}), 
+					React.createElement("p", null, "I'm simply amazing. I'm unmatched in my field and will one day save the world from itself. Read more about me ", React.createElement("a", {className: "link", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "here"), " on a page all about me. Me.")
+				)
+			)
+		)
+	}
+
+});
+
+module.exports = About;
+
 },{"react":160}],167:[function(require,module,exports){
+var React = require('react');
+var Model = require('../../../../build/js/model.js');
+
+var Coffeegram = React.createClass({displayName: "Coffeegram",
+
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
+	renderCoffeegramNavSlick: function () {
+		return Model.getCoffeegramArray().map (function (element, index) {
+			return React.createElement("div", {key: index, className: "slider-coffeegram-nav-element"});
+		});
+	},
+
+	renderCoffeegramSlick: function () {
+		return Model.getCoffeegramArray().map (function (element, index) {
+			return React.createElement("a", {key: index, className: "slider-coffeegram-element", href: element['link'] ? element['link'] : 'https://vimeo.com/177925265', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+		});
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("a", {href: "https://vimeo.com/177925265", target: "_blank"}, React.createElement("h4", null, "COFFEEGRAM")), 
+				React.createElement("div", {className: "slider-coffeegram-nav"}, 
+					this.renderCoffeegramNavSlick()
+				), 
+				React.createElement("div", {className: "slider-coffeegram"}, 
+				  this.renderCoffeegramSlick()
+				)
+			)	
+		)
+	},
+
+	initSlicks: function () {
+		$('.slider-coffeegram').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: false,
+		  speed: 200,
+		  asNavFor: '.slider-coffeegram-nav'
+		});
+
+		$('.slider-coffeegram-nav').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: true,
+		  speed: 200,
+		  asNavFor: '.slider-coffeegram'
+		});
+	}
+
+});
+
+module.exports = Coffeegram;
+
+},{"../../../../build/js/model.js":2,"react":160}],168:[function(require,module,exports){
 var React = require('react');
 var RecentArticles = require('./RecentArticles.jsx');
 var Coffeegram = require('./Coffeegram.jsx');
@@ -19383,6 +19511,10 @@ var LatestPosts = require('./LatestPosts.jsx');
 var About = require('./About.jsx');
 
 var HomePage = React.createClass({displayName: "HomePage",
+
+	handleScroll: function () {
+		$('html, body').animate({scrollTop: $('#top').offset().top}, 1500);
+	},
 
 	render: function () {
 		return (
@@ -19398,10 +19530,11 @@ var HomePage = React.createClass({displayName: "HomePage",
 						React.createElement(Twitter, null)
 					)
 				), 
-				React.createElement(RecentArticles, {togglePdfView: this.props.togglePdfView}), 
+				React.createElement(RecentArticles, {changeView: this.props.changeView, togglePdfView: this.props.togglePdfView}), 
 				React.createElement("div", {className: "row"}, 
-					React.createElement(LatestPosts, null), 
-					React.createElement(About, null)
+					React.createElement(LatestPosts, {changeView: this.props.changeView, changeCurrentBlogId: this.props.changeCurrentBlogId}), 
+					React.createElement(About, {changeView: this.props.changeView}), 
+					React.createElement("a", {className: "scroll-top", onClick: this.handleScroll}, React.createElement("h4", null, "^ Back to top ^"))
 				)
 			)
 		);
@@ -19411,14 +19544,21 @@ var HomePage = React.createClass({displayName: "HomePage",
 
 module.exports = HomePage;
 
-},{"./About.jsx":161,"./Coffeegram.jsx":164,"./LatestPosts.jsx":168,"./RecentArticles.jsx":174,"./Twitter.jsx":176,"./Videos.jsx":177,"react":160}],168:[function(require,module,exports){
+},{"./About.jsx":166,"./Coffeegram.jsx":167,"./LatestPosts.jsx":169,"./RecentArticles.jsx":170,"./Twitter.jsx":171,"./Videos.jsx":172,"react":160}],169:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var LatestPosts = React.createClass({displayName: "LatestPosts",
 
 	componentDidMount: function () {
 		this.initSlicks();
+	},
+
+	handleChangeView: function (view, elementIdToScrollTo) {
+		this.props.changeView(view);
+		if (elementIdToScrollTo) {
+			this.props.changeCurrentBlogId(elementIdToScrollTo);
+		}
 	},
 
 	renderLatestPostsNavSlick: function () {
@@ -19430,22 +19570,22 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 	},
 
 	renderLatestPostsSlick: function () {
-		return Model.getBlogpostsArray().map (function (element, index) {
+		return Model.getBlogpostsArray().map (function (blogpost, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-latest-posts-element", href: element['link'] ? element['link'] : 'http://www.rose.blogPosts', target: "_blank"}, React.createElement("img", {src: element['image-src']})), 
-					React.createElement("h4", null, element['title']), 
-					React.createElement("span", null, element['date']), 
-					React.createElement("p", null, element['description'])
+					React.createElement("a", {className: "slider-latest-posts-element", onClick:  blogpost['id'] ? function() {this.handleChangeView("BLOG", blogpost['id'])}.bind(this) : function() {this.handleChangeView("BLOG")}.bind(this)}, React.createElement("img", {src: blogpost['slider-image']})), 
+					React.createElement("h4", null, blogpost['title']), 
+					React.createElement("span", null, blogpost['date']), 
+					React.createElement("p", null, blogpost['description'])
 				)
 			);
-		});
+		}.bind(this));
 	},
 
 	render: function () {
 		return (
 			React.createElement("div", {className: "col-xs-8"}, 
-				React.createElement("h4", {className: "fullwidth-header"}, "LATEST POSTS"), 
+				React.createElement("h4", {className: "fullwidth-header homepage-header", onClick: function() {this.handleChangeView("BLOG")}.bind(this)}, "LATEST POSTS"), 
 				React.createElement("div", {className: "slider-latest-posts-nav"}, 
 					this.renderLatestPostsNavSlick()
 				), 	
@@ -19499,7 +19639,183 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 
 module.exports = LatestPosts;
 
-},{"../../../build/js/model.js":2,"react":160}],169:[function(require,module,exports){
+},{"../../../../build/js/model.js":2,"react":160}],170:[function(require,module,exports){
+var React = require('react');
+var Model = require('../../../../build/js/model.js');
+
+var RecentArticles = React.createClass({displayName: "RecentArticles",
+
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
+	handleChangeView: function (view) {
+		this.props.changeView(view);
+	},
+
+	handleLoadPdfViewer: function (pdfLink) {
+		this.props.togglePdfView(true, pdfLink)
+	},
+
+	renderRecentArticlesNavSlick: function () {
+		return Model.getArticlesArray().map (function (article, index) {
+			return (
+				React.createElement("div", {key: index, className: "slider-recent-articles-nav-element"})
+			);
+		});
+	},
+
+	renderRecentArticlesSlick: function () {
+		return Model.getArticlesArray().map (function (article, index) {
+			return (
+				React.createElement("div", {key: index, className: "col-xs-4"}, 
+					React.createElement("a", {className: "slider-recent-articles-element", onClick: article['pdf'] ? function() {this.handleLoadPdfViewer(article['link'])}.bind(this) : null, href: !article['pdf'] ? article['link'] : null, target: "_blank"}, React.createElement("img", {src: article['image-src']})), 
+					React.createElement("h4", null, article['title']), 
+					React.createElement("span", null, article['date']), 
+					React.createElement("p", null, article['description'])
+				)
+			);
+		}.bind(this));
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", {className: "row"}, 
+				React.createElement("h4", {className: "fullwidth-header homepage-header", onClick: function() {this.handleChangeView("LATEST_WORK")}.bind(this)}, "RECENT ARTICLES"), 
+				React.createElement("div", {className: "slider-recent-articles-nav"}, 
+					this.renderRecentArticlesNavSlick()					 
+				), 	
+				React.createElement("div", {className: "slider-recent-articles"}, 
+					this.renderRecentArticlesSlick()				
+				)
+			)
+		)
+	},
+
+	initSlicks: function () {
+		$('.slider-recent-articles').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-recent-articles-nav',
+		  responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+
+		$('.slider-recent-articles-nav').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  arrows: false,
+		  dots: true,
+		  adaptiveHeight: true,
+		  asNavFor: '.slider-recent-articles',
+		    responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        arrows: false,
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		  ]
+		});
+	}
+
+});
+
+module.exports = RecentArticles;
+
+},{"../../../../build/js/model.js":2,"react":160}],171:[function(require,module,exports){
+var React = require('react');
+
+var Twitter = React.createClass({displayName: "Twitter",
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, React.createElement("h4", {className: "twitter"}, "TWITTER")), 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, 
+					React.createElement("img", {src: "./build/images/twitter-image.jpg"})
+				)	
+			)
+		)
+	}
+
+});
+
+module.exports = Twitter;
+
+},{"react":160}],172:[function(require,module,exports){
+var React = require('react');
+var Model = require('../../../../build/js/model.js');
+
+var Videos = React.createClass({displayName: "Videos",
+
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
+	renderVideosNavSlick: function () {
+		return Model.getVideosArray().map (function (element, index) {
+			return React.createElement("div", {key: index, className: "slider-videos-nav-element"});
+		});
+	},
+
+	renderVideosSlick: function () {
+		return Model.getVideosArray().map (function (element, index) {
+			return React.createElement("a", {key: index, className: "slider-videos-element", href: element['link'] ? element['link'] : 'https://vimeo.com/177925265', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+		});
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("a", {href: "https://vimeo.com/177925265", target: "_blank"}, React.createElement("h4", null, "VIDEOS")), 
+				React.createElement("div", {className: "slider-videos-nav"}, 
+					this.renderVideosNavSlick()
+				), 
+				React.createElement("div", {className: "slider-videos"}, 
+				  this.renderVideosSlick()
+				)
+			)	
+		)
+	},
+
+	initSlicks: function () {
+		$('.slider-videos').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: false,
+		  speed: 200,
+		  asNavFor: '.slider-videos-nav'
+		});
+
+		$('.slider-videos-nav').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: true,
+		  speed: 200,
+		  asNavFor: '.slider-videos'
+		});
+	}
+
+});
+
+module.exports = Videos;
+
+},{"../../../../build/js/model.js":2,"react":160}],173:[function(require,module,exports){
 var React = require('react');
 var OnlineArticles = require('./OnlineArticles.jsx');
 var PrintArticles = require('./PrintArticles.jsx');
@@ -19519,29 +19835,9 @@ var LatestWorkPage = React.createClass({displayName: "LatestWorkPage",
 
 module.exports = LatestWorkPage;
 
-},{"./OnlineArticles.jsx":171,"./PrintArticles.jsx":173,"react":160}],170:[function(require,module,exports){
+},{"./OnlineArticles.jsx":174,"./PrintArticles.jsx":175,"react":160}],174:[function(require,module,exports){
 var React = require('react');
-
-var Navbar = React.createClass({displayName: "Navbar",
-
-	render: function () {
-		return (
-			React.createElement("nav", {className: "navbar navbar-inverse"}, 
-				React.createElement("i", {className: "fa fa-2x fa-google-plus", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-twitter", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-tumblr", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-facebook", "aria-hidden": "true"})
-			)
-		)
-	}
-
-});
-
-module.exports = Navbar;
-
-},{"react":160}],171:[function(require,module,exports){
-var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
@@ -19550,11 +19846,11 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 	},
 
 	renderOnlineArticlesNavSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "slider-online-articles-nav-element"})
 			);
@@ -19562,17 +19858,17 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 	},
 
 	renderOnlineArticlesSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-online-articles-element", href: element['link'], target: "_blank"}, React.createElement("img", {src: element['image-src']})), 
-					React.createElement("h4", null, element['title']), 
-					React.createElement("span", null, element['date']), 
-					React.createElement("p", null, element['description'])
+					React.createElement("a", {className: "slider-online-articles-element", href: article['link'], target: "_blank"}, React.createElement("img", {src: article['image-src']})), 
+					React.createElement("h4", null, article['title']), 
+					React.createElement("span", null, article['date']), 
+					React.createElement("p", null, article['description'])
 				)
 			);
 		}.bind(this));
@@ -19635,48 +19931,9 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
 module.exports = OnlineArticles;
 
-},{"../../../build/js/model.js":2,"react":160}],172:[function(require,module,exports){
+},{"../../../../build/js/model.js":2,"react":160}],175:[function(require,module,exports){
 var React = require('react');
-
-var PdfView = React.createClass({displayName: "PdfView",
-
-	componentDidMount: function () {
-		new PdfViewer({pdfUrl: 'no more', staticHost: this.props.pdfLink}).embed(this.refs.pdf)
-		$('[id="pdf-view"]').append($('<div class="close-button">X</div>'));
-		$('.close-button').click(function() {
-  		this.handleCloseButton(this.props.pdfLink);
-		}.bind(this));
-	},
-
-	componentWillUnmount: function () {
-		$('.close-button').off('click');
-	},
-
-	handleCloseButton: function (pdfLink) {
-		this.props.togglePdfView(false, pdfLink)
-	},
-
-	renderPdfView: function () {
-		return (
-		React.createElement("div", {className: "close-button"}, "X")
-		);
-	},
-
-	render: function () {
-		return (
-			React.createElement("section", {ref: "pdf", id: "pdf-view", className: "container pdf-view"}, 
-				this.renderPdfView()
-			)
-		);
-	}
-
-});
-
-module.exports = PdfView;
-
-},{"react":160}],173:[function(require,module,exports){
-var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var PrintArticles = React.createClass({displayName: "PrintArticles",
 
@@ -19689,11 +19946,11 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 	},
 
 	renderPrintArticlesNavSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(!element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "slider-print-articles-nav-element"})
 			);
@@ -19701,17 +19958,17 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 	},
 
 	renderPrintArticlesSlick: function () {
-		return Model.getArticlesArray().filter(function (element)	{
-			if(!element['pdf']) {
+		return Model.getArticlesArray().filter(function (article)	{
+			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (element, index) {
+		}).map (function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-print-articles-element", onClick: function() {this.handleLoadPdfViewer(element['link'])}.bind(this)}, React.createElement("img", {src: element['image-src']})), 
-					React.createElement("h4", null, element['title']), 
-					React.createElement("span", null, element['date']), 
-					React.createElement("p", null, element['description'])
+					React.createElement("a", {className: "slider-print-articles-element", onClick: function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}, React.createElement("img", {src: article['image-src']})), 
+					React.createElement("h4", null, article['title']), 
+					React.createElement("span", null, article['date']), 
+					React.createElement("p", null, article['description'])
 				)
 			);
 		}.bind(this));
@@ -19774,99 +20031,66 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 
 module.exports = PrintArticles;
 
-},{"../../../build/js/model.js":2,"react":160}],174:[function(require,module,exports){
+},{"../../../../build/js/model.js":2,"react":160}],176:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../build/js/model.js');
 
-var RecentArticles = React.createClass({displayName: "RecentArticles",
-
-	componentDidMount: function () {
-		this.initSlicks();
-	},
-
-	handleLoadPdfViewer: function (pdfLink) {
-		this.props.togglePdfView(true, pdfLink)
-	},
-
-	renderRecentArticlesNavSlick: function () {
-		return Model.getArticlesArray().map (function (element, index) {
-			return (
-				React.createElement("div", {key: index, className: "slider-recent-articles-nav-element"})
-			);
-		});
-	},
-
-	renderRecentArticlesSlick: function () {
-		return Model.getArticlesArray().map (function (element, index) {
-			return (
-				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-recent-articles-element", onClick: element['pdf'] ? function() {this.handleLoadPdfViewer(element['link'])}.bind(this) : null, href: !element['pdf'] ? element['link'] : null, target: "_blank"}, React.createElement("img", {src: element['image-src']})), 
-					React.createElement("h4", null, element['title']), 
-					React.createElement("span", null, element['date']), 
-					React.createElement("p", null, element['description'])
-				)
-			);
-		}.bind(this));
-	},
+var Navbar = React.createClass({displayName: "Navbar",
 
 	render: function () {
 		return (
-			React.createElement("div", {className: "row"}, 
-				React.createElement("h4", {className: "fullwidth-header"}, "RECENT ARTICLES"), 
-				React.createElement("div", {className: "slider-recent-articles-nav"}, 
-					this.renderRecentArticlesNavSlick()					 
-				), 	
-				React.createElement("div", {className: "slider-recent-articles"}, 
-					this.renderRecentArticlesSlick()				
-				)
+			React.createElement("nav", {id: "top", className: "navbar navbar-inverse"}, 
+				React.createElement("i", {className: "fa fa-2x fa-google-plus", "aria-hidden": "true"}), 
+				React.createElement("i", {className: "fa fa-2x fa-twitter", "aria-hidden": "true"}), 
+				React.createElement("i", {className: "fa fa-2x fa-tumblr", "aria-hidden": "true"}), 
+				React.createElement("i", {className: "fa fa-2x fa-facebook", "aria-hidden": "true"})
 			)
 		)
-	},
-
-	initSlicks: function () {
-		$('.slider-recent-articles').slick({
-		  slidesToShow: 3,
-		  slidesToScroll: 3,
-		  arrows: false,
-		  dots: true,
-		  adaptiveHeight: true,
-		  asNavFor: '.slider-recent-articles-nav',
-		  responsive: [
-		    {
-		      breakpoint: 768,
-		      settings: {
-		        slidesToShow: 1,
-		        slidesToScroll: 1
-		      }
-		    }
-		  ]
-		});
-
-		$('.slider-recent-articles-nav').slick({
-		  slidesToShow: 3,
-		  slidesToScroll: 3,
-		  arrows: false,
-		  dots: true,
-		  adaptiveHeight: true,
-		  asNavFor: '.slider-recent-articles',
-		    responsive: [
-		    {
-		      breakpoint: 768,
-		      settings: {
-		        arrows: false,
-		        slidesToShow: 1,
-		        slidesToScroll: 1
-		      }
-		    }
-		  ]
-		});
 	}
 
 });
 
-module.exports = RecentArticles;
+module.exports = Navbar;
 
-},{"../../../build/js/model.js":2,"react":160}],175:[function(require,module,exports){
+},{"react":160}],177:[function(require,module,exports){
+var React = require('react');
+
+var PdfView = React.createClass({displayName: "PdfView",
+
+	componentDidMount: function () {
+		new PdfViewer({pdfUrl: 'no more', staticHost: this.props.pdfLink}).embed(this.refs.pdf)
+		$('[id="pdf-view"]').append($('<div class="close-button">X</div>'));
+		$('.close-button').click(function() {
+  		this.handleCloseButton(this.props.pdfLink);
+		}.bind(this));
+	},
+
+	componentWillUnmount: function () {
+		$('.close-button').off('click');
+	},
+
+	handleCloseButton: function (pdfLink) {
+		this.props.togglePdfView(false, pdfLink)
+	},
+
+	renderPdfView: function () {
+		return (
+		React.createElement("div", {className: "close-button"}, "X")
+		);
+	},
+
+	render: function () {
+		return (
+			React.createElement("section", {ref: "pdf", id: "pdf-view", className: "container pdf-view"}, 
+				this.renderPdfView()
+			)
+		);
+	}
+
+});
+
+module.exports = PdfView;
+
+},{"react":160}],178:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../build/js/model.js');
 
@@ -19876,6 +20100,41 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 		this.initSlicks()
 	},
 
+	handleNameAnimation: function () {
+		var name = $('#name');
+    name.animate({
+      'margin-left': '-=5px',
+      'margin-right': '+=5px',
+      'color': 'rgb(230,200,20)'
+    }, 200, function() {
+      name.animate({
+        'margin-left': '+=5px',
+        'margin-right': '-=5px'
+      }, 200, function() {
+	      name.animate({
+	        'margin-left': '-=5px',
+	        'margin-right': '+=5px'
+	      }, 200, function() {
+			    name.animate({
+		        'margin-left': '+=5px',
+		        'margin-right': '-=5px'
+		      }, 200, function() {
+			      name.animate({
+			        'margin-left': '-=5px',
+			        'margin-right': '+=5px'
+			      }, 200, function() {
+			        name.animate({
+				        'margin-left': '+=5px',
+				        'margin-right': '-=5px',
+				        'color': 'black'
+		      		});
+			      });
+		      });
+	      });
+      });
+    });		
+	},
+
 	handleChangeView: function (view) {
 		if (this.props.currentView!==view) {
 			this.props.changeView(view);
@@ -19883,13 +20142,12 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 	},
 
 	renderSplashSlick: function () {
-		return Model.getSplashImagesArray().map (function (element, index) {
-			return React.createElement("div", {key: index, className: "splash-image-element"}, React.createElement("img", {src: element['image-src']}));
+		return Model.getSplashImagesArray().map (function (image, index) {
+			return React.createElement("div", {key: index, className: "splash-image-element"}, React.createElement("img", {src: image['image-src']}));
 		});
 	},
 
 	render: function () {
-		console.log(this.props.currentView);
 		return (
 			React.createElement("div", {className: "container-fluid"}, 
 				React.createElement("div", {className: "row splash-screen"}, 
@@ -19901,7 +20159,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 					), 
 					React.createElement("br", null), 
 					React.createElement("br", null), 
-					React.createElement("h1", null, "/ROSE DYKINS/"), 
+					React.createElement("h1", {id: "name", onClick: this.handleNameAnimation}, "/ROSE DYKINS/"), 
 					React.createElement("br", null), 
 					React.createElement("h1", {className: "bigger-text"}, "TRAVEL"), 
 					React.createElement("br", null), 
@@ -19936,86 +20194,6 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 });
 
 module.exports = Splashscreen;
-
-},{"../../../build/js/model.js":2,"react":160}],176:[function(require,module,exports){
-var React = require('react');
-
-var Twitter = React.createClass({displayName: "Twitter",
-
-	render: function () {
-		return (
-			React.createElement("div", null, 
-				React.createElement("h4", {className: "twitter"}, "TWITTER"), 
-				React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, 
-					React.createElement("img", {src: "./build/images/twitter-image.jpg"})
-				)	
-			)
-		)
-	}
-
-});
-
-module.exports = Twitter;
-
-},{"react":160}],177:[function(require,module,exports){
-var React = require('react');
-var Model = require('../../../build/js/model.js');
-
-var Videos = React.createClass({displayName: "Videos",
-
-	componentDidMount: function () {
-		this.initSlicks();
-	},
-
-	renderVideosNavSlick: function () {
-		return Model.getVideosArray().map (function (element, index) {
-			return React.createElement("div", {key: index, className: "slider-videos-nav-element"});
-		});
-	},
-
-	renderVideosSlick: function () {
-		return Model.getVideosArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-videos-element", href: element['link'] ? element['link'] : 'http://www.rose.videos.com', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
-		});
-	},
-
-	render: function () {
-		return (
-			React.createElement("div", null, 
-				React.createElement("h4", null, "VIDEOS"), 
-				React.createElement("div", {className: "slider-videos-nav"}, 
-					this.renderVideosNavSlick()
-				), 
-				React.createElement("div", {className: "slider-videos"}, 
-				  this.renderVideosSlick()
-				)
-			)	
-		)
-	},
-
-	initSlicks: function () {
-		$('.slider-videos').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: false,
-		  speed: 200,
-		  asNavFor: '.slider-videos-nav'
-		});
-
-		$('.slider-videos-nav').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: true,
-		  speed: 200,
-		  asNavFor: '.slider-videos'
-		});
-	}
-
-});
-
-module.exports = Videos;
 
 },{"../../../build/js/model.js":2,"react":160}]},{},[1]);
 

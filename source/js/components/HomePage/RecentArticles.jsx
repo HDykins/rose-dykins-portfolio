@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var RecentArticles = React.createClass({
 
@@ -7,12 +7,16 @@ var RecentArticles = React.createClass({
 		this.initSlicks();
 	},
 
+	handleChangeView: function (view) {
+		this.props.changeView(view);
+	},
+
 	handleLoadPdfViewer: function (pdfLink) {
 		this.props.togglePdfView(true, pdfLink)
 	},
 
 	renderRecentArticlesNavSlick: function () {
-		return Model.getArticlesArray().map (function (element, index) {
+		return Model.getArticlesArray().map (function (article, index) {
 			return (
 				<div key={index} className="slider-recent-articles-nav-element"></div>
 			);
@@ -20,13 +24,13 @@ var RecentArticles = React.createClass({
 	},
 
 	renderRecentArticlesSlick: function () {
-		return Model.getArticlesArray().map (function (element, index) {
+		return Model.getArticlesArray().map (function (article, index) {
 			return (
 				<div key={index} className="col-xs-4">
-					<a className="slider-recent-articles-element" onClick={element['pdf'] ? function() {this.handleLoadPdfViewer(element['link'])}.bind(this) : null} href={!element['pdf'] ? element['link'] : null} target="_blank"><img src={element['image-src']} /></a>
-					<h4>{element['title']}</h4>
-					<span>{element['date']}</span>
-					<p>{element['description']}</p>
+					<a className="slider-recent-articles-element" onClick={article['pdf'] ? function() {this.handleLoadPdfViewer(article['link'])}.bind(this) : null} href={!article['pdf'] ? article['link'] : null} target="_blank"><img src={article['image-src']} /></a>
+					<h4>{article['title']}</h4>
+					<span>{article['date']}</span>
+					<p>{article['description']}</p>
 				</div>
 			);
 		}.bind(this));
@@ -35,7 +39,7 @@ var RecentArticles = React.createClass({
 	render: function () {
 		return (
 			<div className="row">
-				<h4 className="fullwidth-header">RECENT ARTICLES</h4>
+				<h4 className="fullwidth-header homepage-header" onClick={function() {this.handleChangeView("LATEST_WORK")}.bind(this)}>RECENT ARTICLES</h4>
 				<div className="slider-recent-articles-nav">
 					{this.renderRecentArticlesNavSlick()} 					 
 				</div>	

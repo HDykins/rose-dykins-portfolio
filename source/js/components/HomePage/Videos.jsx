@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+var Model = require('../../../../build/js/model.js');
 
 var Videos = React.createClass({
 
@@ -15,14 +15,14 @@ var Videos = React.createClass({
 
 	renderVideosSlick: function () {
 		return Model.getVideosArray().map (function (element, index) {
-			return <a key={index} className="slider-videos-element" href={element['link'] ? element['link'] : 'http://www.rose.videos.com'} target="_blank"><img src={element['image-src']} /></a>;
+			return <a key={index} className="slider-videos-element" href={element['link'] ? element['link'] : 'https://vimeo.com/177925265'} target="_blank"><img src={element['image-src']} /></a>;
 		});
 	},
 
 	render: function () {
 		return (
 			<div>
-				<h4>VIDEOS</h4>
+				<a href="https://vimeo.com/177925265" target="_blank"><h4>VIDEOS</h4></a>
 				<div className="slider-videos-nav">
 					{this.renderVideosNavSlick()}
 				</div>
