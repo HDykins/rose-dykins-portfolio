@@ -19761,6 +19761,10 @@ var Model = require('../../../../build/js/model.js');
 
 var Videos = React.createClass({displayName: "Videos",
 
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
 	renderVideosNavSlick: function () {
 		return Model.getVideosArray().map (function (element, index) {
 			return React.createElement("div", {key: index, className: "slider-videos-nav-element"});
@@ -19785,6 +19789,26 @@ var Videos = React.createClass({displayName: "Videos",
 				)
 			)	
 		)
+	},
+
+	initSlicks: function () {
+		$('.slider-videos').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: false,
+		  speed: 200,
+		  asNavFor: '.slider-videos-nav'
+		});
+
+		$('.slider-videos-nav').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: true,
+		  speed: 200,
+		  asNavFor: '.slider-videos'
+		});
 	}
 
 });
