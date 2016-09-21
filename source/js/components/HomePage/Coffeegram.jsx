@@ -15,7 +15,7 @@ var Coffeegram = React.createClass({
 
 	renderCoffeegramSlick: function () {
 		return Model.getCoffeegramArray().map (function (element, index) {
-			return <a key={index} className="slider-coffeegram-element" href={element['link'] ? element['link'] : 'https://vimeo.com/177925265'} target="_blank"><img src={element['image-src']} /></a>;
+			return <a key={index} className="slider-coffeegram-element" href={element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media'} target="_blank"><img src={element['image-src']} /></a>;
 		});
 	},
 

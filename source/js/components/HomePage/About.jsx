@@ -12,7 +12,7 @@ var About = React.createClass({
 				<h4 className="about homepage-header" onClick={function() {this.handleChangeView("ABOUT")}.bind(this)}>ABOUT</h4>
 				<div className="about-section">
 					<img onClick={function() {this.handleChangeView("ABOUT")}.bind(this)} className="rose-portrait" src="./build/images/about-mugshot.png" />
-					<p>I'm simply amazing. I'm unmatched in my field and will one day save the world from itself. Read more about me <a className="link" onClick={function() {this.handleChangeView("ABOUT")}.bind(this)}>here</a> on a page all about me. Me.</p>
+					<p>About section under-construction. Read more about me <a className="link" onClick={function() {this.handleChangeView("ABOUT")}.bind(this)}>here</a> on the About page</p>
 				</div>
 			</div>
 		)
