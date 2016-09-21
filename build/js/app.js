@@ -19181,10 +19181,10 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 					), 
 					React.createElement("div", {className: "col-xs-4 quotes"}, 
 						React.createElement("h4", {className: "about"}, "Quotes"), 
-						React.createElement("blockquote", null, "Rose is good, Rose is great"), 
-						React.createElement("h4", null, "Someone"), 
-						React.createElement("blockquote", null, "One day she came in with some krispy kremes, I suppose that was pretty decent of her. Otherwise I have no idea who you're asking about."), 
-						React.createElement("h4", null, "Someone"), 
+						React.createElement("blockquote", null, "Quote pending"), 
+						React.createElement("h4", null, "Quotee pending"), 
+						React.createElement("blockquote", null, "Quote pending"), 
+						React.createElement("h4", null, "Quotee pending"), 
 						React.createElement("img", {src: "./build/images/media-award-image.png", alt: "Award pic goes here"})
 					), 
 					React.createElement("div", {className: "col-xs-4 about-text"}, 
@@ -19431,7 +19431,7 @@ var About = React.createClass({displayName: "About",
 				React.createElement("h4", {className: "about homepage-header", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "ABOUT"), 
 				React.createElement("div", {className: "about-section"}, 
 					React.createElement("img", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this), className: "rose-portrait", src: "./build/images/about-mugshot.png"}), 
-					React.createElement("p", null, "I'm simply amazing. I'm unmatched in my field and will one day save the world from itself. Read more about me ", React.createElement("a", {className: "link", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "here"), " on a page all about me. Me.")
+					React.createElement("p", null, "About section under-construction. Read more about me ", React.createElement("a", {className: "link", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "here"), " on the About page")
 				)
 			)
 		)
@@ -19459,7 +19459,7 @@ var Coffeegram = React.createClass({displayName: "Coffeegram",
 
 	renderCoffeegramSlick: function () {
 		return Model.getCoffeegramArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-coffeegram-element", href: element['link'] ? element['link'] : 'https://vimeo.com/177925265', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+			return React.createElement("a", {key: index, className: "slider-coffeegram-element", href: element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
 		});
 	},
 
@@ -19761,10 +19761,6 @@ var Model = require('../../../../build/js/model.js');
 
 var Videos = React.createClass({displayName: "Videos",
 
-	componentDidMount: function () {
-		this.initSlicks();
-	},
-
 	renderVideosNavSlick: function () {
 		return Model.getVideosArray().map (function (element, index) {
 			return React.createElement("div", {key: index, className: "slider-videos-nav-element"});
@@ -19773,14 +19769,14 @@ var Videos = React.createClass({displayName: "Videos",
 
 	renderVideosSlick: function () {
 		return Model.getVideosArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-videos-element", href: element['link'] ? element['link'] : 'https://vimeo.com/177925265', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+			return React.createElement("a", {key: index, className: "slider-videos-element", href: element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
 		});
 	},
 
 	render: function () {
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://vimeo.com/177925265", target: "_blank"}, React.createElement("h4", null, "VIDEOS")), 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "VIDEOS")), 
 				React.createElement("div", {className: "slider-videos-nav"}, 
 					this.renderVideosNavSlick()
 				), 
@@ -19789,26 +19785,6 @@ var Videos = React.createClass({displayName: "Videos",
 				)
 			)	
 		)
-	},
-
-	initSlicks: function () {
-		$('.slider-videos').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: false,
-		  speed: 200,
-		  asNavFor: '.slider-videos-nav'
-		});
-
-		$('.slider-videos-nav').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: true,
-		  speed: 200,
-		  asNavFor: '.slider-videos'
-		});
 	}
 
 });
@@ -20161,9 +20137,9 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 					React.createElement("br", null), 
 					React.createElement("h1", {id: "name", onClick: this.handleNameAnimation}, "/ROSE DYKINS/"), 
 					React.createElement("br", null), 
-					React.createElement("h1", {className: "bigger-text"}, "TRAVEL"), 
+					React.createElement("h1", {className: "bigger-text"}, "UNDER"), 
 					React.createElement("br", null), 
-					React.createElement("h1", {className: "bigger-text"}, "JOURNALIST"), 
+					React.createElement("h1", {className: "bigger-text"}, "CONSTRUCTION"), 
 					React.createElement("br", null), 
 					React.createElement("h1", {onClick: function() {this.handleChangeView("HOME")}.bind(this), className: this.props.currentView==="HOME" ? "selected" : null}, this.props.currentView==="HOME" ? "/ " : null, "HOME", this.props.currentView==="HOME" ? " /" : null), 
 					React.createElement("br", null), 
