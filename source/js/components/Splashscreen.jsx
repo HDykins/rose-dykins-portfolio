@@ -68,9 +68,9 @@ var Splashscreen = React.createClass({
 					<br />
 					<h1 id="name" onClick={this.handleNameAnimation}>/ROSE DYKINS/</h1>
 					<br />
-					<h1 className="bigger-text">TRAVEL</h1>
+					<h1 className="bigger-text">UNDER</h1>
 					<br />
-					<h1 className="bigger-text">JOURNALIST</h1>
+					<h1 className="bigger-text">CONSTRUCTION</h1>
 					<br />
 					<h1 onClick={function() {this.handleChangeView("HOME")}.bind(this)} className={this.props.currentView==="HOME" ? "selected" : null}>{this.props.currentView==="HOME" ? "/ " : null}HOME{this.props.currentView==="HOME" ? " /" : null}</h1>
 					<br />

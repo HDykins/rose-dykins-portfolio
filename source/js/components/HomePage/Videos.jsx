@@ -18,7 +18,7 @@ var Videos = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<a href="https://vimeo.com/177925265" target="_blank"><h4>VIDEOS</h4></a>
+				<a href="https://twitter.com/rose_dykins/media" target="_blank"><h4>VIDEOS</h4></a>
 				<div className="slider-videos-nav">
 					{this.renderVideosNavSlick()}
 				</div>
