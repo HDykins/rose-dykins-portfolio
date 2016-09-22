@@ -1,7 +1,7 @@
 var React = require('react');
 var RecentArticles = require('./RecentArticles.jsx');
 var Coffeegram = require('./Coffeegram.jsx');
-var Videos = require('./Videos.jsx');
+var TravelPics = require('./TravelPics.jsx');
 var Twitter = require('./Twitter.jsx');
 var LatestPosts = require('./LatestPosts.jsx');
 var About = require('./About.jsx');
@@ -20,7 +20,7 @@ var HomePage = React.createClass({
 						<Coffeegram />
 					</div>
 					<div className="col-xs-4">
-						<Videos />
+						<TravelPics />
 					</div>
 					<div className="col-xs-4">
 						<Twitter />

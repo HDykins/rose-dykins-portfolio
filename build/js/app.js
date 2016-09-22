@@ -19,20 +19,20 @@ var Model = (function initModel() {
 
 	var coffeegramArray = [
 		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"}
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"}
 	];
 
-	var videosArray = [
-		{'image-src': "./build/images/videos-image-1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"}
+	var previewTravelPicsArray = [
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"}
 	];
 
 	var articlesArray = [
@@ -135,8 +135,8 @@ var Model = (function initModel() {
 		return coffeegramArray;
 	}
 
-	function getVideosArray() {
-		return videosArray;
+	function getPreviewTravelPicsArray() {
+		return previewTravelPicsArray;
 	}
 
 	function getArticlesArray() {
@@ -151,7 +151,7 @@ var Model = (function initModel() {
 	return {
 		getSplashImagesArray: getSplashImagesArray,
 		getCoffeegramArray: getCoffeegramArray,
-		getVideosArray: getVideosArray,
+		getPreviewTravelPicsArray: getPreviewTravelPicsArray,
 		getArticlesArray: getArticlesArray,
 		getBlogpostsArray: getBlogpostsArray
 	};
@@ -19505,7 +19505,7 @@ module.exports = Coffeegram;
 var React = require('react');
 var RecentArticles = require('./RecentArticles.jsx');
 var Coffeegram = require('./Coffeegram.jsx');
-var Videos = require('./Videos.jsx');
+var TravelPics = require('./TravelPics.jsx');
 var Twitter = require('./Twitter.jsx');
 var LatestPosts = require('./LatestPosts.jsx');
 var About = require('./About.jsx');
@@ -19524,7 +19524,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 						React.createElement(Coffeegram, null)
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
-						React.createElement(Videos, null)
+						React.createElement(TravelPics, null)
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement(Twitter, null)
@@ -19544,7 +19544,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 
 module.exports = HomePage;
 
-},{"./About.jsx":166,"./Coffeegram.jsx":167,"./LatestPosts.jsx":169,"./RecentArticles.jsx":170,"./Twitter.jsx":171,"./Videos.jsx":172,"react":160}],169:[function(require,module,exports){
+},{"./About.jsx":166,"./Coffeegram.jsx":167,"./LatestPosts.jsx":169,"./RecentArticles.jsx":170,"./TravelPics.jsx":171,"./Twitter.jsx":172,"react":160}],169:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../../build/js/model.js');
 
@@ -19737,6 +19737,66 @@ module.exports = RecentArticles;
 
 },{"../../../../build/js/model.js":2,"react":160}],171:[function(require,module,exports){
 var React = require('react');
+var Model = require('../../../../build/js/model.js');
+
+var TravelPics = React.createClass({displayName: "TravelPics",
+
+	componentDidMount: function () {
+		this.initSlicks();
+	},
+
+	renderTravelPicsNavSlick: function () {
+		return Model.getPreviewTravelPicsArray().map (function (element, index) {
+			return React.createElement("div", {key: index, className: "slider-preview-travel-pics-nav-element"});
+		});
+	},
+
+	renderTravelPicsSlick: function () {
+		return Model.getPreviewTravelPicsArray().map (function (element, index) {
+			return React.createElement("a", {key: index, className: "slider-preview-travel-pics-element", href: element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+		});
+	},
+
+	render: function () {
+		return (
+			React.createElement("div", null, 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "GALLERY")), 
+				React.createElement("div", {className: "slider-preview-travel-pics-nav"}, 
+					this.renderTravelPicsNavSlick()
+				), 
+				React.createElement("div", {className: "slider-preview-travel-pics"}, 
+				  this.renderTravelPicsSlick()
+				)
+			)	
+		)
+	},
+
+	initSlicks: function () {
+		$('.slider-preview-travel-pics').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: false,
+		  speed: 200,
+		  asNavFor: '.slider-preview-travel-pics-nav'
+		});
+
+		$('.slider-preview-travel-pics-nav').slick({
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+		  dots: true,
+		  speed: 200,
+		  asNavFor: '.slider-preview-travel-pics'
+		});
+	}
+
+});
+
+module.exports = TravelPics;
+
+},{"../../../../build/js/model.js":2,"react":160}],172:[function(require,module,exports){
+var React = require('react');
 
 var Twitter = React.createClass({displayName: "Twitter",
 
@@ -19755,67 +19815,7 @@ var Twitter = React.createClass({displayName: "Twitter",
 
 module.exports = Twitter;
 
-},{"react":160}],172:[function(require,module,exports){
-var React = require('react');
-var Model = require('../../../../build/js/model.js');
-
-var Videos = React.createClass({displayName: "Videos",
-
-	componentDidMount: function () {
-		this.initSlicks();
-	},
-
-	renderVideosNavSlick: function () {
-		return Model.getVideosArray().map (function (element, index) {
-			return React.createElement("div", {key: index, className: "slider-videos-nav-element"});
-		});
-	},
-
-	renderVideosSlick: function () {
-		return Model.getVideosArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-videos-element", href: element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
-		});
-	},
-
-	render: function () {
-		return (
-			React.createElement("div", null, 
-				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "VIDEOS")), 
-				React.createElement("div", {className: "slider-videos-nav"}, 
-					this.renderVideosNavSlick()
-				), 
-				React.createElement("div", {className: "slider-videos"}, 
-				  this.renderVideosSlick()
-				)
-			)	
-		)
-	},
-
-	initSlicks: function () {
-		$('.slider-videos').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: false,
-		  speed: 200,
-		  asNavFor: '.slider-videos-nav'
-		});
-
-		$('.slider-videos-nav').slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  dots: true,
-		  speed: 200,
-		  asNavFor: '.slider-videos'
-		});
-	}
-
-});
-
-module.exports = Videos;
-
-},{"../../../../build/js/model.js":2,"react":160}],173:[function(require,module,exports){
+},{"react":160}],173:[function(require,module,exports){
 var React = require('react');
 var OnlineArticles = require('./OnlineArticles.jsx');
 var PrintArticles = require('./PrintArticles.jsx');
@@ -20161,9 +20161,9 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 					React.createElement("br", null), 
 					React.createElement("h1", {id: "name", onClick: this.handleNameAnimation}, "/ROSE DYKINS/"), 
 					React.createElement("br", null), 
-					React.createElement("h1", {className: "bigger-text"}, "UNDER"), 
+					React.createElement("h1", {className: "bigger-text"}, "TRAVEL"), 
 					React.createElement("br", null), 
-					React.createElement("h1", {className: "bigger-text"}, "CONSTRUCTION"), 
+					React.createElement("h1", {className: "bigger-text"}, "JOURNALIST"), 
 					React.createElement("br", null), 
 					React.createElement("h1", {onClick: function() {this.handleChangeView("HOME")}.bind(this), className: this.props.currentView==="HOME" ? "selected" : null}, this.props.currentView==="HOME" ? "/ " : null, "HOME", this.props.currentView==="HOME" ? " /" : null), 
 					React.createElement("br", null), 

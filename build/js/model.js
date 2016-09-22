@@ -11,20 +11,20 @@ var Model = (function initModel() {
 
 	var coffeegramArray = [
 		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"}
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"},
+		{'image-src': "./build/images/coffeegram-image-1.jpg"}
 	];
 
-	var videosArray = [
-		{'image-src': "./build/images/videos-image-1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"},
-		{'image-src': "./build/images/Hiltops-Hideaways1.jpg"}
+	var previewTravelPicsArray = [
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-1.jpg"}
 	];
 
 	var articlesArray = [
@@ -127,8 +127,8 @@ var Model = (function initModel() {
 		return coffeegramArray;
 	}
 
-	function getVideosArray() {
-		return videosArray;
+	function getPreviewTravelPicsArray() {
+		return previewTravelPicsArray;
 	}
 
 	function getArticlesArray() {
@@ -143,7 +143,7 @@ var Model = (function initModel() {
 	return {
 		getSplashImagesArray: getSplashImagesArray,
 		getCoffeegramArray: getCoffeegramArray,
-		getVideosArray: getVideosArray,
+		getPreviewTravelPicsArray: getPreviewTravelPicsArray,
 		getArticlesArray: getArticlesArray,
 		getBlogpostsArray: getBlogpostsArray
 	};
