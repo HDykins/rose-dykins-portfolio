@@ -22,10 +22,11 @@ var TravelPics = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<a href="https://twitter.com/rose_dykins/media" target="_blank"><h4>GALLERY</h4></a>
+				<a href="https://twitter.com/rose_dykins/media" target="_blank"><h4>TRAVEL GALLERY</h4></a>
 				<div className="slider-preview-travel-pics-nav">
 					{this.renderTravelPicsNavSlick()}
 				</div>
+				<a><i className="fa fa-picture-o icon-overlay" aria-hidden="true"></i></a>
 				<div className="slider-preview-travel-pics">
 				  {this.renderTravelPicsSlick()}
 				</div>  
@@ -40,7 +41,10 @@ var TravelPics = React.createClass({
 		  arrows: false,
 		  dots: false,
 		  speed: 200,
-		  asNavFor: '.slider-preview-travel-pics-nav'
+		  asNavFor: '.slider-preview-travel-pics-nav',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200
 		});
 
 		$('.slider-preview-travel-pics-nav').slick({
@@ -49,7 +53,10 @@ var TravelPics = React.createClass({
 		  arrows: false,
 		  dots: true,
 		  speed: 200,
-		  asNavFor: '.slider-preview-travel-pics'
+		  asNavFor: '.slider-preview-travel-pics',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200
 		});
 	}
 

@@ -46,6 +46,13 @@ i {
 a {
 	color: black;
 	text-decoration: none;
+	i {
+		color : white;
+		&:hover {
+			color: purple;
+			cursor: pointer;
+		}
+	}
 }	
 
 a:hover {
@@ -95,6 +102,11 @@ h4.about, h4.twitter, h4.blogpost {
 	cursor: pointer;
 }
 
+.link-void {
+	cursor: default;
+	color: grey;
+}
+
 .footer {
 	padding-top: 10px;
 	border-top: solid 1px black;
@@ -142,6 +154,15 @@ h4.about, h4.twitter, h4.blogpost {
 		}
 	}
 }
+
+	.icon-overlay {
+		position: absolute;
+		font-size: 80px;
+		left: calc(50% - 40px);
+		z-index: 1;
+		top: calc(50% - 20px);
+		color: white;
+	}
 
 .cv {
 	text-align: center;
@@ -358,6 +379,7 @@ button.slick-next {
 	position: absolute;
 	top: 40px;
 	right: 0px;
+	z-index: -1;
 }
 
 .splash-image {
@@ -563,7 +585,7 @@ button.slick-next {
 	}
 }
 
-@media (max-width: 400px) and (min-width: 200px) {
+@media (max-width: 399px) and (min-width: 200px) {
 	h1 {
 		font-size: 24px;
 	}	

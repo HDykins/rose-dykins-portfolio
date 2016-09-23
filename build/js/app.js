@@ -19365,19 +19365,19 @@ var ContactPage = React.createClass({displayName: "ContactPage",
 				React.createElement("div", {className: "row"}, 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
-						React.createElement("span", {className: "fa large-icon fa-envelope-o"})
+						React.createElement("a", {href: "mailto:rosedykins@gmail.com"}, React.createElement("i", {className: "fa large-icon fa-envelope-o"}))
 						), 
 						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "ROSEDYKINS@GMAIL.COM"))
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
-						React.createElement("span", {className: "fa large-icon fa-phone"})
+						React.createElement("i", {className: "fa large-icon fa-phone"})
 						), 
 						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "0778 446 725 3390"))
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
-						React.createElement("span", {className: "fa large-icon fa-twitter"})
+						React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, React.createElement("i", {className: "fa large-icon fa-twitter"}))
 						), 
 						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "@ROSEDYKINSJOURNALIST"))
 					)
@@ -19402,8 +19402,8 @@ var Footer = React.createClass({displayName: "Footer",
 					React.createElement("p", null, "Contact: rosedykins@traveljourney.com / 077 897 345 7699")
 				), 
 				React.createElement("div", {className: "col-xs-4"}, 
-					React.createElement("p", null, "Web design: www.feedingcrows.co.uk"), 
-					React.createElement("p", null, "Created by: www.hdykins.co.uk")
+					React.createElement("p", null, "Web design: ", React.createElement("a", {href: "www.feedingcrows.co.uk", target: "_blank"}, "www.feedingcrows.co.uk")), 
+					React.createElement("p", null, "Created by: ", React.createElement("a", {href: "www.hdykins.co.uk", target: "_blank"}, "www.hdykins.co.uk"))
 				), 
 				React.createElement("div", {className: "col-xs-4"}, 
 					React.createElement("p", null, "© Rose Dykins 2016")
@@ -19470,6 +19470,7 @@ var Coffeegram = React.createClass({displayName: "Coffeegram",
 				React.createElement("div", {className: "slider-coffeegram-nav"}, 
 					this.renderCoffeegramNavSlick()
 				), 
+				React.createElement("a", {className: "icon-overlay", href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("i", {className: "fa fa-instagram", "aria-hidden": "true"})), 
 				React.createElement("div", {className: "slider-coffeegram"}, 
 				  this.renderCoffeegramSlick()
 				)
@@ -19484,7 +19485,10 @@ var Coffeegram = React.createClass({displayName: "Coffeegram",
 		  arrows: false,
 		  dots: false,
 		  speed: 200,
-		  asNavFor: '.slider-coffeegram-nav'
+		  asNavFor: '.slider-coffeegram-nav',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200
 		});
 
 		$('.slider-coffeegram-nav').slick({
@@ -19493,7 +19497,10 @@ var Coffeegram = React.createClass({displayName: "Coffeegram",
 		  arrows: false,
 		  dots: true,
 		  speed: 200,
-		  asNavFor: '.slider-coffeegram'
+		  asNavFor: '.slider-coffeegram',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200		  
 		});
 	}
 
@@ -19760,10 +19767,11 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 	render: function () {
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "GALLERY")), 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "TRAVEL GALLERY")), 
 				React.createElement("div", {className: "slider-preview-travel-pics-nav"}, 
 					this.renderTravelPicsNavSlick()
 				), 
+				React.createElement("a", null, React.createElement("i", {className: "fa fa-picture-o icon-overlay", "aria-hidden": "true"})), 
 				React.createElement("div", {className: "slider-preview-travel-pics"}, 
 				  this.renderTravelPicsSlick()
 				)
@@ -19778,7 +19786,10 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 		  arrows: false,
 		  dots: false,
 		  speed: 200,
-		  asNavFor: '.slider-preview-travel-pics-nav'
+		  asNavFor: '.slider-preview-travel-pics-nav',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200
 		});
 
 		$('.slider-preview-travel-pics-nav').slick({
@@ -19787,7 +19798,10 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 		  arrows: false,
 		  dots: true,
 		  speed: 200,
-		  asNavFor: '.slider-preview-travel-pics'
+		  asNavFor: '.slider-preview-travel-pics',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200
 		});
 	}
 
@@ -19805,6 +19819,7 @@ var Twitter = React.createClass({displayName: "Twitter",
 			React.createElement("div", null, 
 				React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, React.createElement("h4", {className: "twitter"}, "TWITTER")), 
 				React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, 
+					React.createElement("i", {className: "fa fa-twitter icon-overlay", href: "https://twitter.com/rose_dykins", target: "_blank", "aria-hidden": "true"}), 
 					React.createElement("img", {src: "./build/images/twitter-image.jpg"})
 				)	
 			)
@@ -20039,10 +20054,10 @@ var Navbar = React.createClass({displayName: "Navbar",
 	render: function () {
 		return (
 			React.createElement("nav", {id: "top", className: "navbar navbar-inverse"}, 
-				React.createElement("i", {className: "fa fa-2x fa-google-plus", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-twitter", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-tumblr", "aria-hidden": "true"}), 
-				React.createElement("i", {className: "fa fa-2x fa-facebook", "aria-hidden": "true"})
+				React.createElement("i", {className: "fa fa-2x fa-google-plus link-void", "aria-hidden": "true"}), 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor", target: "_blank"}, React.createElement("i", {className: "fa fa-2x fa-twitter", "aria-hidden": "true"})), 
+				React.createElement("i", {className: "fa fa-2x fa-tumblr link-void", "aria-hidden": "true"}), 
+				React.createElement("a", {href: "https://www.facebook.com/rose.dykins", target: "_blank"}, React.createElement("i", {className: "fa fa-2x fa-facebook", "aria-hidden": "true"}))
 			)
 		)
 	}

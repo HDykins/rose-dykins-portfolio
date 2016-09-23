@@ -26,6 +26,7 @@ var Coffeegram = React.createClass({
 				<div className="slider-coffeegram-nav">
 					{this.renderCoffeegramNavSlick()}
 				</div>
+				<a className="icon-overlay" href="https://twitter.com/rose_dykins/media" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
 				<div className="slider-coffeegram">
 				  {this.renderCoffeegramSlick()}
 				</div>  
@@ -40,7 +41,10 @@ var Coffeegram = React.createClass({
 		  arrows: false,
 		  dots: false,
 		  speed: 200,
-		  asNavFor: '.slider-coffeegram-nav'
+		  asNavFor: '.slider-coffeegram-nav',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200
 		});
 
 		$('.slider-coffeegram-nav').slick({
@@ -49,7 +53,10 @@ var Coffeegram = React.createClass({
 		  arrows: false,
 		  dots: true,
 		  speed: 200,
-		  asNavFor: '.slider-coffeegram'
+		  asNavFor: '.slider-coffeegram',
+		  autoplay: true,
+		  autoplaySpeed: 10000,
+		  speed: 200		  
 		});
 	}
 
