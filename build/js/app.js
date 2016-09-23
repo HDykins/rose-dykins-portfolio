@@ -19402,8 +19402,8 @@ var Footer = React.createClass({displayName: "Footer",
 					React.createElement("p", null, "Contact: rosedykins@traveljourney.com / 077 897 345 7699")
 				), 
 				React.createElement("div", {className: "col-xs-4"}, 
-					React.createElement("p", null, "Web design: ", React.createElement("a", {href: "www.feedingcrows.co.uk", target: "_blank"}, "www.feedingcrows.co.uk")), 
-					React.createElement("p", null, "Created by: ", React.createElement("a", {href: "www.hdykins.co.uk", target: "_blank"}, "www.hdykins.co.uk"))
+					React.createElement("p", null, "Web design: ", React.createElement("a", {href: "http://www.feedingcrows.co.uk", target: "_blank"}, "www.feedingcrows.co.uk")), 
+					React.createElement("p", null, "Created by: ", React.createElement("a", {href: "http://www.hdykins.co.uk", target: "_blank"}, "www.hdykins.co.uk"))
 				), 
 				React.createElement("div", {className: "col-xs-4"}, 
 					React.createElement("p", null, "© Rose Dykins 2016")
