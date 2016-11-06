@@ -6,7 +6,7 @@ var Footer = React.createClass({
 		return (
 			<div className="row footer">
 				<div className="col-xs-4">
-					<p>Contact: rosedykins@traveljourney.com / 077 897 345 7699</p>
+					<p>Contact: rose.dykins@hotmail.co.uk / 0790 674 8008</p>
 				</div>
 				<div className="col-xs-4">
 					<p>Web design: <a href="http://www.feedingcrows.co.uk" target="_blank">www.feedingcrows.co.uk</a></p>

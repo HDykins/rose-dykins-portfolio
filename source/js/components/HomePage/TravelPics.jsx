@@ -22,7 +22,7 @@ var TravelPics = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<a href="https://twitter.com/rose_dykins/media" target="_blank"><h4>TRAVEL GALLERY</h4></a>
+				<a href="https://twitter.com/rose_dykins/media" target="_blank"><h4>WHERE I'VE BEEN</h4></a>
 				<div className="slider-preview-travel-pics-nav">
 					{this.renderTravelPicsNavSlick()}
 				</div>

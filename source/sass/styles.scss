@@ -1,18 +1,18 @@
 $num-splash-images: 6;
-$num-coffeegram-images: 6;
+$num-instagram-images: 6;
 $num-preview-travel-images: 6;
-$num-online-articles-images: 4;
-$num-print-articles-images: 2;
+$num-online-articles-images: 13;
+$num-print-articles-images: 16;
 $num-recent-articles-images: $num-online-articles-images + $num-print-articles-images;
 $num-latest-posts-images: 6;
 
-$num-online-articles-dots: 2;
-$num-print-articles-dots: 1;
-$num-recent-articles-dots: 2;
+$num-online-articles-dots: 5;
+$num-print-articles-dots: 6;
+$num-recent-articles-dots: 10;
 $num-latest-posts-dots: 3;
 
 $splash-image-dots-width: (100%/$num-splash-images);
-$coffeegram-images-dots-width: (100%/$num-coffeegram-images);
+$instagram-images-dots-width: (100%/$num-instagram-images);
 $preview-travel-images-dots-width: (100%/$num-preview-travel-images);
 $recent-articles-images-dots-width: (100%/$num-recent-articles-dots);
 $online-articles-images-dots-width: (100%/$num-online-articles-dots);
@@ -193,7 +193,7 @@ h4.about, h4.twitter, h4.blogpost {
 	cursor: pointer;
 }
 
-.slider-coffeegram-nav, .slider-preview-travel-pics-nav, .slider-recent-articles-nav, .slider-latest-posts-nav, .slider-online-articles-nav, .slider-print-articles-nav {
+.slider-instagram-nav, .slider-preview-travel-pics-nav, .slider-recent-articles-nav, .slider-latest-posts-nav, .slider-online-articles-nav, .slider-print-articles-nav {
 	&.slick-dotted {
 		height: 5px;
 	}
@@ -239,12 +239,12 @@ h4.about, h4.twitter, h4.blogpost {
 	}
 }
 
-.slider-coffeegram-nav {
+.slider-instagram-nav {
 	&.slick-dotted {
 		margin-bottom: 5px;
 	}
 	.slick-dots li {
-		width: $coffeegram-images-dots-width;
+		width: $instagram-images-dots-width;
 	}
 }
 
@@ -400,7 +400,7 @@ button.slick-next {
 	transform: scale(1.2);
 }
 
-.slider-coffeegram-nav {
+.slider-instagram-nav {
 	// @extend .slider-recent-articles-nav;
 }
 
@@ -578,7 +578,7 @@ button.slick-next {
 }
 
 @-moz-document url-prefix() {
- .slider-coffeegram-nav, .slider-preview-travel-pics-nav, .slider-recent-articles-nav, .slider-latest-posts-nav, .slider-online-articles-nav, .slider-print-articles-nav {
+ .slider-instagram-nav, .slider-preview-travel-pics-nav, .slider-recent-articles-nav, .slider-latest-posts-nav, .slider-online-articles-nav, .slider-print-articles-nav {
 		.slick-dots {
 			bottom: -10px;
 		}

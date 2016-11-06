@@ -17,13 +17,13 @@ var Model = (function initModel() {
 		{'image-src': "./build/images/splash-image-6.jpg"}
 	];
 
-	var coffeegramArray = [
-		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/coffeegram-image-1.jpg"},
-		{'image-src': "./build/images/coffeegram-image-1.jpg"}
+	var instagramArray = [
+		{'image-src': "./build/images/instagram-image-1.jpg"},
+		{'image-src': "./build/images/instagram-image-1.jpg"},
+		{'image-src': "./build/images/instagram-image-1.jpg"},
+		{'image-src': "./build/images/instagram-image-1.jpg"},
+		{'image-src': "./build/images/instagram-image-1.jpg"},
+		{'image-src': "./build/images/instagram-image-1.jpg"}
 	];
 
 	var previewTravelPicsArray = [
@@ -36,12 +36,35 @@ var Model = (function initModel() {
 	];
 
 	var articlesArray = [
-		{pdf: true, link: "http://docdro.id/YcwPFQA", 'image-src': "./build/images/articles-image-1.jpg", description: "esrdh eruherf rghveer vegfhev rvuhr vervurv vrvuhrv rvhvv chh ru vhurvhrvuve", title: "The best place to go at the moment really", date: "Date is this yes 606060"},
-		{pdf: true, link: "www.docdroid.net/YcwPFQA/bulkhead-assembly-1.pdf", 'image-src': "./build/images/articles-image-2.jpg", description: "descriptionExample", title: "titleExample", date: "22/22/22"},
-		{pdf: true, link: "www.docdroid.net/YcwPFQA/bulkhead-assembly-1.pdf.html", 'image-src': "./build/images/articles-image-3.jpg", description: "descriptionExample", title: "titleExample", date: "33/33/33"},
-		{pdf: true, link: "https://dl.dropboxusercontent.com/u/46887483/pdfs/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "descriptionExample", title: "hhhfuhfu feiuhfew ewfuew fehuweuwfhf fwhufi uff nfweuf", date: "44/44/44"},
-		{pdf: false, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "descriptionExample", title: "titleExample", date: "55/55/55"},
-		{pdf: false, link: "https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf", 'image-src': "./build/images/Hiltops-Hideaways1.jpg", description: "descriptionExample", title: "titleExample", date: "66/66/66"}
+		{pdf: false, link: "https://www.lonelyplanet.com/indonesia/nusa-tenggara/gili-islands/travel-tips-and-articles/which-gili-island-is-for-you", 'image-src': "./build/images/gillifish.jpg", description: "Fringed by white-sand beaches and coconut palms, all three Gilis, located off the northwest coast of Lombok, are a vision of paradise, but each have a distinct personality. Find the one that matches yours.", title: "Which Gili island is for you?", date: "05/10/14"},
+		{pdf: true, link: "https://www.docdroid.net/vBftLAJ/metropokemon.pdf.html", 'image-src': "./build/images/pokemon-go.jpg", description: "It’s day two of our holiday in Dubrovnik but, rather than looking up the ferry schedule to the island of Lokrum or finding the best place to try local speciality ‘dirty macaroni’ (a mix of beef, macaroni and cheese), he’s searching for a Charmander, a Pokémon species.", title: "Holidaying with a monster hunter", date: "01/08/16"},
+		{pdf: false, link: "http://www.telegraph.co.uk/travel/gap-year-travel/Gap-years-Voluntourism-who-are-you-helping", 'image-src': "./build/images/voluntourism-children.jpg", description: "Volunteering placements abroad are a popular choice for gap years, but projects need to be chosen wisely or there is a danger participants may end up doing more harm than good.", title: "Gap years: Voluntourism - who are you helping?", date: "14/08/14"},
+		{pdf: true, link: "https://www.docdroid.net/ckCu5yM/bintan.pdf.html", 'image-src': "./build/images/bintan-bliss.png", description: "The lesser-known Indonesian island of Bintan has all the key ingredients for a high-end, hedonistic honeymoon", title: "Bintan bliss", date: "27/01/16"},
+		{pdf: true, link: "https://www.docdroid.net/u70RHgk/sollo-zp.pdf.html", 'image-src': "./build/images/sollo.png", description: "Brazilian-Spanish chef Diego Gallegos is proving that Michelin-starred food can be sustainable. Rose Dykins learns about fish farming, sturgeon blood and affordable caviar", title: "Going Sollo", date: "19/04/15"},
+		{pdf: false, link: "http://globetrendermagazine.com/2016/11/06/mama-shelter-opens-rio/", 'image-src': "./build/images/mama-shelter.jpg", description: "Rose Dykins reports on the opening of hipster boutique hotel Mama Shelter in Rio de Janeiro’s creative quarter. It is the sixth property from the trendy French brand, which has partnered with renowned designer Philippe Starck on earlier projects.", title: "Mama Shelter opens in Rio - with space for artists to collaborate", date: "06/11/16"},
+		{pdf: true, link: "https://www.docdroid.net/awmMblQ/142-143-maldives-1.pdf.html", 'image-src': "./build/images/maldives-jetty.jpg", description: "Whether you’re looking to dive, dine or detox, the Maldives has you covered. Rose Dykins finds her own slice of paradise", title: "The Maldives - Heaven on earth", date: "16/10/15"},
+		{pdf: true, link: "https://www.docdroid.net/5j8n4Jg/amsterdam.pdf.html", 'image-src': "./build/images/amsterdam-bridge.jpg", description: "Is innovation something that can be taught? THNK Academy believes it can be fostered and harnessed by those with curious mindsets, purpose and passion. Although it is privately funded, THNK was launched as part of a government programme to make the Dutch capital’s creative sector more cutting-edge. ", title: "Amsterdam is placing beta thinking at the heart of its development", date: "13/05/15"},
+		{pdf: false, link: "http://www.countrybycountry.com/2014/07/bali-cycling/", 'image-src': "./build/images/bali-cycling.jpg", description: "Rose Dykins explores Ubud on two wheels", title: "Bali: Cycling around rice paddies", date: "03/07/14"},
+		{pdf: false, link: "http://www.abouttimemagazine.co.uk/travel/about-time-you-went-skiing-in-south-tyrol/", 'image-src': "./build/images/skiing-italy.jpg", description: "Hoping to get a ski trip in this year without the gap yaaaaa vibe? Nestled in the Italian dolomites, the beautiful, interesting and laid-back resorts of Val Senales, Schnalstal and Sulden should be on your list. ", title: "Top 10 reasons to go skiing in South Tyrol, Italy", date: "20/01/16"},
+		{pdf: false, link: "http://www.norwegian.com/magazine/features/2016/03/can-bins-talk", 'image-src': "./build/images/bin-man.jpg", description: "The ones invented by Finnish entrepreneur Fredrik Kekäläinen can. His company Enevo is transforming how rubbish is collected", title: "Can bins talk?", date: "13/03/16"},
+		{pdf: false, link: "https://www.lonelyplanet.com/travel-tips-and-articles/exploring-kota-jakartas-old-town", 'image-src': "./build/images/jakarta-old-town.jpg", description: "While Indonesia’s capital is powering ahead as a global business hub, Kota, its old town, is arguably still its top traveller highlight.", title: "Exploring Kota, Jakarta's old town", date: "20/08/14"},
+		{pdf: false, link: "http://www.abouttimemagazine.co.uk/travel/48-hours-in-brighton-and-hove", 'image-src': "./build/images/brighton-48hrs.jpg", description: "“It’s always sunny in Brighton,” my dad likes to say. It’s obviously not – but what I think he’s getting at, is the feeling many people experience when their train pulls in to Brighton Station, with hills of colourful terraced houses either side of them and the shrill seagull calls echoing in the air.", title: "Perfect weekend: 48 hours in Brighton & Hove", date: "23/05/16"},
+		{pdf: false, link: "http://www.telegraph.co.uk/travel/destinations/europe/greece/halkidiki/hotels/sani-beach-hotel", 'image-src': "./build/images/sani-beach-hotel-greece.jpg", description: "A microcosm of Mediterranean luxury, Sani Resort comprises four hotels with child-friendly facilities, and a dizzying amount of restaurants.", title: "Sani beach hotel review", date: "14/06/15"},
+		{pdf: false, link: "http://www.abouttimemagazine.co.uk/travel/the-ultimate-foodie-guide-to-singapore", 'image-src': "./build/images/singapore-food-guide.jpg", description: "If you’re only in the city for a short time, here’s a suggested itinerary that your tastebuds will thank you for following…", title: "The ultimate foodie guide: Singapore", date: "29/09/16"},
+		{pdf: true, link: "https://www.docdroid.net/Dx8gdP5/jakarta.pdf.html", 'image-src': "./build/images/jakarta-traffic.png", description: "Jakarta’s chaotic traffic is symptomatic of a city whose infrastructure currently cannot cope with the demands of the many who want to feed off its enormous potential. Fortunately, change is on its way", title: "Out of the slow lane", date: "08/09/14"},
+		{pdf: true, link: "https://www.docdroid.net/u8nDlP9/mauritius.pdf.html", 'image-src': "./build/images/mauritius.png", description: "Decided to take the plunge and elope to Mauritius? Rose Dykins explores settings for intimate weddings and unforgettable honeymoons at opposite ends of the island", title: "Mauritius - North and South", date: "18/07/15"},
+		{pdf: false, link: "http://globetrendermagazine.com/2015/11/27/eye-in-the-sky-british-airways-to-launch-worlds-first-vertical-cable-car/", 'image-src': "./build/images/BA-cable-car.jpg", description: "Brighton resident, Rose Dykins, considers how British Airways’ sponsorship of Brighton’s BAi360 may benefit the attraction", title: "Eye in the sky: British airways to launch world's first vertical cable car", date: "27/11/15"},
+		{pdf: false, link: "https://www.lonelyplanet.com/malaysia/kuala-lumpur/travel-tips-and-articles/kuala-lumpur-for-free-exploring-malaysias-capital-on-a-tight-budget", 'image-src': "./build/images/kuala-lumpur-cheap.jpg", description: "You might get more roti for your ringgit in Kuala Lumpur than in many other big Asian capitals, but who doesn’t love a freebie?", title: "Kuala Lumpur for free: exploring Malaysia's capital on a tight budget", date: "15/10/15"},
+		{pdf: false, link: "http://globetrendermagazine.com/2015/10/07/digital-nomads-the-future-of-working-is-travelling", 'image-src': "./build/images/digital-nomads.jpg", description: "These days, many office-based employees require little more than a laptop with the right software and an internet connection to get their job done. Thanks to technology, there are now an estimated 53 million freelancers working across the UK as we speak – probably in their pyjamas.", title: "Digital Nomads: The future of working is... travelling", date: "07/10/15"},
+		{pdf: true, link: "https://www.docdroid.net/EWm7ZuB/084-weekend-istanbul.pdf.html", 'image-src': "./build/images/instanbul-shadow-towers.jpg", description: "Successive historical influences make the largest city in Turkey a fascinating destination. Situated where east meets west, Istanbul’s alluring architecture and air of mysticism make it unlike any other city.", title: "Weekend in Istanbul", date: "23/11/13"},
+		{pdf: true, link: "https://www.docdroid.net/xLkEZb8/077-escape-santorini.pdf.html", 'image-src': "./build/images/santorini.jpg", description: "The curious landscape and glorious skies of the volcanic Greek island is mesmerising", title: "Under the setting sun", date: "15/09/13"},
+		{pdf: true, link: "https://www.docdroid.net/mDSqkKr/031-hostels.pdf.html", 'image-src': "./build/images/hostel-furniture.png", description: "Is the new breed of upmarket hostels a viable option for budget business travellers?  People are increasingly turning to hostels for business stays – but not the kind of hostels you will remember.", title: "Bunking down", date: "10/03/15"},
+		{pdf: true, link: "https://www.docdroid.net/68vhan3/028-luggage.pdf.html", 'image-src': "./build/images/luggage.jpg", description: "What is the aviation industry doing to stop luggage getting lost in the system?", title: "Handle with care", date: "04/05/14"},
+		{pdf: true, link: "https://www.docdroid.net/CtlwV8s/031-security.pdf.html", 'image-src': "./build/images/security-swat.jpg", description: "As growth in emerging markets takes travellers to less developed places, Rose Dykins asks what assistance is available to help you stay safe", title: "Risky business", date: "26/06/12"},
+		{pdf: true, link: "https://www.docdroid.net/UPe8176/034-ancillary-charges.pdf.html", 'image-src': "./build/images/ancillary.png", description: "Rose Dykins investigates how airline ancillary fees have changed the face of European aviation – and are no longer the reserve of low-cost carriers", title: "Ancillary charges - Strings attached", date: "29/07/13"},
+		{pdf: true, link: "https://www.docdroid.net/swCOXzn/077-escape-koh-samui.pdf.html", 'image-src': "./build/images/koh-samui.png", description: "From coconut palms to plunge pools, Koh Samui is the perfect place to be marooned, finds Rose Dykins", title: "Ocean view", date: "14/02/14"},
+		{pdf: true, link: "https://www.docdroid.net/ho8wNVf/biz-prague-2-1.pdf.html", 'image-src': "./build/images/biz-prague.jpg", description: "The Czech capital is working hard to boost foreign investment and show the world that it is not just a pretty face.", title: "Tech Republic", date: "03/06/14"},
+		{pdf: true, link: "https://www.docdroid.net/TbNIY2i/in-flight-dining.pdf.html", 'image-src': "./build/images/in-flight-dining.png", description: "In the battle of the skies, airlines are using their in-flight food to stand out from the competition. Rose Dykins reports on what’s being served up.", title: "What's cooking?", date: "13/05/15"}
 	];
 
 	var blogpostsArray = [
@@ -131,8 +154,8 @@ var Model = (function initModel() {
 		return splashImagesArray;
 	}
 
-	function getCoffeegramArray() {
-		return coffeegramArray;
+	function getInstagramArray() {
+		return instagramArray;
 	}
 
 	function getPreviewTravelPicsArray() {
@@ -150,7 +173,7 @@ var Model = (function initModel() {
 
 	return {
 		getSplashImagesArray: getSplashImagesArray,
-		getCoffeegramArray: getCoffeegramArray,
+		getInstagramArray: getInstagramArray,
 		getPreviewTravelPicsArray: getPreviewTravelPicsArray,
 		getArticlesArray: getArticlesArray,
 		getBlogpostsArray: getBlogpostsArray
@@ -19176,24 +19199,24 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 						React.createElement("h4", {className: "about"}, "My CV"), 
 						React.createElement("span", {className: "fa large-icon fa-file-text-o"}), 
 						React.createElement("p", {className: "cv-text"}, "Download my CV as a pdf"), 
-						React.createElement("a", {href: "https://rose_dykins_CV.com", target: "_blank", className: "fa large-icon fa-arrow-circle-o-down"}
+						React.createElement("a", {href: "./build/RoseDykinsCV2016.pdf", target: "_blank", className: "fa large-icon fa-arrow-circle-o-down"}
 						)
 					), 
 					React.createElement("div", {className: "col-xs-4 quotes"}, 
-						React.createElement("h4", {className: "about"}, "Quotes"), 
-						React.createElement("blockquote", null, "Quote pending"), 
-						React.createElement("h4", null, "Quotee pending"), 
-						React.createElement("blockquote", null, "Quote pending"), 
-						React.createElement("h4", null, "Quotee pending"), 
+
 						React.createElement("img", {src: "./build/images/media-award-image.png", alt: "Award pic goes here"})
 					), 
 					React.createElement("div", {className: "col-xs-4 about-text"}, 
 						React.createElement("h4", {className: "about"}, "About"), 
-						React.createElement("p", null, React.createElement("strong", null, "Lorem ipsum lorem ipsum lorem ipsum,"), " lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
-						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
-						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
-						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), 
-						React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum")
+						React.createElement("p", null, "Hello!"), 
+						React.createElement("p", null, React.createElement("strong", null, "My name is Rose Dykins and I’m a freelance travel journalist and writer."), " I’m a Londoner originally, but my home for the past few years has been the incredible city of Brighton (well, Hove, actually)."), 
+						React.createElement("p", null, "I worked as Business Traveller’s staff writer for more than three years, before beginning a freelance career in 2014. I stuffed my backpack full to capacity and travelled around Southeast Asia, successfully pitching ideas to publications such as The Telegraph and Lonely Planet as I went."), 
+						React.createElement("p", null, "I now work full-time as a freelance writer and journalist. Business travel is my background – and my geekiness for aviation and industry news is still going strong – but I’ve since branched out to cover gap year travel, overseas weddings and honeymoons, gourmet travel, luxury travel and adventure travel."), 
+						React.createElement("p", null, "I’m the travel editor of Platinum Business magazine – a publication for business leaders in the southeast – and am always seeking new destinations to cover for them."), 
+						React.createElement("p", null, "I also work regularly for Connections Events – an experience-based networking events company, and part of the Travel Weekly Group – where I conduct interviews to camera, compile their digital magazines and create content for Travel Weekly and Aspire."), 
+						React.createElement("p", null, "Copywriting and editing for travel management companies is also something I do regularly, as well as researching and writing industry reports for travel heavyweights such as ", React.createElement("a", {href: "http://www.amadeus.com/documents/future-traveller-tribes-2030/luxury-travel/shaping-the-future-of-luxury-travel-report.pdf", target: "_blank"}, "Amadeus"), "."), 
+						React.createElement("p", null, "Recently, I also became Co-Chapter Leader of ", React.createElement("a", {href: "https://travelmassive.com/chapters/brighton", target: "_blank"}, "Brighton Travel Massive"), ", a networking group for travel folk based in my fair city by the sea, which is great fun."), 
+						React.createElement("p", null, "If you’re interested in working with me in some way, please don’t hesitate to get in touch, I’d love to hear from you.")
 					)
 				)
 			)
@@ -19201,6 +19224,12 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 	},
 
 });
+
+						// <h4 className="about">Quotes</h4>
+						// <blockquote>Quote pending</blockquote>
+						// <h4>Quotee pending</h4>
+						// <blockquote>Quote pending</blockquote>
+						// <h4>Quotee pending</h4>
 
 module.exports = AboutPage;
 
@@ -19323,23 +19352,26 @@ var BlogPage = React.createClass({displayName: "BlogPage",
 	},
 
 	renderBlogpost: function () {
-		return Model.getBlogpostsArray().map(function (blogpost, index) {
-			return (
-				React.createElement("div", {id: 'blogpost' + blogpost['id'], key: index, className: "row"}, 
-					React.createElement("div", {className: "col-xs-12"}, 
-						React.createElement("h4", {className: "fullwidth-header blogpost"}, blogpost['date']), 
-						React.createElement("div", {className: "col-xs-8"}, 
-							this.renderBlogpostImages(blogpost)
-						), 
-						React.createElement("div", {className: "col-xs-4"}, 
-							React.createElement("h4", null, blogpost['title']), 
-							this.renderBlogpostParagraphs(blogpost), 
-							React.createElement("a", {className: "scroll-top", onClick: this.handleScroll}, React.createElement("h4", null, "^ Back to top ^"))
-						)
-					)
-				)
-			);
-		}.bind(this));
+		return (
+			React.createElement("div", null, "COMING SOON")
+		);
+		// return Model.getBlogpostsArray().map(function (blogpost, index) {
+		// 	return (
+		// 		<div id={'blogpost' + blogpost['id']} key={index} className="row">
+		// 			<div className="col-xs-12">
+		// 				<h4 className="fullwidth-header blogpost">{blogpost['date']}</h4>
+		// 				<div className="col-xs-8">
+		// 					{this.renderBlogpostImages(blogpost)}
+		// 				</div>
+		// 				<div className="col-xs-4">
+		// 					<h4>{blogpost['title']}</h4>
+		// 					{this.renderBlogpostParagraphs(blogpost)}
+		// 					<a className="scroll-top" onClick={this.handleScroll}><h4>^ Back to top ^</h4></a>
+		// 				</div>
+		// 			</div>
+		// 		</div>
+		// 	);
+		// }.bind(this));
 	},
 
 	render: function () {
@@ -19365,21 +19397,21 @@ var ContactPage = React.createClass({displayName: "ContactPage",
 				React.createElement("div", {className: "row"}, 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
-						React.createElement("a", {href: "mailto:rosedykins@gmail.com"}, React.createElement("i", {className: "fa large-icon fa-envelope-o"}))
+						React.createElement("a", {href: "mailto:rose.dykins@hotmail.co.uk"}, React.createElement("i", {className: "fa large-icon fa-envelope-o"}))
 						), 
-						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "ROSEDYKINS@GMAIL.COM"))
+						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "ROSE.DYKINS@HOTMAIL.CO.UK"))
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
 						React.createElement("i", {className: "fa large-icon fa-phone"})
 						), 
-						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "0778 446 725 3390"))
+						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "0790 674 8008"))
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement("div", {className: "col-xs-4 contact-icon-column"}, 
 						React.createElement("a", {href: "https://twitter.com/rose_dykins", target: "_blank"}, React.createElement("i", {className: "fa large-icon fa-twitter"}))
 						), 
-						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "@ROSEDYKINSJOURNALIST"))
+						React.createElement("div", {className: "col-xs-8"}, React.createElement("p", {className: "contact-info"}, "@ROSE_DYKINS"))
 					)
 				)
 			)
@@ -19399,7 +19431,7 @@ var Footer = React.createClass({displayName: "Footer",
 		return (
 			React.createElement("div", {className: "row footer"}, 
 				React.createElement("div", {className: "col-xs-4"}, 
-					React.createElement("p", null, "Contact: rosedykins@traveljourney.com / 077 897 345 7699")
+					React.createElement("p", null, "Contact: rose.dykins@hotmail.co.uk / 0790 674 8008")
 				), 
 				React.createElement("div", {className: "col-xs-4"}, 
 					React.createElement("p", null, "Web design: ", React.createElement("a", {href: "http://www.feedingcrows.co.uk", target: "_blank"}, "www.feedingcrows.co.uk")), 
@@ -19430,8 +19462,8 @@ var About = React.createClass({displayName: "About",
 			React.createElement("div", {className: "col-xs-4"}, 
 				React.createElement("h4", {className: "about homepage-header", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "ABOUT"), 
 				React.createElement("div", {className: "about-section"}, 
-					React.createElement("img", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this), className: "rose-portrait", src: "./build/images/about-mugshot.png"}), 
-					React.createElement("p", null, "About section under-construction. Read more about me ", React.createElement("a", {className: "link", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "here"), " on the About page")
+					React.createElement("img", {onClick: function() {this.handleChangeView("ABOUT")}.bind(this), className: "rose-portrait", src: "./build/images/about-mugshot.jpg"}), 
+					React.createElement("p", null, "Thanks for checking out my website! Read more about me ", React.createElement("a", {className: "link", onClick: function() {this.handleChangeView("ABOUT")}.bind(this)}, "here"))
 				)
 			)
 		)
@@ -19445,59 +19477,59 @@ module.exports = About;
 var React = require('react');
 var Model = require('../../../../build/js/model.js');
 
-var Coffeegram = React.createClass({displayName: "Coffeegram",
+var Instagram = React.createClass({displayName: "Instagram",
 
 	componentDidMount: function () {
 		this.initSlicks();
 	},
 
-	renderCoffeegramNavSlick: function () {
-		return Model.getCoffeegramArray().map (function (element, index) {
-			return React.createElement("div", {key: index, className: "slider-coffeegram-nav-element"});
+	renderInstagramNavSlick: function () {
+		return Model.getInstagramArray().map (function (element, index) {
+			return React.createElement("div", {key: index, className: "slider-instagram-nav-element"});
 		});
 	},
 
-	renderCoffeegramSlick: function () {
-		return Model.getCoffeegramArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-coffeegram-element", href: element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+	renderInstagramSlick: function () {
+		return Model.getInstagramArray().map (function (element, index) {
+			return React.createElement("a", {key: index, className: "slider-instagram-element", href: element['link'] ? element['link'] : 'https://www.instagram.com/rosedykins/', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
 		});
 	},
 
 	render: function () {
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://vimeo.com/177925265", target: "_blank"}, React.createElement("h4", null, "COFFEEGRAM")), 
-				React.createElement("div", {className: "slider-coffeegram-nav"}, 
-					this.renderCoffeegramNavSlick()
+				React.createElement("a", {href: "https://vimeo.com/177925265", target: "_blank"}, React.createElement("h4", null, "INSTAGRAM")), 
+				React.createElement("div", {className: "slider-instagram-nav"}, 
+					this.renderInstagramNavSlick()
 				), 
-				React.createElement("a", {className: "icon-overlay", href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("i", {className: "fa fa-instagram", "aria-hidden": "true"})), 
-				React.createElement("div", {className: "slider-coffeegram"}, 
-				  this.renderCoffeegramSlick()
+				React.createElement("a", {className: "icon-overlay", href: "https://www.instagram.com/rosedykins/", target: "_blank"}, React.createElement("i", {className: "fa fa-instagram", "aria-hidden": "true"})), 
+				React.createElement("div", {className: "slider-instagram"}, 
+				  this.renderInstagramSlick()
 				)
 			)	
 		)
 	},
 
 	initSlicks: function () {
-		$('.slider-coffeegram').slick({
+		$('.slider-instagram').slick({
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
 		  dots: false,
 		  speed: 200,
-		  asNavFor: '.slider-coffeegram-nav',
+		  asNavFor: '.slider-instagram-nav',
 		  autoplay: true,
 		  autoplaySpeed: 10000,
 		  speed: 200
 		});
 
-		$('.slider-coffeegram-nav').slick({
+		$('.slider-instagram-nav').slick({
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
 		  dots: true,
 		  speed: 200,
-		  asNavFor: '.slider-coffeegram',
+		  asNavFor: '.slider-instagram',
 		  autoplay: true,
 		  autoplaySpeed: 10000,
 		  speed: 200		  
@@ -19506,7 +19538,7 @@ var Coffeegram = React.createClass({displayName: "Coffeegram",
 
 });
 
-module.exports = Coffeegram;
+module.exports = Instagram;
 
 },{"../../../../build/js/model.js":2,"react":160}],168:[function(require,module,exports){
 var React = require('react');
@@ -19767,7 +19799,7 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 	render: function () {
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "TRAVEL GALLERY")), 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "WHERE I'VE BEEN")), 
 				React.createElement("div", {className: "slider-preview-travel-pics-nav"}, 
 					this.renderTravelPicsNavSlick()
 				), 

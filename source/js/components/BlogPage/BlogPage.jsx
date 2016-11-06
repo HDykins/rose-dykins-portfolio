@@ -30,23 +30,26 @@ var BlogPage = React.createClass({
 	},
 
 	renderBlogpost: function () {
-		return Model.getBlogpostsArray().map(function (blogpost, index) {
-			return (
-				<div id={'blogpost' + blogpost['id']} key={index} className="row">
-					<div className="col-xs-12">
-						<h4 className="fullwidth-header blogpost">{blogpost['date']}</h4>
-						<div className="col-xs-8">
-							{this.renderBlogpostImages(blogpost)}
-						</div>
-						<div className="col-xs-4">
-							<h4>{blogpost['title']}</h4>
-							{this.renderBlogpostParagraphs(blogpost)}
-							<a className="scroll-top" onClick={this.handleScroll}><h4>^ Back to top ^</h4></a>
-						</div>
-					</div>
-				</div>
-			);
-		}.bind(this));
+		return (
+			<div>COMING SOON</div>
+		);
+		// return Model.getBlogpostsArray().map(function (blogpost, index) {
+		// 	return (
+		// 		<div id={'blogpost' + blogpost['id']} key={index} className="row">
+		// 			<div className="col-xs-12">
+		// 				<h4 className="fullwidth-header blogpost">{blogpost['date']}</h4>
+		// 				<div className="col-xs-8">
+		// 					{this.renderBlogpostImages(blogpost)}
+		// 				</div>
+		// 				<div className="col-xs-4">
+		// 					<h4>{blogpost['title']}</h4>
+		// 					{this.renderBlogpostParagraphs(blogpost)}
+		// 					<a className="scroll-top" onClick={this.handleScroll}><h4>^ Back to top ^</h4></a>
+		// 				</div>
+		// 			</div>
+		// 		</div>
+		// 	);
+		// }.bind(this));
 	},
 
 	render: function () {
