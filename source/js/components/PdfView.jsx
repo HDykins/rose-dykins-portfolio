@@ -1,4 +1,5 @@
 var React = require('react');
+var PdfViewer = require('pdfviewer')
 
 var PdfView = React.createClass({
 
