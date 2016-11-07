@@ -19896,7 +19896,7 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
 	renderOnlineArticlesNavSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(article['pdf']) {
+			if(!article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {
@@ -19908,7 +19908,7 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
 	renderOnlineArticlesSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(article['pdf']) {
+			if(!article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {
@@ -19996,7 +19996,7 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 
 	renderPrintArticlesNavSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(!article['pdf']) {
+			if(article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {
@@ -20008,7 +20008,7 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 
 	renderPrintArticlesSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(!article['pdf']) {
+			if(article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {

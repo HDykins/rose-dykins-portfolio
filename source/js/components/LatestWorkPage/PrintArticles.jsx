@@ -13,7 +13,7 @@ var PrintArticles = React.createClass({
 
 	renderPrintArticlesNavSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(!article['pdf']) {
+			if(article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {
@@ -25,7 +25,7 @@ var PrintArticles = React.createClass({
 
 	renderPrintArticlesSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(!article['pdf']) {
+			if(article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {

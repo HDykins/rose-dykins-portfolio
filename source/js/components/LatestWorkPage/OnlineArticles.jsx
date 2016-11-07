@@ -9,7 +9,7 @@ var OnlineArticles = React.createClass({
 
 	renderOnlineArticlesNavSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(article['pdf']) {
+			if(!article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {
@@ -21,7 +21,7 @@ var OnlineArticles = React.createClass({
 
 	renderOnlineArticlesSlick: function () {
 		return Model.getArticlesArray().filter(function (article)	{
-			if(article['pdf']) {
+			if(!article['pdf']) {
 				return true;
 			}
 		}).map (function (article, index) {
