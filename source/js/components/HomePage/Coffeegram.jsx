@@ -22,7 +22,7 @@ var Instagram = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<a href="https://vimeo.com/177925265" target="_blank"><h4>INSTAGRAM</h4></a>
+				<a href="https://www.instagram.com/rosedykins/" target="_blank"><h4>INSTAGRAM</h4></a>
 				<div className="slider-instagram-nav">
 					{this.renderInstagramNavSlick()}
 				</div>

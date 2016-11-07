@@ -10,21 +10,21 @@ var Model = (function initModel() {
 	];
 
 	var instagramArray = [
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"}
+		{'image-src': "./build/images/pansy-cocktail.jpg"},
+		{'image-src': "./build/images/blue-stairs.jpg"},
+		{'image-src': "./build/images/christ-redeemer.jpg"},
+		{'image-src': "./build/images/curry.jpg"},
+		{'image-src': "./build/images/barcelona-red-room.jpg"},
+		{'image-src': "./build/images/weird-fish.jpg"}
 	];
 
 	var previewTravelPicsArray = [
 		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"}
+		{'image-src': "./build/images/travel-pics-preview-2.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-3.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-4.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-5.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-6.jpg"}
 	];
 
 	var articlesArray = [

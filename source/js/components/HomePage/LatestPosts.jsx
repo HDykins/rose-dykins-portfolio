@@ -38,7 +38,7 @@ var LatestPosts = React.createClass({
 	render: function () {
 		return (
 			<div className="col-xs-8">
-				<h4 className="fullwidth-header homepage-header" onClick={function() {this.handleChangeView("BLOG")}.bind(this)}>LATEST POSTS</h4>
+				<h4 className="fullwidth-header homepage-header" onClick={function() {this.handleChangeView("BLOG")}.bind(this)}>LATEST POSTS (UNDER CONSTRUCTION)</h4>
 				<div className="slider-latest-posts-nav">
 					{this.renderLatestPostsNavSlick()} 
 				</div>	

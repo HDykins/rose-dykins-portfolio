@@ -18,21 +18,21 @@ var Model = (function initModel() {
 	];
 
 	var instagramArray = [
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"},
-		{'image-src': "./build/images/instagram-image-1.jpg"}
+		{'image-src': "./build/images/pansy-cocktail.jpg"},
+		{'image-src': "./build/images/blue-stairs.jpg"},
+		{'image-src': "./build/images/christ-redeemer.jpg"},
+		{'image-src': "./build/images/curry.jpg"},
+		{'image-src': "./build/images/barcelona-red-room.jpg"},
+		{'image-src': "./build/images/weird-fish.jpg"}
 	];
 
 	var previewTravelPicsArray = [
 		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"},
-		{'image-src': "./build/images/travel-pics-preview-1.jpg"}
+		{'image-src': "./build/images/travel-pics-preview-2.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-3.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-4.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-5.jpg"},
+		{'image-src': "./build/images/travel-pics-preview-6.jpg"}
 	];
 
 	var articlesArray = [
@@ -19500,7 +19500,7 @@ var Instagram = React.createClass({displayName: "Instagram",
 	render: function () {
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://vimeo.com/177925265", target: "_blank"}, React.createElement("h4", null, "INSTAGRAM")), 
+				React.createElement("a", {href: "https://www.instagram.com/rosedykins/", target: "_blank"}, React.createElement("h4", null, "INSTAGRAM")), 
 				React.createElement("div", {className: "slider-instagram-nav"}, 
 					this.renderInstagramNavSlick()
 				), 
@@ -19626,7 +19626,7 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 	render: function () {
 		return (
 			React.createElement("div", {className: "col-xs-8"}, 
-				React.createElement("h4", {className: "fullwidth-header homepage-header", onClick: function() {this.handleChangeView("BLOG")}.bind(this)}, "LATEST POSTS"), 
+				React.createElement("h4", {className: "fullwidth-header homepage-header", onClick: function() {this.handleChangeView("BLOG")}.bind(this)}, "LATEST POSTS (UNDER CONSTRUCTION)"), 
 				React.createElement("div", {className: "slider-latest-posts-nav"}, 
 					this.renderLatestPostsNavSlick()
 				), 	
@@ -19801,7 +19801,7 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 	render: function () {
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "WHERE I'VE BEEN")), 
+				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "WHERE I'VE BEEN (UNDER CONSTRUCTION)")), 
 				React.createElement("div", {className: "slider-preview-travel-pics-nav"}, 
 					this.renderTravelPicsNavSlick()
 				), 
