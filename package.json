@@ -29,7 +29,12 @@
     "gulp-uglify": "*",
     "jquery": "*",
     "object-assign": "*",
+    "pdfviewer": "^1.0.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-preload": "^0.4.0",
     "sass": "*",
+    "slick-carousel": "^1.6.0",
     "vinyl-buffer": "*"
   }
 }

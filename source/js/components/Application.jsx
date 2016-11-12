@@ -9,7 +9,6 @@ var LatestWorkPage = require('./LatestWorkPage/LatestWorkPage.jsx');
 var BlogPage = require('./BlogPage/BlogPage.jsx');
 var ContactPage = require('./ContactPage/ContactPage.jsx');
 
-
 var Application = React.createClass({
 
 	getInitialState: function () {
