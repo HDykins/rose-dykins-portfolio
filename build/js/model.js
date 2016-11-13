@@ -126,7 +126,12 @@ var Model = (function initModel() {
 			'image-srcs': ["./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg", "./build/images/latest-posts-1.jpg"],
 			'slider-image': "./build/images/latest-posts-1.jpg"
 		}
-	];	
+	];
+
+	articlesArray.map(function(article){
+		var my_image = new Image();
+		my_image.src = article['image-src'];
+	});
 
 	var pdfView = false;
 
