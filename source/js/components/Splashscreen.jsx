@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+// var Model = require('../../../build/js/model.js');
 
 var Splashscreen = React.createClass({
 
@@ -49,6 +49,7 @@ var Splashscreen = React.createClass({
 	},
 
 	renderSplashSlick: function () {
+		console.log(Model);
 		return Model.getSplashImagesArray().map (function (image, index) {
 			return <div key={index} className="splash-image-element"><img src={image['image-src']} /></div>;
 		});

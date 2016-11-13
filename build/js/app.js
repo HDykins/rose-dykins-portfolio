@@ -191,8 +191,6 @@ var Model = (function initModel() {
 
 })();
 
-module.exports = Model;
-
 },{}],3:[function(require,module,exports){
 // shim for using process in browser
 
@@ -21167,7 +21165,7 @@ module.exports = About;
 
 },{"react":174}],181:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var Instagram = React.createClass({displayName: "Instagram",
 
@@ -21232,7 +21230,7 @@ var Instagram = React.createClass({displayName: "Instagram",
 
 module.exports = Instagram;
 
-},{"../../../../build/js/model.js":2,"react":174}],182:[function(require,module,exports){
+},{"react":174}],182:[function(require,module,exports){
 var React = require('react');
 var RecentArticles = require('./RecentArticles.jsx');
 var Coffeegram = require('./Coffeegram.jsx');
@@ -21277,7 +21275,7 @@ module.exports = HomePage;
 
 },{"./About.jsx":180,"./Coffeegram.jsx":181,"./LatestPosts.jsx":183,"./RecentArticles.jsx":184,"./TravelPics.jsx":185,"./Twitter.jsx":186,"react":174}],183:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var LatestPosts = React.createClass({displayName: "LatestPosts",
 
@@ -21370,9 +21368,9 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 
 module.exports = LatestPosts;
 
-},{"../../../../build/js/model.js":2,"react":174}],184:[function(require,module,exports){
+},{"react":174}],184:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var RecentArticles = React.createClass({displayName: "RecentArticles",
 
@@ -21466,9 +21464,9 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 
 module.exports = RecentArticles;
 
-},{"../../../../build/js/model.js":2,"react":174}],185:[function(require,module,exports){
+},{"react":174}],185:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var TravelPics = React.createClass({displayName: "TravelPics",
 
@@ -21533,7 +21531,7 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 
 module.exports = TravelPics;
 
-},{"../../../../build/js/model.js":2,"react":174}],186:[function(require,module,exports){
+},{"react":174}],186:[function(require,module,exports){
 var React = require('react');
 
 var Twitter = React.createClass({displayName: "Twitter",
@@ -21576,7 +21574,7 @@ module.exports = LatestWorkPage;
 
 },{"./OnlineArticles.jsx":188,"./PrintArticles.jsx":189,"react":174}],188:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
@@ -21670,9 +21668,9 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
 module.exports = OnlineArticles;
 
-},{"../../../../build/js/model.js":2,"react":174}],189:[function(require,module,exports){
+},{"react":174}],189:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var PrintArticles = React.createClass({displayName: "PrintArticles",
 
@@ -21770,7 +21768,7 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 
 module.exports = PrintArticles;
 
-},{"../../../../build/js/model.js":2,"react":174}],190:[function(require,module,exports){
+},{"react":174}],190:[function(require,module,exports){
 var React = require('react');
 
 var Navbar = React.createClass({displayName: "Navbar",
@@ -21832,7 +21830,7 @@ module.exports = PdfView;
 
 },{"pdfviewer":5,"react":174}],192:[function(require,module,exports){
 var React = require('react');
-var Model = require('../../../build/js/model.js');
+// var Model = require('../../../build/js/model.js');
 
 var Splashscreen = React.createClass({displayName: "Splashscreen",
 
@@ -21882,6 +21880,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 	},
 
 	renderSplashSlick: function () {
+		console.log(Model);
 		return Model.getSplashImagesArray().map (function (image, index) {
 			return React.createElement("div", {key: index, className: "splash-image-element"}, React.createElement("img", {src: image['image-src']}));
 		});
@@ -21935,88 +21934,4 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 
 module.exports = Splashscreen;
 
-},{"../../../build/js/model.js":2,"react":174}]},{},[1]);
-
-// var container = document.getElementById('pdf-view');
-
-
-
-// function handleClosePdfView () {
-// 	$('body').on('click', '.close-button', function (clickEvent) {
-// 		clickEvent.preventDefault();
-// 		console.log(Model.getPdfView());
-// 		if (Model.getPdfView()) {
-// 			$('#pdf-view').empty().hide();
-// 			$('#main-view').show();
-// 		}
-// 		Model.togglePdfView();
-// 	});
-// }
-
-// function addCarouselClickEvents (callback) {
-// 	Model.getArticlesArray().forEach (function (element) {
-// 		console.log('data-' + element['id'] + '');
-// 		$('body').on('click', '.' + element['id'] + '', function (clickEvent) {
-// 			console.log("hi");
-// 			clickEvent.preventDefault();
-// 		    callback();
-// 		});
-// 	});
-// }
-
-// Model.getArticlesArray().forEach (function (element) {
-// 	console.log(element['pdf']);
-// 	console.log(element['url']);
-// 	$('[class="slider-for"]').append($('<div class="slider-for-element"><img src=' + element['image-src'] + ' /><p>' + element['description'] + '</p></div>'));
-// 	$('[class="slider-nav"]').append($('<div class="slider-nav-element ' + element['id'] + '"><img src=' + element['image-src'] + ' /><p>' + element['title'] + '</div>'));
-// });
-
-// Model.getCoffeePicsArray().forEach (function (element) {
-// 	$('[class="coffee-pics-container"]').append($('<div class="col-xs-4"><img src=' + element['image-src'] + ' /><p></p></div>'));
-// });
-
-// $('#pdf-view').hide();
-
-// addCarouselClickEvents(function handleCarouselClickEvents () {
-// 		console.log("pdf : " + Model.getPdfView());
-// 		// if (element['pdf']) {
-// 			if (!Model.getPdfView()) {
-// 				$('#main-view').hide();
-// 				$('#pdf-view').show();
-// 				new PdfViewer({pdfUrl: 'Junior developer CV_short', staticHost: 'https://dl.dropboxusercontent.com/u/46887483/Junior%20developer%20CV_short.pdf'}).embed(container);
-// 		    	$('[id="pdf-view"]').append($('<div class="close-button">X</div>'));
-// 			}
-// 			Model.togglePdfView();
-// 		// }
-// });
-
-// handleClosePdfView();
-
-// $('.slider-for').slick({
-//   slidesToShow: 3,
-//   slidesToScroll: 3,
-//   arrows: false,
-//   fade: true,
-//   asNavFor: '.slider-nav',
-//   adaptiveHeight: true
-// });
-
-// $('.slider-nav').slick({
-//   centerMode: true,
-//   slidesToShow: 3,
-//   slidesToScroll: 3,  
-//   speed: 200,
-//   asNavFor: '.slider-for',
-//   dots: true,
-//   adaptiveHeight: true,
-//     responsive: [
-//     {
-//       breakpoint: 768,
-//       settings: {
-//         arrows: false,
-//         centerMode: true,
-//         slidesToShow: 1
-//       }
-//     }
-//   ]
-// });
+},{"react":174}]},{},[1]);

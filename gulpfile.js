@@ -26,8 +26,7 @@ gulp.task('browserify', function () {
 
 gulp.task('combine-scripts', ['browserify'], function () {
   return gulp.src([
-    './build/js/app.js',
-    './source/js/my-app.js'
+    './build/js/app.js'
   ])
   .pipe(concat('app.js'))
   .pipe(gulp.dest('./build/js/'));

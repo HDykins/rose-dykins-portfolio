@@ -177,5 +177,3 @@ var Model = (function initModel() {
 	};
 
 })();
-
-module.exports = Model;

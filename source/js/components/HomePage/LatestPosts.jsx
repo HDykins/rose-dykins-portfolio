@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var LatestPosts = React.createClass({
 
