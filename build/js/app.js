@@ -7,8 +7,9 @@ var Application = require('./components/Application.jsx');
 // var images = ['./build/images/gillifish.jpg', './build/images/bintan-bliss.png', './build/images/sollo.png']
 // var loadingIndicator = (<div>Loading...</div>)
  
-
-ReactDOM.render(React.createElement(Application, null), document.querySelector('[data-rose-portfolio-react-application]'));
+$( window).load(function() {
+	ReactDOM.render(React.createElement(Application, null), document.querySelector('[data-rose-portfolio-react-application]'));
+});
 
 },{"./components/Application.jsx":176,"react":174,"react-dom":6}],2:[function(require,module,exports){
 var Model = (function initModel() {
