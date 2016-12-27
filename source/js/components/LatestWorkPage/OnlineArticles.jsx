@@ -29,7 +29,6 @@ var OnlineArticles = React.createClass({
 				<div key={index} className="col-xs-4">
 					<a className="slider-online-articles-element" href={article['link']} target="_blank"><img src={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
-					<span>{article['date']}</span>
 					<p>{article['description']}</p>
 				</div>
 			);

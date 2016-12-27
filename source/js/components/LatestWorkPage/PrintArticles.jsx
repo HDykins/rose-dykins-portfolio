@@ -33,7 +33,6 @@ var PrintArticles = React.createClass({
 				<div key={index} className="col-xs-4">
 					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}><img src={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
-					<span>{article['date']}</span>
 					<p>{article['description']}</p>
 				</div>
 			);
