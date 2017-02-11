@@ -8,15 +8,17 @@ var AboutPage = require('./AboutPage/AboutPage.jsx');
 var LatestWorkPage = require('./LatestWorkPage/LatestWorkPage.jsx');
 var BlogPage = require('./BlogPage/BlogPage.jsx');
 var ContactPage = require('./ContactPage/ContactPage.jsx');
+var GalleryPage = require('./GalleryPage/GalleryPage.jsx');
 
 var Application = React.createClass({
 
 	getInitialState: function () {
     return {
-      currentView: 'HOME',
+      currentView: 'GALLERY',
       pdfView: false,
       pdfLink: "",
-      currentBlogId: ""
+      currentBlogId: "",
+      selectedGalleryPic: ""
     };
   },
 
@@ -40,6 +42,10 @@ var Application = React.createClass({
     this.updateState("currentBlogId", id)
   },
 
+  changeSelectedGalleryPic: function (name) {
+    this.updateState("selectedGalleryPic", name)
+  },
+
   renderPage: function () {
     if (this.state.currentView==="HOME") {
       return (
@@ -60,6 +66,10 @@ var Application = React.createClass({
     } else if (this.state.currentView==="CONTACT") {
       return (
         <ContactPage currentView={this.state.currentView} changeView={this.changeView} />
+      );
+    } else if (this.state.currentView==="GALLERY") {
+      return (
+        <GalleryPage currentView={this.state.currentView} changeView={this.changeView} changeSelectedGalleryPic={this.changeSelectedGalleryPic} selectedGalleryPic={this.state.selectedGalleryPic} />
       );
     }
   },

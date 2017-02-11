@@ -1,5 +1,4 @@
 var React = require('react');
-// var Model = require('../../../../build/js/model.js');
 
 var OnlineArticles = React.createClass({
 
@@ -12,7 +11,7 @@ var OnlineArticles = React.createClass({
 			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (article, index) {
+		}).map(function (article, index) {
 			return (
 				<div key={index} className="slider-online-articles-nav-element"></div>
 			);
@@ -24,7 +23,7 @@ var OnlineArticles = React.createClass({
 			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (article, index) {
+		}).map(function (article, index) {
 			return (
 				<div key={index} className="col-xs-4">
 					<a className="slider-online-articles-element" href={article['link']} target="_blank"><img src={article['image-src']} /></a>

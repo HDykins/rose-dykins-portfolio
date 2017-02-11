@@ -133,6 +133,15 @@ var Model = (function initModel() {
 		my_image.src = article['image-src'];
 	});
 
+	var galleryPicsArray = [
+		{name: "pic-1", 'image-src': "./build/images/pansy-cocktail.jpg"},
+		{name: "pic-2", 'image-src': "./build/images/blue-stairs.jpg"},
+		{name: "pic-3", 'image-src': "./build/images/christ-redeemer.jpg"},
+		{name: "pic-4", 'image-src': "./build/images/curry.jpg"},
+		{name: "pic-5", 'image-src': "./build/images/barcelona-red-room.jpg"},
+		{name: "pic-6", 'image-src': "./build/images/weird-fish.jpg"}
+	];
+
 	var pdfView = false;
 
 	function togglePdfView() {
@@ -167,13 +176,17 @@ var Model = (function initModel() {
 		return blogpostsArray;
 	}
 
+	function getGalleryPicsArray() {
+		return galleryPicsArray;
+	}
 
 	return {
 		getSplashImagesArray: getSplashImagesArray,
 		getInstagramArray: getInstagramArray,
 		getPreviewTravelPicsArray: getPreviewTravelPicsArray,
 		getArticlesArray: getArticlesArray,
-		getBlogpostsArray: getBlogpostsArray
+		getBlogpostsArray: getBlogpostsArray,
+		getGalleryPicsArray: getGalleryPicsArray
 	};
 
 })();

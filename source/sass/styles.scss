@@ -94,7 +94,15 @@ h4.about, h4.twitter, h4.blogpost {
 }
 
 .col-xs-4 {
+	cursor: pointer;
 	text-align: left;
+	-webkit-transition: all 0.5s linear; /* Safari */
+  transition: all 0.5s linear;
+	&.selected-gallery-pic {
+		width: 100%;
+		-webkit-transition: all 0.5s linear; /* Safari */
+  	transition: all 0.5s linear;
+	}
 }
 
 .link {

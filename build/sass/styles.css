@@ -58,7 +58,16 @@ h4.about, h4.twitter, h4.blogpost {
   margin: 0 20px 30px 20px; }
 
 .col-xs-4 {
-  text-align: left; }
+  cursor: pointer;
+  text-align: left;
+  -webkit-transition: all 0.5s linear;
+  /* Safari */
+  transition: all 0.5s linear; }
+  .col-xs-4.selected-gallery-pic {
+    width: 100%;
+    -webkit-transition: all 0.5s linear;
+    /* Safari */
+    transition: all 0.5s linear; }
 
 .link {
   color: purple;

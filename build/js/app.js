@@ -147,6 +147,15 @@ var Model = (function initModel() {
 		my_image.src = article['image-src'];
 	});
 
+	var galleryPicsArray = [
+		{name: "pic-1", 'image-src': "./build/images/pansy-cocktail.jpg"},
+		{name: "pic-2", 'image-src': "./build/images/blue-stairs.jpg"},
+		{name: "pic-3", 'image-src': "./build/images/christ-redeemer.jpg"},
+		{name: "pic-4", 'image-src': "./build/images/curry.jpg"},
+		{name: "pic-5", 'image-src': "./build/images/barcelona-red-room.jpg"},
+		{name: "pic-6", 'image-src': "./build/images/weird-fish.jpg"}
+	];
+
 	var pdfView = false;
 
 	function togglePdfView() {
@@ -181,13 +190,17 @@ var Model = (function initModel() {
 		return blogpostsArray;
 	}
 
+	function getGalleryPicsArray() {
+		return galleryPicsArray;
+	}
 
 	return {
 		getSplashImagesArray: getSplashImagesArray,
 		getInstagramArray: getInstagramArray,
 		getPreviewTravelPicsArray: getPreviewTravelPicsArray,
 		getArticlesArray: getArticlesArray,
-		getBlogpostsArray: getBlogpostsArray
+		getBlogpostsArray: getBlogpostsArray,
+		getGalleryPicsArray: getGalleryPicsArray
 	};
 
 })();
@@ -20936,15 +20949,17 @@ var AboutPage = require('./AboutPage/AboutPage.jsx');
 var LatestWorkPage = require('./LatestWorkPage/LatestWorkPage.jsx');
 var BlogPage = require('./BlogPage/BlogPage.jsx');
 var ContactPage = require('./ContactPage/ContactPage.jsx');
+var GalleryPage = require('./GalleryPage/GalleryPage.jsx');
 
 var Application = React.createClass({displayName: "Application",
 
 	getInitialState: function () {
     return {
-      currentView: 'HOME',
+      currentView: 'GALLERY',
       pdfView: false,
       pdfLink: "",
-      currentBlogId: ""
+      currentBlogId: "",
+      selectedGalleryPic: ""
     };
   },
 
@@ -20968,6 +20983,10 @@ var Application = React.createClass({displayName: "Application",
     this.updateState("currentBlogId", id)
   },
 
+  changeSelectedGalleryPic: function (name) {
+    this.updateState("selectedGalleryPic", name)
+  },
+
   renderPage: function () {
     if (this.state.currentView==="HOME") {
       return (
@@ -20988,6 +21007,10 @@ var Application = React.createClass({displayName: "Application",
     } else if (this.state.currentView==="CONTACT") {
       return (
         React.createElement(ContactPage, {currentView: this.state.currentView, changeView: this.changeView})
+      );
+    } else if (this.state.currentView==="GALLERY") {
+      return (
+        React.createElement(GalleryPage, {currentView: this.state.currentView, changeView: this.changeView, changeSelectedGalleryPic: this.changeSelectedGalleryPic, selectedGalleryPic: this.state.selectedGalleryPic})
       );
     }
   },
@@ -21010,7 +21033,7 @@ var Application = React.createClass({displayName: "Application",
 
 module.exports = Application;
 
-},{"./AboutPage/AboutPage.jsx":175,"./BlogPage/BlogPage.jsx":177,"./ContactPage/ContactPage.jsx":178,"./Footer.jsx":179,"./HomePage/HomePage.jsx":182,"./LatestWorkPage/LatestWorkPage.jsx":187,"./Navbar.jsx":190,"./PdfView.jsx":191,"./Splashscreen.jsx":192,"react":174}],177:[function(require,module,exports){
+},{"./AboutPage/AboutPage.jsx":175,"./BlogPage/BlogPage.jsx":177,"./ContactPage/ContactPage.jsx":178,"./Footer.jsx":179,"./GalleryPage/GalleryPage.jsx":180,"./HomePage/HomePage.jsx":183,"./LatestWorkPage/LatestWorkPage.jsx":188,"./Navbar.jsx":191,"./PdfView.jsx":192,"./Splashscreen.jsx":193,"react":174}],177:[function(require,module,exports){
 var React = require('react');
 var Model = require('../../../../build/js/model.js');
 
@@ -21142,6 +21165,37 @@ module.exports = Footer;
 },{"react":174}],180:[function(require,module,exports){
 var React = require('react');
 
+var GalleryPage = React.createClass({displayName: "GalleryPage",
+
+	renderGalleryPics: function () {
+		console.log(this.props)
+		return Model.getGalleryPicsArray().map(function (galleryPic, index) {
+			return (
+				React.createElement("div", {key: index, onClick: (this.props.selectedGalleryPic===galleryPic.name) ? function() {this.props.changeSelectedGalleryPic("")}.bind(this) : function() {this.props.changeSelectedGalleryPic(galleryPic.name)}.bind(this), className: (galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}, 
+					React.createElement("img", {src: galleryPic['image-src'], alt: "No pics"})
+				)
+			)
+		}.bind(this))
+	},
+
+	render: function () {
+		console.log(this.props);
+		return (
+			React.createElement("section", {id: "gallery-view"}, 
+				React.createElement("div", {className: "row gallery-pics"}, 
+					this.renderGalleryPics()
+				)
+			)
+		);
+	},
+
+});
+
+module.exports = GalleryPage;
+
+},{"react":174}],181:[function(require,module,exports){
+var React = require('react');
+
 var About = React.createClass({displayName: "About",
 
 	handleChangeView: function (view) {
@@ -21164,7 +21218,7 @@ var About = React.createClass({displayName: "About",
 
 module.exports = About;
 
-},{"react":174}],181:[function(require,module,exports){
+},{"react":174}],182:[function(require,module,exports){
 var React = require('react');
 // var Model = require('../../../../build/js/model.js');
 
@@ -21231,7 +21285,7 @@ var Instagram = React.createClass({displayName: "Instagram",
 
 module.exports = Instagram;
 
-},{"react":174}],182:[function(require,module,exports){
+},{"react":174}],183:[function(require,module,exports){
 var React = require('react');
 var RecentArticles = require('./RecentArticles.jsx');
 var Coffeegram = require('./Coffeegram.jsx');
@@ -21274,7 +21328,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 
 module.exports = HomePage;
 
-},{"./About.jsx":180,"./Coffeegram.jsx":181,"./LatestPosts.jsx":183,"./RecentArticles.jsx":184,"./TravelPics.jsx":185,"./Twitter.jsx":186,"react":174}],183:[function(require,module,exports){
+},{"./About.jsx":181,"./Coffeegram.jsx":182,"./LatestPosts.jsx":184,"./RecentArticles.jsx":185,"./TravelPics.jsx":186,"./Twitter.jsx":187,"react":174}],184:[function(require,module,exports){
 var React = require('react');
 // var Model = require('../../../../build/js/model.js');
 
@@ -21369,9 +21423,8 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 
 module.exports = LatestPosts;
 
-},{"react":174}],184:[function(require,module,exports){
+},{"react":174}],185:[function(require,module,exports){
 var React = require('react');
-// var Model = require('../../../../build/js/model.js');
 
 var RecentArticles = React.createClass({displayName: "RecentArticles",
 
@@ -21464,7 +21517,7 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 
 module.exports = RecentArticles;
 
-},{"react":174}],185:[function(require,module,exports){
+},{"react":174}],186:[function(require,module,exports){
 var React = require('react');
 // var Model = require('../../../../build/js/model.js');
 
@@ -21531,7 +21584,7 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 
 module.exports = TravelPics;
 
-},{"react":174}],186:[function(require,module,exports){
+},{"react":174}],187:[function(require,module,exports){
 var React = require('react');
 
 var Twitter = React.createClass({displayName: "Twitter",
@@ -21552,7 +21605,7 @@ var Twitter = React.createClass({displayName: "Twitter",
 
 module.exports = Twitter;
 
-},{"react":174}],187:[function(require,module,exports){
+},{"react":174}],188:[function(require,module,exports){
 var React = require('react');
 var OnlineArticles = require('./OnlineArticles.jsx');
 var PrintArticles = require('./PrintArticles.jsx');
@@ -21572,9 +21625,8 @@ var LatestWorkPage = React.createClass({displayName: "LatestWorkPage",
 
 module.exports = LatestWorkPage;
 
-},{"./OnlineArticles.jsx":188,"./PrintArticles.jsx":189,"react":174}],188:[function(require,module,exports){
+},{"./OnlineArticles.jsx":189,"./PrintArticles.jsx":190,"react":174}],189:[function(require,module,exports){
 var React = require('react');
-// var Model = require('../../../../build/js/model.js');
 
 var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
@@ -21587,7 +21639,7 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (article, index) {
+		}).map(function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "slider-online-articles-nav-element"})
 			);
@@ -21599,7 +21651,7 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 			if(!article['pdf']) {
 				return true;
 			}
-		}).map (function (article, index) {
+		}).map(function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
 					React.createElement("a", {className: "slider-online-articles-element", href: article['link'], target: "_blank"}, React.createElement("img", {src: article['image-src']})), 
@@ -21667,9 +21719,8 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 
 module.exports = OnlineArticles;
 
-},{"react":174}],189:[function(require,module,exports){
+},{"react":174}],190:[function(require,module,exports){
 var React = require('react');
-// var Model = require('../../../../build/js/model.js');
 
 var PrintArticles = React.createClass({displayName: "PrintArticles",
 
@@ -21766,7 +21817,7 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 
 module.exports = PrintArticles;
 
-},{"react":174}],190:[function(require,module,exports){
+},{"react":174}],191:[function(require,module,exports){
 var React = require('react');
 
 var Navbar = React.createClass({displayName: "Navbar",
@@ -21786,7 +21837,7 @@ var Navbar = React.createClass({displayName: "Navbar",
 
 module.exports = Navbar;
 
-},{"react":174}],191:[function(require,module,exports){
+},{"react":174}],192:[function(require,module,exports){
 var React = require('react');
 var PdfViewer = require('pdfviewer')
 
@@ -21826,7 +21877,7 @@ var PdfView = React.createClass({displayName: "PdfView",
 
 module.exports = PdfView;
 
-},{"pdfviewer":5,"react":174}],192:[function(require,module,exports){
+},{"pdfviewer":5,"react":174}],193:[function(require,module,exports){
 var React = require('react');
 // var Model = require('../../../build/js/model.js');
 

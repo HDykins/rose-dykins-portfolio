@@ -1,5 +1,4 @@
 var React = require('react');
-// var Model = require('../../../../build/js/model.js');
 
 var PrintArticles = React.createClass({
 
