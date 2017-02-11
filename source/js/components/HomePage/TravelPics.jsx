@@ -7,6 +7,10 @@ var TravelPics = React.createClass({
 		this.initSlicks();
 	},
 
+	handleChangeView: function (view) {
+		this.props.changeView(view);
+	},
+
 	renderTravelPicsNavSlick: function () {
 		return Model.getPreviewTravelPicsArray().map (function (element, index) {
 			return <div key={index} className="slider-preview-travel-pics-nav-element"></div>;
@@ -15,14 +19,15 @@ var TravelPics = React.createClass({
 
 	renderTravelPicsSlick: function () {
 		return Model.getPreviewTravelPicsArray().map (function (element, index) {
-			return <a key={index} className="slider-preview-travel-pics-element" href={element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media'} target="_blank"><img src={element['image-src']} /></a>;
-		});
+			return <a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)} key={index} className="slider-preview-travel-pics-element"><img src={element['image-src']} /></a>;
+		}.bind(this));
 	},
 
 	render: function () {
+		console.log("EHEHREHER :", this.props)
 		return (
 			<div>
-				<a href="https://twitter.com/rose_dykins/media" target="_blank"><h4>WHERE I'VE BEEN (UNDER CONSTRUCTION)</h4></a>
+				<a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)}><h4>WHERE I'VE BEEN (UNDER CONSTRUCTION)</h4></a>
 				<div className="slider-preview-travel-pics-nav">
 					{this.renderTravelPicsNavSlick()}
 				</div>

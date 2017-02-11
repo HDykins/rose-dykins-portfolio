@@ -20955,7 +20955,7 @@ var Application = React.createClass({displayName: "Application",
 
 	getInitialState: function () {
     return {
-      currentView: 'GALLERY',
+      currentView: 'HOME',
       pdfView: false,
       pdfLink: "",
       currentBlogId: "",
@@ -21010,7 +21010,7 @@ var Application = React.createClass({displayName: "Application",
       );
     } else if (this.state.currentView==="GALLERY") {
       return (
-        React.createElement(GalleryPage, {currentView: this.state.currentView, changeView: this.changeView, changeSelectedGalleryPic: this.changeSelectedGalleryPic, selectedGalleryPic: this.state.selectedGalleryPic})
+        React.createElement(GalleryPage, {currentView: this.state.currentView, changeSelectedGalleryPic: this.changeSelectedGalleryPic, selectedGalleryPic: this.state.selectedGalleryPic})
       );
     }
   },
@@ -21167,11 +21167,18 @@ var React = require('react');
 
 var GalleryPage = React.createClass({displayName: "GalleryPage",
 
+	handleChangeSelectedGalleryPic: function (galleryPic) {
+		if (this.props.selectedGalleryPic===galleryPic.name) {
+			this.props.changeSelectedGalleryPic("")
+		} else {
+			this.props.changeSelectedGalleryPic(galleryPic.name)
+		}
+	},
+
 	renderGalleryPics: function () {
-		console.log(this.props)
 		return Model.getGalleryPicsArray().map(function (galleryPic, index) {
 			return (
-				React.createElement("div", {key: index, onClick: (this.props.selectedGalleryPic===galleryPic.name) ? function() {this.props.changeSelectedGalleryPic("")}.bind(this) : function() {this.props.changeSelectedGalleryPic(galleryPic.name)}.bind(this), className: (galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}, 
+				React.createElement("div", {key: index, onClick: function() {this.handleChangeSelectedGalleryPic(galleryPic)}.bind(this), className: (galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}, 
 					React.createElement("img", {src: galleryPic['image-src'], alt: "No pics"})
 				)
 			)
@@ -21179,7 +21186,6 @@ var GalleryPage = React.createClass({displayName: "GalleryPage",
 	},
 
 	render: function () {
-		console.log(this.props);
 		return (
 			React.createElement("section", {id: "gallery-view"}, 
 				React.createElement("div", {className: "row gallery-pics"}, 
@@ -21308,7 +21314,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 						React.createElement(Coffeegram, null)
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
-						React.createElement(TravelPics, null)
+						React.createElement(TravelPics, {changeView: this.props.changeView})
 					), 
 					React.createElement("div", {className: "col-xs-4"}, 
 						React.createElement(Twitter, null)
@@ -21527,6 +21533,10 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 		this.initSlicks();
 	},
 
+	handleChangeView: function (view) {
+		this.props.changeView(view);
+	},
+
 	renderTravelPicsNavSlick: function () {
 		return Model.getPreviewTravelPicsArray().map (function (element, index) {
 			return React.createElement("div", {key: index, className: "slider-preview-travel-pics-nav-element"});
@@ -21535,14 +21545,15 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 
 	renderTravelPicsSlick: function () {
 		return Model.getPreviewTravelPicsArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-preview-travel-pics-element", href: element['link'] ? element['link'] : 'https://twitter.com/rose_dykins/media', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
-		});
+			return React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this), key: index, className: "slider-preview-travel-pics-element"}, React.createElement("img", {src: element['image-src']}));
+		}.bind(this));
 	},
 
 	render: function () {
+		console.log("EHEHREHER :", this.props)
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {href: "https://twitter.com/rose_dykins/media", target: "_blank"}, React.createElement("h4", null, "WHERE I'VE BEEN (UNDER CONSTRUCTION)")), 
+				React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this)}, React.createElement("h4", null, "WHERE I'VE BEEN (UNDER CONSTRUCTION)")), 
 				React.createElement("div", {className: "slider-preview-travel-pics-nav"}, 
 					this.renderTravelPicsNavSlick()
 				), 

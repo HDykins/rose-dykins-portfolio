@@ -20,7 +20,7 @@ var HomePage = React.createClass({
 						<Coffeegram />
 					</div>
 					<div className="col-xs-4">
-						<TravelPics />
+						<TravelPics changeView={this.props.changeView} />
 					</div>
 					<div className="col-xs-4">
 						<Twitter />

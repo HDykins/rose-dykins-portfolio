@@ -2,11 +2,18 @@ var React = require('react');
 
 var GalleryPage = React.createClass({
 
+	handleChangeSelectedGalleryPic: function (galleryPic) {
+		if (this.props.selectedGalleryPic===galleryPic.name) {
+			this.props.changeSelectedGalleryPic("")
+		} else {
+			this.props.changeSelectedGalleryPic(galleryPic.name)
+		}
+	},
+
 	renderGalleryPics: function () {
-		console.log(this.props)
 		return Model.getGalleryPicsArray().map(function (galleryPic, index) {
 			return (
-				<div key={index} onClick={(this.props.selectedGalleryPic===galleryPic.name) ? function() {this.props.changeSelectedGalleryPic("")}.bind(this) : function() {this.props.changeSelectedGalleryPic(galleryPic.name)}.bind(this)} className={(galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}>
+				<div key={index} onClick={function() {this.handleChangeSelectedGalleryPic(galleryPic)}.bind(this)} className={(galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}>
 					<img src={galleryPic['image-src']} alt="No pics" />
 				</div>
 			)
@@ -14,7 +21,6 @@ var GalleryPage = React.createClass({
 	},
 
 	render: function () {
-		console.log(this.props);
 		return (
 			<section id="gallery-view">
 				<div className="row gallery-pics">

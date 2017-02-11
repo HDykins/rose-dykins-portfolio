@@ -14,7 +14,7 @@ var Application = React.createClass({
 
 	getInitialState: function () {
     return {
-      currentView: 'GALLERY',
+      currentView: 'HOME',
       pdfView: false,
       pdfLink: "",
       currentBlogId: "",
@@ -69,7 +69,7 @@ var Application = React.createClass({
       );
     } else if (this.state.currentView==="GALLERY") {
       return (
-        <GalleryPage currentView={this.state.currentView} changeView={this.changeView} changeSelectedGalleryPic={this.changeSelectedGalleryPic} selectedGalleryPic={this.state.selectedGalleryPic} />
+        <GalleryPage currentView={this.state.currentView} changeSelectedGalleryPic={this.changeSelectedGalleryPic} selectedGalleryPic={this.state.selectedGalleryPic} />
       );
     }
   },
