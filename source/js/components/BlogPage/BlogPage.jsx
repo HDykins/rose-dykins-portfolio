@@ -1,5 +1,5 @@
 var React = require('react');
-var Model = require('../../../../build/js/model.js');
+// var Model = require('../../../../build/js/model.js');
 
 var BlogPage = React.createClass({
 
@@ -19,7 +19,7 @@ var BlogPage = React.createClass({
 				<div key={index} className="blog-image">
 					<img src={image} />
 				</div>
-			);	
+			);
 		});
 	},
 
@@ -53,6 +53,7 @@ var BlogPage = React.createClass({
 	},
 
 	render: function () {
+		console.log("THIS", this)
 		return (
 			<section id="blog-view" className="blog-view">
 				{this.renderBlogpost()}

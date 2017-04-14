@@ -28,6 +28,7 @@ var RecentArticles = React.createClass({
 				<div key={index} className="col-xs-4">
 					<a className="slider-recent-articles-element" onClick={article['pdf'] ? function() {this.handleLoadPdfViewer(article['link'])}.bind(this) : null} href={!article['pdf'] ? article['link'] : null} target="_blank"><img src={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
+					<h3>{article['publication']}</h3>
 					<p>{article['description']}</p>
 				</div>
 			);
@@ -39,10 +40,10 @@ var RecentArticles = React.createClass({
 			<div className="row">
 				<h4 className="fullwidth-header homepage-header" onClick={function() {this.handleChangeView("LATEST_WORK")}.bind(this)}>RECENT ARTICLES</h4>
 				<div className="slider-recent-articles-nav">
-					{this.renderRecentArticlesNavSlick()} 					 
-				</div>	
+					{this.renderRecentArticlesNavSlick()}
+				</div>
 				<div className="slider-recent-articles">
-					{this.renderRecentArticlesSlick()}				
+					{this.renderRecentArticlesSlick()}
 				</div>
 			</div>
 		)

@@ -32,6 +32,7 @@ var PrintArticles = React.createClass({
 				<div key={index} className="col-xs-4">
 					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}><img src={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
+					<h3>{article['publication']}</h3>
 					<p>{article['description']}</p>
 				</div>
 			);
@@ -43,10 +44,10 @@ var PrintArticles = React.createClass({
 			<div className="row">
 				<h4 className="fullwidth-header">PRINT</h4>
 				<div className="slider-print-articles-nav">
-					{this.renderPrintArticlesNavSlick()} 					 
-				</div>	
+					{this.renderPrintArticlesNavSlick()}
+				</div>
 				<div className="slider-print-articles">
-					{this.renderPrintArticlesSlick()}				
+					{this.renderPrintArticlesSlick()}
 				</div>
 			</div>
 		)

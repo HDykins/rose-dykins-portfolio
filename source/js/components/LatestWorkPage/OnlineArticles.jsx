@@ -28,6 +28,7 @@ var OnlineArticles = React.createClass({
 				<div key={index} className="col-xs-4">
 					<a className="slider-online-articles-element" href={article['link']} target="_blank"><img src={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
+					<h3>{article['publication']}</h3>
 					<p>{article['description']}</p>
 				</div>
 			);
@@ -39,10 +40,10 @@ var OnlineArticles = React.createClass({
 			<div className="row">
 				<h4 className="fullwidth-header">ONLINE</h4>
 				<div className="slider-online-articles-nav">
-					{this.renderOnlineArticlesNavSlick()} 					 
-				</div>	
+					{this.renderOnlineArticlesNavSlick()}
+				</div>
 				<div className="slider-online-articles">
-					{this.renderOnlineArticlesSlick()}				
+					{this.renderOnlineArticlesSlick()}
 				</div>
 			</div>
 		)
