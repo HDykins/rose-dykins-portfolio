@@ -13,7 +13,7 @@ var GalleryPage = React.createClass({
 	renderGalleryPics: function () {
 		return Model.getGalleryPicsArray().map(function (galleryPic, index) {
 			return (
-				<div key={index} onClick={function() {this.handleChangeSelectedGalleryPic(galleryPic)}.bind(this)} className={(galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}>
+				<div key={index} onClick={function() {this.handleChangeSelectedGalleryPic(galleryPic)}.bind(this)} className={(galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4 gallery-pic"}>
 					<img src={galleryPic['image-src']} alt="No pics" />
 				</div>
 			)

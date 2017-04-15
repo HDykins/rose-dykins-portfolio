@@ -24,18 +24,17 @@ var TravelPics = React.createClass({
 	},
 
 	render: function () {
-		console.log("EHEHREHER :", this.props)
 		return (
 			<div>
-				<a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)}><h4>WHERE I'VE BEEN (UNDER CONSTRUCTION)</h4></a>
+				<a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)}><h4>WHERE I'VE BEEN</h4></a>
 				<div className="slider-preview-travel-pics-nav">
 					{this.renderTravelPicsNavSlick()}
 				</div>
-				<a><i className="fa fa-picture-o icon-overlay" aria-hidden="true"></i></a>
+				<a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)}><i className="fa fa-picture-o icon-overlay" aria-hidden="true"></i></a>
 				<div className="slider-preview-travel-pics">
 				  {this.renderTravelPicsSlick()}
-				</div>  
-			</div>	
+				</div>
+			</div>
 		)
 	},
 

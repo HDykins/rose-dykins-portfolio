@@ -63,11 +63,14 @@ h4.about, h4.twitter, h4.blogpost {
   -webkit-transition: all 0.5s linear;
   /* Safari */
   transition: all 0.5s linear; }
+  .col-xs-4.gallery-pic {
+    margin-bottom: 30px; }
   .col-xs-4.selected-gallery-pic {
     width: 100%;
     -webkit-transition: all 0.5s linear;
     /* Safari */
-    transition: all 0.5s linear; }
+    transition: all 0.5s linear;
+    margin-bottom: 30px; }
 
 .link {
   color: purple;

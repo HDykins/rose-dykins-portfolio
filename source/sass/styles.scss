@@ -53,7 +53,7 @@ a {
 			cursor: pointer;
 		}
 	}
-}	
+}
 
 a:hover {
 	text-decoration: none;
@@ -98,10 +98,14 @@ h4.about, h4.twitter, h4.blogpost {
 	text-align: left;
 	-webkit-transition: all 0.5s linear; /* Safari */
   transition: all 0.5s linear;
+  &.gallery-pic {
+  	margin-bottom: 30px;
+  }
 	&.selected-gallery-pic {
 		width: 100%;
 		-webkit-transition: all 0.5s linear; /* Safari */
   	transition: all 0.5s linear;
+  	margin-bottom: 30px;
 	}
 }
 
@@ -209,7 +213,7 @@ h4.about, h4.twitter, h4.blogpost {
 	background: white;
 	margin: 0;
 	.slick-dots {
-		height: 20px;  
+		height: 20px;
 		bottom: 0;
 		li {
 			margin: 0;
@@ -304,7 +308,7 @@ h4.about, h4.twitter, h4.blogpost {
 	.slick-dots li button {
 		border: solid 3px black;
 	}
-}	
+}
 
 .slick-dots li button {
 	width: 100%;
@@ -420,16 +424,16 @@ button.slick-next {
 	height: 90px
 }
 
-.slick-prev:before, .slick-next:before { 
+.slick-prev:before, .slick-next:before {
 
-	font-family: FontAwesome; font-size: 20px; line-height: 1; color: black; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }   
+	font-family: FontAwesome; font-size: 20px; line-height: 1; color: black; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 	.slick-prev:before { content: "\f053"; }
 	[dir="rtl"] .slick-prev:before { content: "\f054"; }
 
 	[dir="rtl"] .slick-next { left: -10px; top: 70px; right: auto; }
 	.slick-next:before { content: "\f054"; }
-	[dir="rtl"] .slick-next:before { content: "\f053"; 
+	[dir="rtl"] .slick-next:before { content: "\f053";
 }
 
 @media (max-width: 992px) {
@@ -596,11 +600,11 @@ button.slick-next {
 @media (max-width: 399px) and (min-width: 200px) {
 	h1 {
 		font-size: 24px;
-	}	
+	}
 	.bigger-text {
 		font-size: 24px;
 	}
 	.splash-screen-award {
 		min-width: 120px;
-	}	
+	}
 }

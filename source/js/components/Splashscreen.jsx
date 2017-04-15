@@ -39,7 +39,7 @@ var Splashscreen = React.createClass({
 		      });
 	      });
       });
-    });		
+    });
 	},
 
 	handleChangeView: function (view) {

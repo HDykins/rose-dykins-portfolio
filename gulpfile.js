@@ -14,6 +14,9 @@ var cssOutput = './build/';
 var imagesInput = './source/images/*.{png,jpg}';
 var imagesOutput = './build/images';
 
+var galleryInput = './source/images/gallery/*.{png,jpg}';
+var galleryOutput = './build/images/gallery';
+
 gulp.task('browserify', function () {
   return browserify('./source/js/app.jsx')
         .transform(reactify)
@@ -45,6 +48,12 @@ gulp.task('transfer-images', function () {
     .pipe(gulp.dest(imagesOutput));
 });
 
+gulp.task('transfer-images-gallery', function () {
+  return gulp
+    .src(galleryInput)
+    .pipe(gulp.dest(galleryOutput));
+});
+
 gulp.task('minifyHtml', function() {
   return gulp.src('./source/*.html')
         .pipe(htmlMinifier({collapseWhitespace: true}))
@@ -68,5 +77,5 @@ gulp.task('watch-sass', function () {
 
 gulp.task('sass', ['compile-sass']);
 gulp.task('build', ['browserify', 'minifyHtml', 'compile-sass', 'combine-scripts']);
-gulp.task('update', ['browserify', 'minifyHtml', 'compile-sass', 'transfer-images']);
+gulp.task('update', ['browserify', 'minifyHtml', 'compile-sass', 'transfer-images', 'transfer-images-gallery']);
 gulp.task('default', ['watch', 'browserify', 'minifyHtml', 'compile-sass', 'watch-sass']);

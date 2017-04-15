@@ -21115,7 +21115,7 @@ var GalleryPage = React.createClass({displayName: "GalleryPage",
 	renderGalleryPics: function () {
 		return Model.getGalleryPicsArray().map(function (galleryPic, index) {
 			return (
-				React.createElement("div", {key: index, onClick: function() {this.handleChangeSelectedGalleryPic(galleryPic)}.bind(this), className: (galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4"}, 
+				React.createElement("div", {key: index, onClick: function() {this.handleChangeSelectedGalleryPic(galleryPic)}.bind(this), className: (galleryPic.name === this.props.selectedGalleryPic) ? "col-xs-4 selected-gallery-pic" : "col-xs-4 gallery-pic"}, 
 					React.createElement("img", {src: galleryPic['image-src'], alt: "No pics"})
 				)
 			)
@@ -21488,18 +21488,17 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 	},
 
 	render: function () {
-		console.log("EHEHREHER :", this.props)
 		return (
 			React.createElement("div", null, 
-				React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this)}, React.createElement("h4", null, "WHERE I'VE BEEN (UNDER CONSTRUCTION)")), 
+				React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this)}, React.createElement("h4", null, "WHERE I'VE BEEN")), 
 				React.createElement("div", {className: "slider-preview-travel-pics-nav"}, 
 					this.renderTravelPicsNavSlick()
 				), 
-				React.createElement("a", null, React.createElement("i", {className: "fa fa-picture-o icon-overlay", "aria-hidden": "true"})), 
+				React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this)}, React.createElement("i", {className: "fa fa-picture-o icon-overlay", "aria-hidden": "true"})), 
 				React.createElement("div", {className: "slider-preview-travel-pics"}, 
 				  this.renderTravelPicsSlick()
 				)
-			)	
+			)
 		)
 	},
 
@@ -21870,7 +21869,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 		      });
 	      });
       });
-    });		
+    });
 	},
 
 	handleChangeView: function (view) {
