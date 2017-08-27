@@ -49,7 +49,6 @@ var Splashscreen = React.createClass({
 	},
 
 	renderSplashSlick: function () {
-		console.log(Model);
 		return Model.getSplashImagesArray().map (function (image, index) {
 			return <div key={index} className="splash-image-element"><img src={image['image-src']} /></div>;
 		});
@@ -79,8 +78,8 @@ var Splashscreen = React.createClass({
 					<br />
 					<h1 onClick={function() {this.handleChangeView("LATEST_WORK")}.bind(this)} className={this.props.currentView==="LATEST_WORK" ? "selected" : null}>{this.props.currentView==="LATEST_WORK" ? "/ " : null}LATEST WORK{this.props.currentView==="LATEST_WORK" ? " /" : null}</h1>
 					<br />
-					<h1 onClick={function() {this.handleChangeView("BLOG")}.bind(this)} className={this.props.currentView==="BLOG" ? "selected" : null}>{this.props.currentView==="BLOG" ? "/ " : null}BLOG{this.props.currentView==="BLOG" ? " /" : null}</h1>
-					<br />
+					{/*<h1 onClick={function() {this.handleChangeView("BLOG")}.bind(this)} className={this.props.currentView==="BLOG" ? "selected" : null}>{this.props.currentView==="BLOG" ? "/ " : null}BLOG{this.props.currentView==="BLOG" ? " /" : null}</h1>
+					<br />*/}
 					<h1 onClick={function() {this.handleChangeView("CONTACT")}.bind(this)} className={this.props.currentView==="CONTACT" ? "selected" : null}>{this.props.currentView==="CONTACT" ? "/ " : null}CONTACT{this.props.currentView==="CONTACT" ? " /" : null}</h1>
 				</div>
 			</div>

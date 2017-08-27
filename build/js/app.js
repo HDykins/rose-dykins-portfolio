@@ -21259,7 +21259,7 @@ var HomePage = React.createClass({displayName: "HomePage",
 				), 
 				React.createElement(RecentArticles, {changeView: this.props.changeView, togglePdfView: this.props.togglePdfView}), 
 				React.createElement("div", {className: "row"}, 
-					React.createElement(LatestPosts, {changeView: this.props.changeView, changeCurrentBlogId: this.props.changeCurrentBlogId}), 
+					/*<LatestPosts changeView={this.props.changeView} changeCurrentBlogId={this.props.changeCurrentBlogId} />*/
 					React.createElement(About, {changeView: this.props.changeView}), 
 					React.createElement("a", {className: "scroll-top", onClick: this.handleScroll}, React.createElement("h4", null, "^ Back to top ^"))
 				)
@@ -21879,7 +21879,6 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 	},
 
 	renderSplashSlick: function () {
-		console.log(Model);
 		return Model.getSplashImagesArray().map (function (image, index) {
 			return React.createElement("div", {key: index, className: "splash-image-element"}, React.createElement("img", {src: image['image-src']}));
 		});
@@ -21909,8 +21908,8 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 					React.createElement("br", null), 
 					React.createElement("h1", {onClick: function() {this.handleChangeView("LATEST_WORK")}.bind(this), className: this.props.currentView==="LATEST_WORK" ? "selected" : null}, this.props.currentView==="LATEST_WORK" ? "/ " : null, "LATEST WORK", this.props.currentView==="LATEST_WORK" ? " /" : null), 
 					React.createElement("br", null), 
-					React.createElement("h1", {onClick: function() {this.handleChangeView("BLOG")}.bind(this), className: this.props.currentView==="BLOG" ? "selected" : null}, this.props.currentView==="BLOG" ? "/ " : null, "BLOG", this.props.currentView==="BLOG" ? " /" : null), 
-					React.createElement("br", null), 
+					/*<h1 onClick={function() {this.handleChangeView("BLOG")}.bind(this)} className={this.props.currentView==="BLOG" ? "selected" : null}>{this.props.currentView==="BLOG" ? "/ " : null}BLOG{this.props.currentView==="BLOG" ? " /" : null}</h1>
+					<br />*/
 					React.createElement("h1", {onClick: function() {this.handleChangeView("CONTACT")}.bind(this), className: this.props.currentView==="CONTACT" ? "selected" : null}, this.props.currentView==="CONTACT" ? "/ " : null, "CONTACT", this.props.currentView==="CONTACT" ? " /" : null)
 				)
 			)

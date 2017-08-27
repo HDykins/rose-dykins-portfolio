@@ -28,7 +28,7 @@ var HomePage = React.createClass({
 				</div>
 				<RecentArticles changeView={this.props.changeView} togglePdfView={this.props.togglePdfView} />
 				<div className="row">
-					<LatestPosts changeView={this.props.changeView} changeCurrentBlogId={this.props.changeCurrentBlogId} />
+					{/*<LatestPosts changeView={this.props.changeView} changeCurrentBlogId={this.props.changeCurrentBlogId} />*/}
 					<About changeView={this.props.changeView} />
 					<a className="scroll-top" onClick={this.handleScroll}><h4>^ Back to top ^</h4></a>
 				</div>

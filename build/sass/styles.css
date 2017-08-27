@@ -92,7 +92,9 @@ h4.about, h4.twitter, h4.blogpost {
 
 .scroll-top {
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  display: block;
+  margin: 150px 0 0 33.3%; }
 
 .homepage-header:hover {
   cursor: pointer;
@@ -357,6 +359,8 @@ button.slick-next {
     .cv .cv-text {
       margin: 70px 0;
       float: right; }
+  .scroll-top {
+    margin: 0; }
   .quotes, .about-text {
     margin-bottom: 50px; }
   .bigger-text {
