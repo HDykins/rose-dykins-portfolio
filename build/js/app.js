@@ -20840,7 +20840,7 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 						React.createElement("h4", {className: "about"}, "My CV"), 
 						React.createElement("span", {className: "fa large-icon fa-file-text-o"}), 
 						React.createElement("p", {className: "cv-text"}, "Download my CV as a pdf"), 
-						React.createElement("a", {href: "./build/RoseDykinsCV2016.pdf", target: "_blank", className: "fa large-icon fa-arrow-circle-o-down"}
+						React.createElement("a", {href: "./build/181020-Rose-Dykins-cv.pdf", target: "_blank", className: "fa large-icon fa-arrow-circle-o-down"}
 						)
 					), 
 					React.createElement("div", {className: "col-xs-4 quotes"}, 
@@ -20850,13 +20850,13 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 					React.createElement("div", {className: "col-xs-4 about-text"}, 
 						React.createElement("h4", {className: "about"}, "About"), 
 						React.createElement("p", null, "Hello!"), 
-						React.createElement("p", null, React.createElement("strong", null, "My name is Rose Dykins and I’m a freelance travel journalist and writer."), " I’m a Londoner originally, but my home for the past few years has been the incredible city of Brighton (well, Hove, actually)."), 
-						React.createElement("p", null, "I worked as Business Traveller’s staff writer for more than three years, before beginning a freelance career in 2014. I stuffed my backpack full to capacity and travelled around Southeast Asia, successfully pitching ideas to publications such as The Telegraph and Lonely Planet as I went."), 
+						React.createElement("p", null, React.createElement("strong", null, "My name is Rose Dykins and I’m a freelance travel journalist and writer."), " I’m a Londoner originally, but my home for the past few years has been the incredible city of Brighton (well, Hove, actually). I worked as Business Traveller’s staff writer for more than three years, before beginning a freelance career in 2014. I stuffed my backpack full to capacity and travelled around Southeast Asia, successfully pitching ideas to publications such as The Telegraph and Lonely Planet as I went."), 
 						React.createElement("p", null, "I now work full-time as a freelance writer and journalist. Business travel is my background – and my geekiness for aviation and industry news is still going strong – but I’ve since branched out to cover gap year travel, overseas weddings and honeymoons, gourmet travel, luxury travel and adventure travel."), 
 						React.createElement("p", null, "I’m the travel editor of Platinum Business magazine – a publication for business leaders in the southeast – and am always seeking new destinations to cover for them."), 
-						React.createElement("p", null, "I also work regularly for Connections Events – an experience-based networking events company, and part of the Travel Weekly Group – where I conduct interviews to camera, compile their digital magazines and create content for Travel Weekly and Aspire."), 
+						React.createElement("p", null, "Over the past few years I have worked as a journalist and content creator for Connections – an experience-based travel networking company, and part of Jacobs Media Group – where I conduct interviews to camera, compile their digital magazines and write news pages for Travel Weekly and Aspire."), 
 						React.createElement("p", null, "Copywriting and editing for travel management companies is also something I do regularly, as well as researching and writing industry reports for travel heavyweights such as ", React.createElement("a", {href: "http://www.amadeus.com/documents/future-traveller-tribes-2030/luxury-travel/shaping-the-future-of-luxury-travel-report.pdf", target: "_blank"}, "Amadeus"), "."), 
-						React.createElement("p", null, "Recently, I also became Co-Chapter Leader of ", React.createElement("a", {href: "https://travelmassive.com/chapters/brighton", target: "_blank"}, "Brighton Travel Massive"), ", a networking group for travel folk based in my fair city by the sea, which is great fun."), 
+						React.createElement("p", null, "I am also a producer for Brighton’s Museum of Ordinary People (MOOP), a pop-up museum that celebrates the ripples ordinary people leave behind – the magic and mundanity of everyday life. MOOP won the Best Visual Arts award at the 2018 Brighton Fringe Festival, and our plans for word domination are going strong! I’m delighted to apply my passion for telling other people’s stories to this very special project, which was the brainchild of creatives Jolie Booth and Lucy Malone."), 
+						/*<p>Recently, I also became Co-Chapter Leader of <a href="https://travelmassive.com/chapters/brighton" target="_blank">Brighton Travel Massive</a>, a networking group for travel folk based in my fair city by the sea, which is great fun.</p>*/
 						React.createElement("p", null, "If you’re interested in working with me in some way, please don’t hesitate to get in touch, I’d love to hear from you.")
 					)
 				)
