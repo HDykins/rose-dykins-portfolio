@@ -28,7 +28,7 @@ var Model = (function initModel() {
 	];
 
 	var articlesArray = [
-		{pdf: false, link: "https://issuu.com/abtamagazine/docs/web_combined_abta_july2019/34",'image-src': "./build/images/Warsaw.jpg", description: "Exploring the Polish capital's gleaming new attractions and its plans to become an aviation superhub", title: "City Focus - Warsaw", "publication": "ABTA Magazine"},
+		{pdf: true, link: "https://issuu.com/abtamagazine/docs/web_combined_abta_july2019/34",'image-src': "./build/images/Warsaw.jpg", description: "Exploring the Polish capital's gleaming new attractions and its plans to become an aviation superhub", title: "City Focus - Warsaw", "publication": "ABTA Magazine"},
 		{pdf: true, link: "http://origin.misc.pagesuite.com/pdfdownload/ad5926e7-557e-481e-bc98-065e5a5e5b36.pdf", 'image-src': "./build/images/NoIsolationFinal.jpg", description: "A Norwegian start-up is closing the digital generation gap with its warm technology", title: "Simple tech for senior citizens", "publication": "n by Norwegian"},
 		{pdf: true, link: "http://origin.misc.pagesuite.com/pdfdownload/3a079aec-ebcf-49b0-834e-dba4a4302e94.pdf", 'image-src': "./build/images/Antonia.jpg", description: "Designer Antonia Sautter is the creative talent behind the most exclusive masquerade ball in Venice", title: "Behind The Mask", "publication": "Oryx"},
 		{pdf: true, link: "https://www.scribd.com/embeds/419053015/content.html", 'image-src': "./build/images/copenhagen-hygge.jpg", description: "The Danish capital combines business and pleasure with aplomb. Is Copenhagen's progressive attitude at the heart of its success?", title: "The Hygge Life", "publication": "Business Traveller"},
