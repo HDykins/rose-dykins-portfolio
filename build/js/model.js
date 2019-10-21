@@ -27,7 +27,7 @@ var Model = (function initModel() {
 		{'image-src': "./build/images/travel-pics-preview-6.jpg"}
 	];
 
-	var articlesArray = 
+	var articlesArray = [
 	   	{pdf: true, link: "http://origin.misc.pagesuite.com/pdfdownload/57e0837e-de65-4f78-bce8-91612eb2a348.pdf",'image-src': "./build/images/FantasticBeasts.jpg", description: "Looking for a safari with a difference? How about a trip to Poland's Bialowieza Forest, home to a 12,000 year-old landscape and some very special, prehistoric creatures?", title: "Fantastic Beasts", "publication": "n by Norwegian"},   	
 		{pdf: false, link: "https://issuu.com/squareupmedia/docs/e53_cover-wrap/68", 'image-src': "./build/images/Cukurcuma.jpg", description: "Istanbul's Cukurcuma is a neighbourhood defined by ramshackle streets lined with antique shops, but they're not just places to browse bric-a-brac – they offer a glimpse into the past", title: "Curiosity Shops", "publication": "Escapism"},
 		{pdf: false, link: "https://issuu.com/abtamagazine/docs/web_combined_abta_july2019/34",'image-src': "./build/images/Warsaw.jpg", description: "Exploring the Polish capital's gleaming new attractions and its plans to become an aviation superhub", title: "City Focus - Warsaw", "publication": "ABTA Magazine"},
