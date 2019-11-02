@@ -26,7 +26,7 @@ var OnlineArticles = React.createClass({
 		}).map(function (article, index) {
 			return (
 				<div key={index} className="col-xs-4">
-					<a className="slider-online-articles-element" href={article['link']} target="_blank"><img src={article['image-src']} /></a>
+					<a className="slider-online-articles-element" href={article['link']} target="_blank"><img data-lazy={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
 					<h3>{article['publication']}</h3>
 					<p>{article['description']}</p>
@@ -50,7 +50,9 @@ var OnlineArticles = React.createClass({
 	},
 
 	initSlicks: function () {
-		$('.slider-online-articles').slick({
+		var slider = $('.slider-online-articles')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -68,7 +70,21 @@ var OnlineArticles = React.createClass({
 		  ]
 		});
 
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+	  		// sliding = true
+		    $(this).slick('slickNext');
+		  } else if (e.originalEvent.deltaX > 40) {
+		  	// sliding = true
+		    $(this).slick('slickPrev');
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
+
 		$('.slider-online-articles-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -79,6 +95,7 @@ var OnlineArticles = React.createClass({
 		    {
 		      breakpoint: 768,
 		      settings: {
+		      	lazyLoad: 'progressive',
 		        arrows: false,
 		        slidesToShow: 1,
 		        slidesToScroll: 1

@@ -50,7 +50,7 @@ var Splashscreen = React.createClass({
 
 	renderSplashSlick: function () {
 		return Model.getSplashImagesArray().map (function (image, index) {
-			return <div key={index} className="splash-image-element"><img src={image['image-src']} /></div>;
+			return <div key={index} className="splash-image-element"><img data-lazy={image['image-src']} /></div>;
 		});
 	},
 
@@ -88,6 +88,7 @@ var Splashscreen = React.createClass({
 
 	initSlicks: function () {
 		$('.splash-image').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,

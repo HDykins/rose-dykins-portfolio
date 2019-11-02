@@ -165,7 +165,7 @@ h4.about, h4.twitter, h4.blogpost {
   margin: 0 15px 5px 15px; }
 
 .slider-recent-articles-nav .slick-dots li {
-  width: 10%; }
+  width: 8.33333%; }
 
 .slider-latest-posts-nav .slick-dots li {
   width: 33.33333%; }
@@ -174,7 +174,7 @@ h4.about, h4.twitter, h4.blogpost {
   width: 20%; }
 
 .slider-print-articles-nav .slick-dots li {
-  width: 16.66667%; }
+  width: 12.5%; }
 
 .slider-instagram-nav.slick-dotted {
   margin-bottom: 5px; }
@@ -392,13 +392,13 @@ button.slick-next {
     margin: 0;
     padding: 0 10%; }
   .slider-recent-articles-nav .slick-dots li {
-    width: 3.44828%; }
+    width: 2.77778%; }
   .slider-latest-posts-nav .slick-dots li {
     width: 16.66667%; }
   .slider-online-articles-nav .slick-dots li {
     width: 7.69231%; }
   .slider-print-articles-nav .slick-dots li {
-    width: 6.25%; }
+    width: 4.34783%; }
   .col-xs-4 {
     width: 100%;
     padding: 0 10%; }

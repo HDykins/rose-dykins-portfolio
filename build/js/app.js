@@ -20851,9 +20851,8 @@ var AboutPage = React.createClass({displayName: "AboutPage",
 						React.createElement("h4", {className: "about"}, "About"), 
 						React.createElement("p", null, "Hello!"), 
 						React.createElement("p", null, React.createElement("strong", null, "My name is Rose Dykins and I’m a freelance travel journalist and writer."), " I’m a Londoner originally, but my home for the past few years has been the incredible city of Brighton (well, Hove, actually). I worked as Business Traveller’s staff writer for more than three years, before beginning a freelance career in 2014. I stuffed my backpack full to capacity and travelled around Southeast Asia, successfully pitching ideas to publications such as The Telegraph and Lonely Planet as I went."), 
-						React.createElement("p", null, "I now work full-time as a freelance writer and journalist. Business travel is my background – and my geekiness for aviation and industry news is still going strong – but I’ve since branched out to cover gap year travel, overseas weddings and honeymoons, gourmet travel, luxury travel and adventure travel."), 
-						React.createElement("p", null, "I’m the travel editor of Platinum Business magazine – a publication for business leaders in the southeast – and am always seeking new destinations to cover for them."), 
-						React.createElement("p", null, "Over the past few years I have worked as a journalist and content creator for Connections – an experience-based travel networking company, and part of Jacobs Media Group – where I conduct interviews to camera, compile their digital magazines and write news pages for Travel Weekly and Aspire."), 
+						React.createElement("p", null, "I now work full-time as a freelance writer and journalist. Business travel is my background – and my geekiness for aviation and industry news is still going strong – but I’ve since branched out to cover gap year travel, overseas weddings and honeymoons, gourmet travel, luxury travel and adventure travel, social enterprises and innovations around the world, and small museums."), 
+						React.createElement("p", null, "I have worked as a journalist and content creator for Connections – an experience-based travel networking company, and part of Jacobs Media Group – where I conduct interviews to camera, compile their digital magazines and write news pages for Travel Weekly and Aspire."), 
 						React.createElement("p", null, "Copywriting and editing for travel management companies is also something I do regularly, as well as researching and writing industry reports for travel heavyweights such as ", React.createElement("a", {href: "http://www.amadeus.com/documents/future-traveller-tribes-2030/luxury-travel/shaping-the-future-of-luxury-travel-report.pdf", target: "_blank"}, "Amadeus"), "."), 
 						React.createElement("p", null, "I am also a producer for Brighton’s Museum of Ordinary People (MOOP), a pop-up museum that celebrates the ripples ordinary people leave behind – the magic and mundanity of everyday life. MOOP won the Best Visual Arts award at the 2018 Brighton Fringe Festival, and our plans for word domination are going strong! I’m delighted to apply my passion for telling other people’s stories to this very special project, which was the brainchild of creatives Jolie Booth and Lucy Malone."), 
 						/*<p>Recently, I also became Co-Chapter Leader of <a href="https://travelmassive.com/chapters/brighton" target="_blank">Brighton Travel Massive</a>, a networking group for travel folk based in my fair city by the sea, which is great fun.</p>*/
@@ -21179,7 +21178,7 @@ var Instagram = React.createClass({displayName: "Instagram",
 
 	renderInstagramSlick: function () {
 		return Model.getInstagramArray().map (function (element, index) {
-			return React.createElement("a", {key: index, className: "slider-instagram-element", href: element['link'] ? element['link'] : 'https://www.instagram.com/rosedykins/', target: "_blank"}, React.createElement("img", {src: element['image-src']}));
+			return React.createElement("a", {key: index, className: "slider-instagram-element", href: element['link'] ? element['link'] : 'https://www.instagram.com/rosedykins/', target: "_blank"}, React.createElement("img", {"data-lazy": element['image-src']}));
 		});
 	},
 
@@ -21194,12 +21193,16 @@ var Instagram = React.createClass({displayName: "Instagram",
 				React.createElement("div", {className: "slider-instagram"}, 
 				  this.renderInstagramSlick()
 				)
-			)	
+			)
 		)
 	},
 
 	initSlicks: function () {
-		$('.slider-instagram').slick({
+		var sliding = false
+		var timeout;
+		var slider = $('.slider-instagram')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
@@ -21210,8 +21213,33 @@ var Instagram = React.createClass({displayName: "Instagram",
 		  autoplaySpeed: 10000,
 		  speed: 200
 		});
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+		  	clearTimeout(timeout)
+		  	timeout = setTimeout(function() {
+	    		sliding = false
+	    	}, 200)
+		  	if (!sliding) {
+		    	$(this).slick('slickNext');
+		  	}
+		  	sliding = true
+		  } else if (e.originalEvent.deltaX > 40) {
+		  		clearTimeout(timeout)
+		    	timeout = setTimeout(function() {
+		    		sliding = false
+		    	}, 200)
+		    if (!sliding) {
+		    	$(this).slick('slickPrev');
+		  	}
+		  	sliding = true
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
 
 		$('.slider-instagram-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
@@ -21220,7 +21248,7 @@ var Instagram = React.createClass({displayName: "Instagram",
 		  asNavFor: '.slider-instagram',
 		  autoplay: true,
 		  autoplaySpeed: 10000,
-		  speed: 200		  
+		  speed: 200
 		});
 	}
 
@@ -21300,7 +21328,7 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 		return Model.getBlogpostsArray().map (function (blogpost, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-latest-posts-element", onClick:  blogpost['id'] ? function() {this.handleChangeView("BLOG", blogpost['id'])}.bind(this) : function() {this.handleChangeView("BLOG")}.bind(this)}, React.createElement("img", {src: blogpost['slider-image']})), 
+					React.createElement("a", {className: "slider-latest-posts-element", onClick:  blogpost['id'] ? function() {this.handleChangeView("BLOG", blogpost['id'])}.bind(this) : function() {this.handleChangeView("BLOG")}.bind(this)}, React.createElement("img", {alt: "./", "data-lazy": blogpost['slider-image']})), 
 					React.createElement("h4", null, blogpost['title']), 
 					React.createElement("span", null, blogpost['date']), 
 					React.createElement("p", null, blogpost['description'])
@@ -21315,16 +21343,19 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 				React.createElement("h4", {className: "fullwidth-header homepage-header", onClick: function() {this.handleChangeView("BLOG")}.bind(this)}, "LATEST POSTS (UNDER CONSTRUCTION)"), 
 				React.createElement("div", {className: "slider-latest-posts-nav"}, 
 					this.renderLatestPostsNavSlick()
-				), 	
+				), 
 				React.createElement("div", {className: "slider-latest-posts"}, 
 					this.renderLatestPostsSlick()
 				)
-			)	
+			)
 		)
 	},
 
 	initSlicks: function () {
-		$('.slider-latest-posts').slick({
+		var sliding = false
+		var slider = $('.slider-latest-posts')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 2,
 		  slidesToScroll: 2,
 		  arrows: false,
@@ -21341,8 +21372,23 @@ var LatestPosts = React.createClass({displayName: "LatestPosts",
 		    }
 		  ]
 		});
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -50) {
+		  	if (!sliding) {
+		    	$(this).slick('slickNext');
+		  	}
+		  } else if (e.originalEvent.deltaX > 50) {
+		    if (!sliding) {
+		    	$(this).slick('slickNext');
+		  	}
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
 
 		$('.slider-latest-posts-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 2,
 		  slidesToScroll: 2,
 		  arrows: false,
@@ -21395,7 +21441,7 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 		return Model.getArticlesArray().map (function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-recent-articles-element", onClick: article['pdf'] ? function() {this.handleLoadPdfViewer(article['link'])}.bind(this) : null, href: !article['pdf'] ? article['link'] : null, target: "_blank"}, React.createElement("img", {src: article['image-src']})), 
+					React.createElement("a", {className: "slider-recent-articles-element", onClick: article['pdf'] ? function() {this.handleLoadPdfViewer(article['link'])}.bind(this) : null, href: !article['pdf'] ? article['link'] : null, target: "_blank"}, React.createElement("img", {alt: "./build/images/loading-image.jpg", "data-lazy": article['image-src']})), 
 					React.createElement("h4", null, article['title']), 
 					React.createElement("h3", null, article['publication']), 
 					React.createElement("p", null, article['description'])
@@ -21419,30 +21465,49 @@ var RecentArticles = React.createClass({displayName: "RecentArticles",
 	},
 
 	initSlicks: function () {
-		$('.slider-recent-articles').slick({
+		var slider = $('.slider-recent-articles')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
 		  dots: true,
 		  adaptiveHeight: true,
+		  touchMove: true,
+		  swipe: true,
 		  asNavFor: '.slider-recent-articles-nav',
 		  responsive: [
 		    {
 		      breakpoint: 768,
 		      settings: {
+		      	lazyLoad: 'progressive',
 		        slidesToShow: 1,
-		        slidesToScroll: 1
+		        slidesToScroll: 1,
+		        adaptiveHeight: true
 		      }
 		    }
 		  ]
 		});
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+		    $(this).slick('slickNext');
+		  } else if (e.originalEvent.deltaX > 40) {
+		    $(this).slick('slickPrev');
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
 
 		$('.slider-recent-articles-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
 		  dots: true,
 		  adaptiveHeight: true,
+		  touchMove: true,
+		  swipe: true,
 		  asNavFor: '.slider-recent-articles',
 		    responsive: [
 		    {
@@ -21483,7 +21548,7 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 
 	renderTravelPicsSlick: function () {
 		return Model.getPreviewTravelPicsArray().map (function (element, index) {
-			return React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this), key: index, className: "slider-preview-travel-pics-element"}, React.createElement("img", {src: element['image-src']}));
+			return React.createElement("a", {onClick: function() {this.handleChangeView("GALLERY")}.bind(this), key: index, className: "slider-preview-travel-pics-element"}, React.createElement("img", {"data-lazy": element['image-src']}));
 		}.bind(this));
 	},
 
@@ -21503,7 +21568,11 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 	},
 
 	initSlicks: function () {
-		$('.slider-preview-travel-pics').slick({
+		var sliding = false;
+		var timeout;
+		var slider = $('.slider-preview-travel-pics')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
@@ -21514,8 +21583,33 @@ var TravelPics = React.createClass({displayName: "TravelPics",
 		  autoplaySpeed: 10000,
 		  speed: 200
 		});
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+		  	clearTimeout(timeout)
+		  	timeout = setTimeout(function() {
+	    		sliding = false
+	    	}, 200)
+		  	if (!sliding) {
+		    	$(this).slick('slickNext');
+		  	}
+		  	sliding = true
+		  } else if (e.originalEvent.deltaX > 40) {
+		  		clearTimeout(timeout)
+		    	timeout = setTimeout(function() {
+		    		sliding = false
+		    	}, 200)
+		    if (!sliding) {
+		    	$(this).slick('slickPrev');
+		  	}
+		  	sliding = true
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
 
 		$('.slider-preview-travel-pics-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
@@ -21602,7 +21696,7 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 		}).map(function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-online-articles-element", href: article['link'], target: "_blank"}, React.createElement("img", {src: article['image-src']})), 
+					React.createElement("a", {className: "slider-online-articles-element", href: article['link'], target: "_blank"}, React.createElement("img", {"data-lazy": article['image-src']})), 
 					React.createElement("h4", null, article['title']), 
 					React.createElement("h3", null, article['publication']), 
 					React.createElement("p", null, article['description'])
@@ -21626,7 +21720,9 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 	},
 
 	initSlicks: function () {
-		$('.slider-online-articles').slick({
+		var slider = $('.slider-online-articles')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -21644,7 +21740,21 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 		  ]
 		});
 
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+	  		// sliding = true
+		    $(this).slick('slickNext');
+		  } else if (e.originalEvent.deltaX > 40) {
+		  	// sliding = true
+		    $(this).slick('slickPrev');
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
+
 		$('.slider-online-articles-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -21655,6 +21765,7 @@ var OnlineArticles = React.createClass({displayName: "OnlineArticles",
 		    {
 		      breakpoint: 768,
 		      settings: {
+		      	lazyLoad: 'progressive',
 		        arrows: false,
 		        slidesToShow: 1,
 		        slidesToScroll: 1
@@ -21701,7 +21812,7 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 		}).map (function (article, index) {
 			return (
 				React.createElement("div", {key: index, className: "col-xs-4"}, 
-					React.createElement("a", {className: "slider-print-articles-element", onClick: function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}, React.createElement("img", {src: article['image-src']})), 
+					React.createElement("a", {className: "slider-print-articles-element", onClick: function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}, React.createElement("img", {"data-lazy": article['image-src']})), 
 					React.createElement("h4", null, article['title']), 
 					React.createElement("h3", null, article['publication']), 
 					React.createElement("p", null, article['description'])
@@ -21725,7 +21836,9 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 	},
 
 	initSlicks: function () {
-		$('.slider-print-articles').slick({
+		var slider = $('.slider-print-articles')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -21743,7 +21856,19 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 		  ]
 		});
 
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+		    $(this).slick('slickNext');
+		  } else if (e.originalEvent.deltaX > 40) {
+		    $(this).slick('slickPrev');
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
+
 		$('.slider-print-articles-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -21754,6 +21879,7 @@ var PrintArticles = React.createClass({displayName: "PrintArticles",
 		    {
 		      breakpoint: 768,
 		      settings: {
+		      	lazyLoad: 'progressive',
 		        arrows: false,
 		        slidesToShow: 1,
 		        slidesToScroll: 1
@@ -21880,7 +22006,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 
 	renderSplashSlick: function () {
 		return Model.getSplashImagesArray().map (function (image, index) {
-			return React.createElement("div", {key: index, className: "splash-image-element"}, React.createElement("img", {src: image['image-src']}));
+			return React.createElement("div", {key: index, className: "splash-image-element"}, React.createElement("img", {"data-lazy": image['image-src']}));
 		});
 	},
 
@@ -21918,6 +22044,7 @@ var Splashscreen = React.createClass({displayName: "Splashscreen",
 
 	initSlicks: function () {
 		$('.splash-image').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,

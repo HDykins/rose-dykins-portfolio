@@ -2,13 +2,13 @@ $num-splash-images: 6;
 $num-instagram-images: 6;
 $num-preview-travel-images: 6;
 $num-online-articles-images: 13;
-$num-print-articles-images: 16;
+$num-print-articles-images: 23;
 $num-recent-articles-images: $num-online-articles-images + $num-print-articles-images;
 $num-latest-posts-images: 6;
 
 $num-online-articles-dots: 5;
-$num-print-articles-dots: 6;
-$num-recent-articles-dots: 10;
+$num-print-articles-dots: 8;
+$num-recent-articles-dots: 12;
 $num-latest-posts-dots: 3;
 
 $splash-image-dots-width: (100%/$num-splash-images);

@@ -30,7 +30,7 @@ var PrintArticles = React.createClass({
 		}).map (function (article, index) {
 			return (
 				<div key={index} className="col-xs-4">
-					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}><img src={article['image-src']} /></a>
+					<a className="slider-print-articles-element" onClick={function() {this.handleLoadPdfViewer(article['link'])}.bind(this)}><img data-lazy={article['image-src']} /></a>
 					<h4>{article['title']}</h4>
 					<h3>{article['publication']}</h3>
 					<p>{article['description']}</p>
@@ -54,7 +54,9 @@ var PrintArticles = React.createClass({
 	},
 
 	initSlicks: function () {
-		$('.slider-print-articles').slick({
+		var slider = $('.slider-print-articles')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -72,7 +74,19 @@ var PrintArticles = React.createClass({
 		  ]
 		});
 
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+		    $(this).slick('slickNext');
+		  } else if (e.originalEvent.deltaX > 40) {
+		    $(this).slick('slickPrev');
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
+
 		$('.slider-print-articles-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
 		  arrows: false,
@@ -83,6 +97,7 @@ var PrintArticles = React.createClass({
 		    {
 		      breakpoint: 768,
 		      settings: {
+		      	lazyLoad: 'progressive',
 		        arrows: false,
 		        slidesToShow: 1,
 		        slidesToScroll: 1

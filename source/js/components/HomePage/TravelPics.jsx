@@ -19,7 +19,7 @@ var TravelPics = React.createClass({
 
 	renderTravelPicsSlick: function () {
 		return Model.getPreviewTravelPicsArray().map (function (element, index) {
-			return <a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)} key={index} className="slider-preview-travel-pics-element"><img src={element['image-src']} /></a>;
+			return <a onClick={function() {this.handleChangeView("GALLERY")}.bind(this)} key={index} className="slider-preview-travel-pics-element"><img data-lazy={element['image-src']} /></a>;
 		}.bind(this));
 	},
 
@@ -39,7 +39,11 @@ var TravelPics = React.createClass({
 	},
 
 	initSlicks: function () {
-		$('.slider-preview-travel-pics').slick({
+		var sliding = false;
+		var timeout;
+		var slider = $('.slider-preview-travel-pics')
+		slider.slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
@@ -50,8 +54,33 @@ var TravelPics = React.createClass({
 		  autoplaySpeed: 10000,
 		  speed: 200
 		});
+		slider.on('wheel', (function(e) {
+		  e.preventDefault();
+		  if (e.originalEvent.deltaX < -40) {
+		  	clearTimeout(timeout)
+		  	timeout = setTimeout(function() {
+	    		sliding = false
+	    	}, 200)
+		  	if (!sliding) {
+		    	$(this).slick('slickNext');
+		  	}
+		  	sliding = true
+		  } else if (e.originalEvent.deltaX > 40) {
+		  		clearTimeout(timeout)
+		    	timeout = setTimeout(function() {
+		    		sliding = false
+		    	}, 200)
+		    if (!sliding) {
+		    	$(this).slick('slickPrev');
+		  	}
+		  	sliding = true
+		  } else {
+		  	window.scrollBy({left: 0, top: e.originalEvent.deltaY, behavior: "auto"})
+		  }
+		}));
 
 		$('.slider-preview-travel-pics-nav').slick({
+			lazyLoad: 'ondemand',
 		  slidesToShow: 1,
 		  slidesToScroll: 1,
 		  arrows: false,
